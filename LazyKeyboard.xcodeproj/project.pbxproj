@@ -12,6 +12,8 @@
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
 		33C3B8A720463EFD007CD24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A620463EFD007CD24B /* Assets.xcassets */; };
 		33C3B8AA20463EFD007CD24B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A820463EFD007CD24B /* LaunchScreen.storyboard */; };
+		33C3B8B220464813007CD24B /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8B120464813007CD24B /* MoreController.swift */; };
+		33C3B8B42046489C007CD24B /* MoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8B32046489C007CD24B /* MoreEntity.swift */; };
 		803932F237919B68A336EE72 /* Pods_LazyKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		33C3B8A620463EFD007CD24B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33C3B8A920463EFD007CD24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33C3B8AB20463EFD007CD24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33C3B8B120464813007CD24B /* MoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreController.swift; sourceTree = "<group>"; };
+		33C3B8B32046489C007CD24B /* MoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreEntity.swift; sourceTree = "<group>"; };
 		46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA523F51689714C549D6DEF /* Pods-LazyKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		8D578F80A64C1C1E4FB7862A /* Pods-LazyKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 			children = (
 				33C3B89F20463EFD007CD24B /* AppDelegate.swift */,
 				33C3B8A120463EFD007CD24B /* ViewController.swift */,
+				33C3B8B120464813007CD24B /* MoreController.swift */,
+				33C3B8B32046489C007CD24B /* MoreEntity.swift */,
 				33C3B8A320463EFD007CD24B /* Main.storyboard */,
 				33C3B8A620463EFD007CD24B /* Assets.xcassets */,
 				33C3B8A820463EFD007CD24B /* LaunchScreen.storyboard */,
@@ -220,7 +226,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				33C3B8A220463EFD007CD24B /* ViewController.swift in Sources */,
+				33C3B8B220464813007CD24B /* MoreController.swift in Sources */,
 				33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */,
+				33C3B8B42046489C007CD24B /* MoreEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
