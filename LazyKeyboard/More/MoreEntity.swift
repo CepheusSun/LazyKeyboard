@@ -13,8 +13,13 @@ struct MoreSection {
     var footer: String?
     
     var items: [MoreItem] = []
+    
 }
 
 struct MoreItem {
     var title: String = ""
+    var showMore: Bool?
+    var message: String?
+    var switchState: Bool?
+    var action: () -> ()
 }

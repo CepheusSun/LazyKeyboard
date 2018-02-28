@@ -9,5 +9,6 @@ target 'LazyKeyboard' do
 
     pod 'RxSwift'
     pod 'RxCocoa'
-
+    pod 'Reusable'
+    
 end
