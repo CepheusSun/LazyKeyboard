@@ -10,7 +10,6 @@
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
 		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
-		33C3B8A720463EFD007CD24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A620463EFD007CD24B /* Assets.xcassets */; };
 		33C3B8AA20463EFD007CD24B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A820463EFD007CD24B /* LaunchScreen.storyboard */; };
 		33C3B8B220464813007CD24B /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8B120464813007CD24B /* MoreController.swift */; };
 		33C3B8B42046489C007CD24B /* MoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8B32046489C007CD24B /* MoreEntity.swift */; };
@@ -44,6 +43,8 @@
 		33C3B8F220467C3C007CD24B /* CellWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8F120467C3C007CD24B /* CellWrapper.swift */; };
 		33C3B8FB2046A07B007CD24B /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */; };
 		33C3B8FF2046A07B007CD24B /* Lazy.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 33C3B8F82046A07B007CD24B /* Lazy.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		33C3B9042046A4A4007CD24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A620463EFD007CD24B /* Assets.xcassets */; };
+		33C3B9052046A5B3007CD24B /* ChainableView+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8C420464FE8007CD24B /* ChainableView+Snippet.swift */; };
 		803932F237919B68A336EE72 /* Pods_LazyKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */; };
 /* End PBXBuildFile section */
 
@@ -351,7 +352,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33C3B8AA20463EFD007CD24B /* LaunchScreen.storyboard in Resources */,
-				33C3B8A720463EFD007CD24B /* Assets.xcassets in Resources */,
 				33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C3B9042046A4A4007CD24B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C3B9052046A5B3007CD24B /* ChainableView+Snippet.swift in Sources */,
 				33C3B8FB2046A07B007CD24B /* KeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

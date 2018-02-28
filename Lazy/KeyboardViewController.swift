@@ -21,24 +21,70 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let buttonHeight = 40
         // Perform custom UI setup here
-        self.nextKeyboardButton = UIButton(type: .system)
+        self.nextKeyboardButton = UIButton(type: .custom)
         
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
+        self.nextKeyboardButton.setImage(#imageLiteral(resourceName: "keyboard_earth"), for: .normal)
         self.nextKeyboardButton.sizeToFit()
         self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
-        
         self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
-        
+        self.nextKeyboardButton.backgroundColor = .darkGray
+        self.nextKeyboardButton.layer.cornerRadius = 5;
         self.view.addSubview(self.nextKeyboardButton)
         
-        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-    }
+        self.nextKeyboardButton.anchor(
+            top: nil, leading: view.leadingAnchor,
+            bottom: view.bottomAnchor, trailing: nil,
+            padding: UIEdgeInsetsMake(0, 10, 5, 0),
+            size: CGSize(width: 70, height: buttonHeight))
+
+        let returnButton = UIButton(type: .custom)
+        returnButton.setTitle("return", for: .normal)
+        returnButton.sizeToFit()
+        returnButton.translatesAutoresizingMaskIntoConstraints = false
+        returnButton.backgroundColor = .darkGray
+        returnButton.layer.cornerRadius = 5;
+        self.view.addSubview(returnButton)
+
+        returnButton.anchor(
+            top: nil, leading: nil,
+            bottom: view.bottomAnchor,
+            trailing: self.view.trailingAnchor,
+            padding: UIEdgeInsetsMake(0, 0, 5, 10),
+            size: CGSize(width: 80, height: buttonHeight))
+        
+        let spaceButton = UIButton(type: .custom)
+        spaceButton.setTitle("space", for: .normal)
+        spaceButton.sizeToFit()
+        spaceButton.translatesAutoresizingMaskIntoConstraints = false
+        spaceButton.backgroundColor = .darkGray
+        spaceButton.layer.cornerRadius = 5;
+        self.view.addSubview(spaceButton)
+        
+        spaceButton.anchor(
+            top: self.nextKeyboardButton.topAnchor,
+            leading: self.nextKeyboardButton.trailingAnchor,
+            bottom: view.bottomAnchor, trailing: returnButton.leadingAnchor,
+            padding: UIEdgeInsetsMake(0, 5, 5, 5),
+            size: .zero)
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated
+        let deleteButton = UIButton(type: .custom)
+        deleteButton.setTitle("delete", for: .normal)
+        deleteButton.sizeToFit()
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        deleteButton.backgroundColor = .darkGray
+        deleteButton.layer.cornerRadius = 5;
+        self.view.addSubview(deleteButton)
+        
+        deleteButton.anchor(
+            top: self.view.topAnchor,
+            leading: nil,
+            bottom: nil, trailing: returnButton.trailingAnchor,
+            padding: UIEdgeInsetsMake(10, 5, 10, 0),
+            size: CGSize(width: 80, height: buttonHeight))
+        
+        
     }
     
     override func textWillChange(_ textInput: UITextInput?) {
