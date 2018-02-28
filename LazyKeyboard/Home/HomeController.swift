@@ -16,6 +16,9 @@ class HomeController: UIViewController {
     @IBOutlet weak var inputContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var textField: UITextField!
     
+    // 当前正在编辑的字段, 如果是新增, 该字段为nil
+    var currentEditedIndex: Int?
+    
     var bag = DisposeBag()
     
     override func viewDidLoad() {
@@ -38,9 +41,18 @@ class HomeController: UIViewController {
             }).disposed(by: bag)
     }
     
-    
+    var editionStatus = false
     @IBAction func editAction(_ sender: UIBarButtonItem) {
+        if tableView.isEditing {
+            tableView.setEditing(false, animated: true)
+            sender.title = "编辑"
+            return
+        }
         
+        tableView.setEditing(false, animated: true)
+        editionStatus = !editionStatus
+        sender.title = editionStatus ? "完成" : "编辑"
+        tableView.setEditing(editionStatus, animated: true)
     }
     
     @IBAction func addAction(_ sender: UIBarButtonItem) {
@@ -58,6 +70,7 @@ class HomeController: UIViewController {
     }
 }
 
+// MARK: - TableView
 extension HomeController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.list.count
@@ -71,6 +84,33 @@ extension HomeController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        viewModel.move(sourceIndexPath, to: destinationIndexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .default, title: "删除") {[unowned self] (action, indexPath) in
+            self.viewModel.delete([indexPath])
+            tableView.deleteRows(at: [indexPath], with: .none)
+        }
+        let edit = UITableViewRowAction(style: .normal, title: "编辑") {[unowned self] (action, indexPath) in
+            self.currentEditedIndex = indexPath.row
+            self.textField.text = self.viewModel.list[indexPath.row]
+            self.addAction(self.navigationItem.rightBarButtonItem!)
+        }
+        return [delete, edit]
+    }
+}
+
+extension HomeController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -104,7 +144,12 @@ extension HomeController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        self.viewModel.addSyllable(textField.text!)
+        currentEditedIndex
+            .ifSome { [unowned self, textField] in
+                self.viewModel.editSyllable(textField.text!, at: $0)
+            }.ifNone {[unowned self, textField] in
+                self.viewModel.addSyllable(textField.text!)
+            }
         textField.text = ""
         return true
     }
