@@ -63,7 +63,7 @@ extension HomeController: UITableViewDataSource {
 }
 
 // MARK: - 键盘
-extension HomeController {
+extension HomeController: UITextFieldDelegate {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let userInfo = notification.userInfo,
            let value = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue,
@@ -88,8 +88,11 @@ extension HomeController {
                             self.inputContentViewTopConstraint.constant = 0;
             }, completion: nil)
         }
-
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("xxxx")
+        return true
+    }
 }
 
