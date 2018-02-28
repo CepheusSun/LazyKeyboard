@@ -12,9 +12,8 @@ class HomeController: UIViewController {
 
     private var viewModel = HomeViewModel()
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var inputContentView: UIView!
-    
-    var keyBoardNeedLayout: Bool = true
+    @IBOutlet weak var inputContentViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +36,11 @@ class HomeController: UIViewController {
     }
     
     @IBAction func addAction(_ sender: UIBarButtonItem) {
-        
+        textField.becomeFirstResponder()
     }
     
     @IBAction func hideKeyboardAction(_ sender: Any) {
-        self.resignFirstResponder()
+        textField.resignFirstResponder()
     }
     
     deinit {
@@ -63,27 +62,33 @@ extension HomeController: UITableViewDataSource {
     }
 }
 
+// MARK: - 键盘
 extension HomeController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let userInfo = notification.userInfo,
            let value = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue,
-           let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? Double,
            let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt {
             let frame = value.cgRectValue
             let intersection = frame.intersection(self.view.frame)
             let deltaY = intersection.height
-            UIView.animate(withDuration: duration, delay: 0.0,
+            UIView.animate(withDuration: 0.3, delay: 0.0,
                            options: UIViewAnimationOptions(rawValue: curve),
                            animations: {
-                            self.inputContentView.frame = CGRect(x: 0, y: deltaY, width: self.view.bounds.width, height: 44)
-                            self.keyBoardNeedLayout = true
-                            self.view.layoutIfNeeded()
+                            self.inputContentViewTopConstraint.constant = -deltaY-44;
             }, completion: nil)
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        
+        if let userInfo = notification.userInfo,
+            let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt {
+            UIView.animate(withDuration: 0.3, delay: 0.0,
+                           options: UIViewAnimationOptions(rawValue: curve),
+                           animations: {
+                            self.inputContentViewTopConstraint.constant = 0;
+            }, completion: nil)
+        }
+
     }
 
 }

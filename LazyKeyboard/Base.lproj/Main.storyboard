@@ -28,7 +28,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bx-QX-KpZ">
-                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="667" width="375" height="44"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ktg-IL-PLz">
                                         <rect key="frame" x="20" y="2" width="301" height="40"/>
@@ -62,13 +62,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Bx-QX-KpZ" secondAttribute="bottom" id="DLX-OU-7Ne"/>
                             <constraint firstItem="1Bx-QX-KpZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EKd-FJ-FMY"/>
                             <constraint firstItem="lVs-VF-EIO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PjI-5t-cs2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lVs-VF-EIO" secondAttribute="trailing" id="Rfz-aM-xBw"/>
                             <constraint firstItem="1Bx-QX-KpZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bMM-bd-hfM"/>
                             <constraint firstItem="lVs-VF-EIO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dE7-fN-Dfj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lVs-VF-EIO" secondAttribute="bottom" id="hql-5t-oco"/>
+                            <constraint firstItem="1Bx-QX-KpZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="yFG-mZ-oYV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -85,8 +85,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="inputContentView" destination="1Bx-QX-KpZ" id="nj0-aX-ts1"/>
+                        <outlet property="inputContentViewTopConstraint" destination="yFG-mZ-oYV" id="c3D-UN-uY2"/>
                         <outlet property="tableView" destination="lVs-VF-EIO" id="cAS-jx-9Em"/>
+                        <outlet property="textField" destination="Ktg-IL-PLz" id="vGd-7u-Gix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
