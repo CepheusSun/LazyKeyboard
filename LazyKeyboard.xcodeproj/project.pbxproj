@@ -361,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VEMSS45948;
 				INFOPLIST_FILE = LazyKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.LazyKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -377,6 +378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VEMSS45948;
 				INFOPLIST_FILE = LazyKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.LazyKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
