@@ -40,6 +40,8 @@
 		33C3B8E620464FE8007CD24B /* Number+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8CF20464FE8007CD24B /* Number+Snippet.swift */; };
 		33C3B8E92046517C007CD24B /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8E72046517C007CD24B /* MoreTableViewCell.swift */; };
 		33C3B8ED20465223007CD24B /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8EC20465223007CD24B /* General.swift */; };
+		33C3B8F020467BC7007CD24B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8EF20467BC7007CD24B /* HomeViewModel.swift */; };
+		33C3B8F220467C3C007CD24B /* CellWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8F120467C3C007CD24B /* CellWrapper.swift */; };
 		803932F237919B68A336EE72 /* Pods_LazyKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		33C3B8CF20464FE8007CD24B /* Number+Snippet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+Snippet.swift"; sourceTree = "<group>"; };
 		33C3B8E72046517C007CD24B /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		33C3B8EC20465223007CD24B /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		33C3B8EF20467BC7007CD24B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		33C3B8F120467C3C007CD24B /* CellWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWrapper.swift; sourceTree = "<group>"; };
 		46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA523F51689714C549D6DEF /* Pods-LazyKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		8D578F80A64C1C1E4FB7862A /* Pods-LazyKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,11 +121,11 @@
 		33C3B89E20463EFD007CD24B /* LazyKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				33C3B8EE20467B46007CD24B /* Home */,
 				33C3B8EB20465219007CD24B /* General */,
 				33C3B8B820464FE8007CD24B /* Snippet */,
 				33C3B8B520464939007CD24B /* More */,
 				33C3B89F20463EFD007CD24B /* AppDelegate.swift */,
-				33C3B8A120463EFD007CD24B /* HomeController.swift */,
 				33C3B8A320463EFD007CD24B /* Main.storyboard */,
 				33C3B8A620463EFD007CD24B /* Assets.xcassets */,
 				33C3B8A820463EFD007CD24B /* LaunchScreen.storyboard */,
@@ -177,6 +181,16 @@
 				33C3B8EC20465223007CD24B /* General.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		33C3B8EE20467B46007CD24B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				33C3B8A120463EFD007CD24B /* HomeController.swift */,
+				33C3B8EF20467BC7007CD24B /* HomeViewModel.swift */,
+				33C3B8F120467C3C007CD24B /* CellWrapper.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		4CA8088032E1D57A14E6D1F2 /* Frameworks */ = {
@@ -342,6 +356,7 @@
 				33C3B8D220464FE8007CD24B /* Generic+Snippet.swift in Sources */,
 				33C3B8E220464FE8007CD24B /* UIAlertController+Snippet.swift in Sources */,
 				33C3B8DD20464FE8007CD24B /* Enum+Snippet.swift in Sources */,
+				33C3B8F220467C3C007CD24B /* CellWrapper.swift in Sources */,
 				33C3B8D020464FE8007CD24B /* CodableUserDefault.swift in Sources */,
 				33C3B8E620464FE8007CD24B /* Number+Snippet.swift in Sources */,
 				33C3B8B720464A14007CD24B /* MoreViewModel.swift in Sources */,
@@ -358,6 +373,7 @@
 				33C3B8E92046517C007CD24B /* MoreTableViewCell.swift in Sources */,
 				33C3B8DE20464FE8007CD24B /* Namespace+Snipper.swift in Sources */,
 				33C3B8E020464FE8007CD24B /* Regex.swift in Sources */,
+				33C3B8F020467BC7007CD24B /* HomeViewModel.swift in Sources */,
 				33C3B8E420464FE8007CD24B /* UIColor+Snipper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

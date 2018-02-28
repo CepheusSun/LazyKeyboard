@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,13 +18,76 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lVs-VF-EIO">
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mmb-mY-Hc0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oX6-vt-1p0"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bx-QX-KpZ">
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ktg-IL-PLz">
+                                        <rect key="frame" x="20" y="2" width="301" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="507-th-umm">
+                                        <rect key="frame" x="331" y="5" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="507-th-umm" secondAttribute="height" multiplier="1:1" id="ZvF-z7-CqJ"/>
+                                        </constraints>
+                                        <state key="normal" image="keyboard_hide"/>
+                                        <connections>
+                                            <action selector="hideKeyboardAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2LA-ng-74Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="507-th-umm" firstAttribute="top" secondItem="1Bx-QX-KpZ" secondAttribute="top" constant="5" id="RLE-ry-cLN"/>
+                                    <constraint firstItem="507-th-umm" firstAttribute="centerY" secondItem="1Bx-QX-KpZ" secondAttribute="centerY" id="Ww3-Om-ahY"/>
+                                    <constraint firstAttribute="trailing" secondItem="507-th-umm" secondAttribute="trailing" constant="10" id="aSo-px-8Ib"/>
+                                    <constraint firstItem="Ktg-IL-PLz" firstAttribute="top" secondItem="1Bx-QX-KpZ" secondAttribute="top" constant="2" id="ipt-FO-Kxs"/>
+                                    <constraint firstItem="507-th-umm" firstAttribute="leading" secondItem="Ktg-IL-PLz" secondAttribute="trailing" constant="10" id="w9O-RO-5N4"/>
+                                    <constraint firstAttribute="height" constant="44" id="wX8-Zq-iIE"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ktg-IL-PLz" secondAttribute="bottom" constant="2" id="xuj-EW-3AF"/>
+                                    <constraint firstItem="Ktg-IL-PLz" firstAttribute="leading" secondItem="1Bx-QX-KpZ" secondAttribute="leading" constant="20" id="zWX-LW-7f8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Bx-QX-KpZ" secondAttribute="bottom" id="DLX-OU-7Ne"/>
+                            <constraint firstItem="1Bx-QX-KpZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EKd-FJ-FMY"/>
+                            <constraint firstItem="lVs-VF-EIO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PjI-5t-cs2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lVs-VF-EIO" secondAttribute="trailing" id="Rfz-aM-xBw"/>
+                            <constraint firstItem="1Bx-QX-KpZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bMM-bd-hfM"/>
+                            <constraint firstItem="lVs-VF-EIO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dE7-fN-Dfj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lVs-VF-EIO" secondAttribute="bottom" id="hql-5t-oco"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="短语列表" id="GHy-aL-BV6">
-                        <barButtonItem key="leftBarButtonItem" title="编辑" id="jHO-dj-vrp"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wck-2v-zOc"/>
+                        <barButtonItem key="leftBarButtonItem" title="编辑" id="jHO-dj-vrp">
+                            <connections>
+                                <action selector="editAction:" destination="BYZ-38-t0r" id="wtT-jh-bUh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wck-2v-zOc">
+                            <connections>
+                                <action selector="addAction:" destination="BYZ-38-t0r" id="Z51-gR-lij"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="inputContentView" destination="1Bx-QX-KpZ" id="nj0-aX-ts1"/>
+                        <outlet property="tableView" destination="lVs-VF-EIO" id="cAS-jx-9Em"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,6 +186,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="keyboard_hide" width="42" height="42"/>
         <image name="tabbar_more_selected" width="64" height="64"/>
     </resources>
 </document>
