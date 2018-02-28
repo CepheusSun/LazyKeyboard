@@ -42,8 +42,34 @@
 		33C3B8ED20465223007CD24B /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8EC20465223007CD24B /* General.swift */; };
 		33C3B8F020467BC7007CD24B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8EF20467BC7007CD24B /* HomeViewModel.swift */; };
 		33C3B8F220467C3C007CD24B /* CellWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8F120467C3C007CD24B /* CellWrapper.swift */; };
+		33C3B8FB2046A07B007CD24B /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */; };
+		33C3B8FF2046A07B007CD24B /* Lazy.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 33C3B8F82046A07B007CD24B /* Lazy.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		803932F237919B68A336EE72 /* Pods_LazyKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33C3B8FD2046A07B007CD24B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33C3B89420463EFD007CD24B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33C3B8F72046A07B007CD24B;
+			remoteInfo = Lazy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		33C3B9032046A07B007CD24B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				33C3B8FF2046A07B007CD24B /* Lazy.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		33C3B89C20463EFD007CD24B /* LazyKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +110,9 @@
 		33C3B8EF20467BC7007CD24B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		33C3B8F120467C3C007CD24B /* CellWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWrapper.swift; sourceTree = "<group>"; };
 		33C3B8F320468C37007CD24B /* LazyKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LazyKeyboard.entitlements; sourceTree = "<group>"; };
+		33C3B8F82046A07B007CD24B /* Lazy.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Lazy.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		33C3B8FC2046A07B007CD24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA523F51689714C549D6DEF /* Pods-LazyKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		8D578F80A64C1C1E4FB7862A /* Pods-LazyKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +127,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33C3B8F52046A07B007CD24B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				33C3B89E20463EFD007CD24B /* LazyKeyboard */,
+				33C3B8F92046A07B007CD24B /* Lazy */,
 				33C3B89D20463EFD007CD24B /* Products */,
 				5800F7929F4A72810E5523A2 /* Pods */,
 				4CA8088032E1D57A14E6D1F2 /* Frameworks */,
@@ -115,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				33C3B89C20463EFD007CD24B /* LazyKeyboard.app */,
+				33C3B8F82046A07B007CD24B /* Lazy.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,6 +233,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		33C3B8F92046A07B007CD24B /* Lazy */ = {
+			isa = PBXGroup;
+			children = (
+				33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */,
+				33C3B8FC2046A07B007CD24B /* Info.plist */,
+			);
+			path = Lazy;
+			sourceTree = "<group>";
+		};
 		4CA8088032E1D57A14E6D1F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,15 +272,34 @@
 				33C3B89A20463EFD007CD24B /* Resources */,
 				E53A062A3224349B14CBB06A /* [CP] Embed Pods Frameworks */,
 				62A515E376DBB1A6CB58D3D6 /* [CP] Copy Pods Resources */,
+				33C3B9032046A07B007CD24B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				33C3B8FE2046A07B007CD24B /* PBXTargetDependency */,
 			);
 			name = LazyKeyboard;
 			productName = LazyKeyboard;
 			productReference = 33C3B89C20463EFD007CD24B /* LazyKeyboard.app */;
 			productType = "com.apple.product-type.application";
+		};
+		33C3B8F72046A07B007CD24B /* Lazy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33C3B9002046A07B007CD24B /* Build configuration list for PBXNativeTarget "Lazy" */;
+			buildPhases = (
+				33C3B8F42046A07B007CD24B /* Sources */,
+				33C3B8F52046A07B007CD24B /* Frameworks */,
+				33C3B8F62046A07B007CD24B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lazy;
+			productName = Lazy;
+			productReference = 33C3B8F82046A07B007CD24B /* Lazy.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -254,6 +320,10 @@
 							};
 						};
 					};
+					33C3B8F72046A07B007CD24B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 33C3B89720463EFD007CD24B /* Build configuration list for PBXProject "LazyKeyboard" */;
@@ -270,6 +340,7 @@
 			projectRoot = "";
 			targets = (
 				33C3B89B20463EFD007CD24B /* LazyKeyboard */,
+				33C3B8F72046A07B007CD24B /* Lazy */,
 			);
 		};
 /* End PBXProject section */
@@ -282,6 +353,13 @@
 				33C3B8AA20463EFD007CD24B /* LaunchScreen.storyboard in Resources */,
 				33C3B8A720463EFD007CD24B /* Assets.xcassets in Resources */,
 				33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33C3B8F62046A07B007CD24B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +463,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33C3B8F42046A07B007CD24B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33C3B8FB2046A07B007CD24B /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33C3B8FE2046A07B007CD24B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33C3B8F72046A07B007CD24B /* Lazy */;
+			targetProxy = 33C3B8FD2046A07B007CD24B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		33C3B8A320463EFD007CD24B /* Main.storyboard */ = {
@@ -518,6 +612,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7DA523F51689714C549D6DEF /* Pods-LazyKeyboard.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LazyKeyboard/LazyKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +631,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8D578F80A64C1C1E4FB7862A /* Pods-LazyKeyboard.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LazyKeyboard/LazyKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +641,36 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.LazyKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		33C3B9012046A07B007CD24B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VEMSS45948;
+				INFOPLIST_FILE = Lazy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.LazyKeyboard.Lazy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		33C3B9022046A07B007CD24B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VEMSS45948;
+				INFOPLIST_FILE = Lazy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.LazyKeyboard.Lazy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -567,6 +693,15 @@
 			buildConfigurations = (
 				33C3B8AF20463EFD007CD24B /* Debug */,
 				33C3B8B020463EFD007CD24B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33C3B9002046A07B007CD24B /* Build configuration list for PBXNativeTarget "Lazy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33C3B9012046A07B007CD24B /* Debug */,
+				33C3B9022046A07B007CD24B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
