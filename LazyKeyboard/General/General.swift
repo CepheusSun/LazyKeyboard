@@ -11,3 +11,9 @@ import Reusable
 
 typealias NibReuse = NibReusable
 typealias Reuse = Reusable
+
+struct C {
+
+    static let groupUserDefaults = UserDefaults(suiteName: "group.cepheussun.lazyKeyBoard")
+}
+

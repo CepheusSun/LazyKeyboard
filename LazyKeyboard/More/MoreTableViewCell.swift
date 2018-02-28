@@ -17,7 +17,7 @@ class MoreTableViewCell: UITableViewCell {
             if item.showMore.absolute {
                 self.accessoryType = .disclosureIndicator
             }
-            self.detailTextLabel?.text = item.message.or(value: "")
+            self.detailTextLabel?.text = item.message.or("")
             if let isOn = item.switchState {
                 self.switch.isHidden = false
                 self.switch.isOn = isOn

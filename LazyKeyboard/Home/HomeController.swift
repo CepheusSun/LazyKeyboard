@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeController: UIViewController {
 
@@ -14,6 +15,8 @@ class HomeController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var inputContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var textField: UITextField!
+    
+    var bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,11 @@ class HomeController: UIViewController {
             .addObserver(self, selector: #selector(keyboardWillHide(notification:)),
                          name: .UIKeyboardWillHide, object: nil)
         
+        
+        viewModel.output.asObserver()
+            .subscribe(onNext: {[weak self] _ in
+                self?.tableView.reloadData()
+            }).disposed(by: bag)
     }
     
     
@@ -60,6 +68,10 @@ extension HomeController: UITableViewDataSource {
         cell.textLabel?.text = viewModel.list[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 }
 
 // MARK: - 键盘
@@ -91,8 +103,11 @@ extension HomeController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("xxxx")
+        textField.resignFirstResponder()
+        self.viewModel.addSyllable(textField.text!)
+        textField.text = ""
         return true
     }
+    
 }
 
