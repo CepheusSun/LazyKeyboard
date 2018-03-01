@@ -49,7 +49,11 @@
 		33C3B90A20478EC6007CD24B /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8EC20465223007CD24B /* General.swift */; };
 		33C3B90C20478ED6007CD24B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B90B20478ED6007CD24B /* Const.swift */; };
 		33C3B90D20478EE5007CD24B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B90B20478ED6007CD24B /* Const.swift */; };
+		33C3B90E20478FC1007CD24B /* Optional+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8CC20464FE8007CD24B /* Optional+Snippet.swift */; };
+		33C3B90F20479113007CD24B /* CellWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8F120467C3C007CD24B /* CellWrapper.swift */; };
+		33C3B91020479307007CD24B /* UIView+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8BA20464FE8007CD24B /* UIView+Snippet.swift */; };
 		803932F237919B68A336EE72 /* Pods_LazyKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */; };
+		8ABFE37F26698616012D562D /* Pods_Lazy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE234D5952DF1AD23CE47841 /* Pods_Lazy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,9 +124,13 @@
 		33C3B8FC2046A07B007CD24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C3B90820478E90007CD24B /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
 		33C3B90B20478ED6007CD24B /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		33C3B91120479911007CD24B /* Lazy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lazy.entitlements; sourceTree = "<group>"; };
 		46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74A35C13F55F327734E0E7B7 /* Pods-Lazy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lazy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lazy/Pods-Lazy.debug.xcconfig"; sourceTree = "<group>"; };
 		7DA523F51689714C549D6DEF /* Pods-LazyKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		8D578F80A64C1C1E4FB7862A /* Pods-LazyKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.release.xcconfig"; sourceTree = "<group>"; };
+		980293BD81B44FD1303671C2 /* Pods-Lazy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lazy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lazy/Pods-Lazy.release.xcconfig"; sourceTree = "<group>"; };
+		EE234D5952DF1AD23CE47841 /* Pods_Lazy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lazy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABFE37F26698616012D562D /* Pods_Lazy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +253,7 @@
 		33C3B8F92046A07B007CD24B /* Lazy */ = {
 			isa = PBXGroup;
 			children = (
+				33C3B91120479911007CD24B /* Lazy.entitlements */,
 				33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */,
 				33C3B90820478E90007CD24B /* KeyboardViewModel.swift */,
 				33C3B8FC2046A07B007CD24B /* Info.plist */,
@@ -255,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */,
+				EE234D5952DF1AD23CE47841 /* Pods_Lazy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -264,6 +275,8 @@
 			children = (
 				7DA523F51689714C549D6DEF /* Pods-LazyKeyboard.debug.xcconfig */,
 				8D578F80A64C1C1E4FB7862A /* Pods-LazyKeyboard.release.xcconfig */,
+				74A35C13F55F327734E0E7B7 /* Pods-Lazy.debug.xcconfig */,
+				980293BD81B44FD1303671C2 /* Pods-Lazy.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -297,9 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33C3B9002046A07B007CD24B /* Build configuration list for PBXNativeTarget "Lazy" */;
 			buildPhases = (
+				9A5CF041ED1D79A7B571AB32 /* [CP] Check Pods Manifest.lock */,
 				33C3B8F42046A07B007CD24B /* Sources */,
 				33C3B8F52046A07B007CD24B /* Frameworks */,
 				33C3B8F62046A07B007CD24B /* Resources */,
+				D1AE86C1B1F3B7564E91E65F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,6 +347,11 @@
 					33C3B8F72046A07B007CD24B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -390,6 +410,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9A5CF041ED1D79A7B571AB32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lazy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AC8B8B08F2C9BB5BDF57652A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -406,6 +444,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1AE86C1B1F3B7564E91E65F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lazy/Pods-Lazy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E53A062A3224349B14CBB06A /* [CP] Embed Pods Frameworks */ = {
@@ -482,6 +535,9 @@
 				33C3B90A20478EC6007CD24B /* General.swift in Sources */,
 				33C3B90920478E90007CD24B /* KeyboardViewModel.swift in Sources */,
 				33C3B90D20478EE5007CD24B /* Const.swift in Sources */,
+				33C3B90F20479113007CD24B /* CellWrapper.swift in Sources */,
+				33C3B91020479307007CD24B /* UIView+Snippet.swift in Sources */,
+				33C3B90E20478FC1007CD24B /* Optional+Snippet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,7 +718,9 @@
 		};
 		33C3B9012046A07B007CD24B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74A35C13F55F327734E0E7B7 /* Pods-Lazy.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Lazy/Lazy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VEMSS45948;
 				INFOPLIST_FILE = Lazy/Info.plist;
@@ -677,7 +735,9 @@
 		};
 		33C3B9022046A07B007CD24B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 980293BD81B44FD1303671C2 /* Pods-Lazy.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Lazy/Lazy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VEMSS45948;
 				INFOPLIST_FILE = Lazy/Info.plist;

@@ -10,9 +10,9 @@ import Foundation
 
 
 final class KeyboardViewModel {
-    var list: [String] = {
-        
-        return []
-        
+    
+    lazy var list: [String] = {
+        let list = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
+        return list.or([])!
     }()
 }

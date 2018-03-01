@@ -33,7 +33,7 @@ class HomeController: UIViewController {
         NotificationCenter.default
             .addObserver(self, selector: #selector(keyboardWillHide(notification:)),
                          name: .UIKeyboardWillHide, object: nil)
-        
+         
         
         viewModel.output.asObserver()
             .subscribe(onNext: {[weak self] _ in
