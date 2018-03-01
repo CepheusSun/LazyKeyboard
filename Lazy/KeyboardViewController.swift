@@ -10,81 +10,66 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
 
-    @IBOutlet var nextKeyboardButton: UIButton!
+    private lazy var nextKeyboardButton: UIButton = makeKeyboardButton()
+    private lazy var returnKeyboardButton: UIButton = makeKeyboardButton()
+    private lazy var spaceKeyboardButton: UIButton = makeKeyboardButton()
+    private lazy var deleteKeyboardButton: UIButton = makeKeyboardButton()
     
+    var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        
+        return cv
+    }()
+    
+
     override func updateViewConstraints() {
         super.updateViewConstraints()
-        
-        // Add custom view sizing constraints here
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
         let buttonHeight = 40
-        // Perform custom UI setup here
-        self.nextKeyboardButton = UIButton(type: .custom)
-        
-        self.nextKeyboardButton.setImage(#imageLiteral(resourceName: "keyboard_earth"), for: .normal)
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
-        self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
-        self.nextKeyboardButton.backgroundColor = .darkGray
-        self.nextKeyboardButton.layer.cornerRadius = 5;
-        self.view.addSubview(self.nextKeyboardButton)
-        
         self.nextKeyboardButton.anchor(
             top: nil, leading: view.leadingAnchor,
             bottom: view.bottomAnchor, trailing: nil,
             padding: UIEdgeInsetsMake(0, 10, 5, 0),
             size: CGSize(width: 70, height: buttonHeight))
-
-        let returnButton = UIButton(type: .custom)
-        returnButton.setTitle("return", for: .normal)
-        returnButton.sizeToFit()
-        returnButton.translatesAutoresizingMaskIntoConstraints = false
-        returnButton.backgroundColor = .darkGray
-        returnButton.layer.cornerRadius = 5;
-        self.view.addSubview(returnButton)
-
-        returnButton.anchor(
+        
+        self.returnKeyboardButton.anchor(
             top: nil, leading: nil,
             bottom: view.bottomAnchor,
             trailing: self.view.trailingAnchor,
             padding: UIEdgeInsetsMake(0, 0, 5, 10),
             size: CGSize(width: 80, height: buttonHeight))
         
-        let spaceButton = UIButton(type: .custom)
-        spaceButton.setTitle("space", for: .normal)
-        spaceButton.sizeToFit()
-        spaceButton.translatesAutoresizingMaskIntoConstraints = false
-        spaceButton.backgroundColor = .darkGray
-        spaceButton.layer.cornerRadius = 5;
-        self.view.addSubview(spaceButton)
-        
-        spaceButton.anchor(
+        self.spaceKeyboardButton.anchor(
             top: self.nextKeyboardButton.topAnchor,
             leading: self.nextKeyboardButton.trailingAnchor,
-            bottom: view.bottomAnchor, trailing: returnButton.leadingAnchor,
+            bottom: view.bottomAnchor, trailing: self.returnKeyboardButton.leadingAnchor,
             padding: UIEdgeInsetsMake(0, 5, 5, 5),
             size: .zero)
-    
-        let deleteButton = UIButton(type: .custom)
-        deleteButton.setTitle("delete", for: .normal)
-        deleteButton.sizeToFit()
-        deleteButton.translatesAutoresizingMaskIntoConstraints = false
-        deleteButton.backgroundColor = .darkGray
-        deleteButton.layer.cornerRadius = 5;
-        self.view.addSubview(deleteButton)
         
-        deleteButton.anchor(
+        self.deleteKeyboardButton.anchor(
             top: self.view.topAnchor,
             leading: nil,
-            bottom: nil, trailing: returnButton.trailingAnchor,
+            bottom: nil, trailing: self.returnKeyboardButton.trailingAnchor,
             padding: UIEdgeInsetsMake(10, 5, 10, 0),
             size: CGSize(width: 80, height: buttonHeight))
         
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Perform custom UI setup here
+        nextKeyboardButton.setImage(#imageLiteral(resourceName: "keyboard_earth"), for: .normal)
+        view.addSubview(nextKeyboardButton)
         
+        returnKeyboardButton.setTitle("return", for: .normal)
+        view.addSubview(returnKeyboardButton)
+
+        spaceKeyboardButton.setTitle("space", for: .normal)
+        view.addSubview(spaceKeyboardButton)
+        
+        deleteKeyboardButton.setTitle("delete", for: .normal)
+        view.addSubview(deleteKeyboardButton)
+        updateViewConstraints()
     }
     
     override func textWillChange(_ textInput: UITextInput?) {
@@ -103,5 +88,41 @@ class KeyboardViewController: UIInputViewController {
         }
         self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
+    
+    
+    private func makeKeyboardButton() -> UIButton {
+        let button = UIButton(type: .custom)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
+        button.backgroundColor = .darkGray
+        button.layer.cornerRadius = 5;
+        return button
+    }
 
 }
+
+extension KeyboardViewController: UICollectionViewDelegateFlowLayout {
+    
+    
+}
+
+extension KeyboardViewController: UICollectionViewDataSource {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

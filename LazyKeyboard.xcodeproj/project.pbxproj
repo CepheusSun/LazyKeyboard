@@ -45,6 +45,10 @@
 		33C3B8FF2046A07B007CD24B /* Lazy.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 33C3B8F82046A07B007CD24B /* Lazy.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		33C3B9042046A4A4007CD24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A620463EFD007CD24B /* Assets.xcassets */; };
 		33C3B9052046A5B3007CD24B /* ChainableView+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8C420464FE8007CD24B /* ChainableView+Snippet.swift */; };
+		33C3B90920478E90007CD24B /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B90820478E90007CD24B /* KeyboardViewModel.swift */; };
+		33C3B90A20478EC6007CD24B /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8EC20465223007CD24B /* General.swift */; };
+		33C3B90C20478ED6007CD24B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B90B20478ED6007CD24B /* Const.swift */; };
+		33C3B90D20478EE5007CD24B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B90B20478ED6007CD24B /* Const.swift */; };
 		803932F237919B68A336EE72 /* Pods_LazyKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +118,8 @@
 		33C3B8F82046A07B007CD24B /* Lazy.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Lazy.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		33C3B8FC2046A07B007CD24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33C3B90820478E90007CD24B /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
+		33C3B90B20478ED6007CD24B /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA523F51689714C549D6DEF /* Pods-LazyKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		8D578F80A64C1C1E4FB7862A /* Pods-LazyKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				33C3B8EC20465223007CD24B /* General.swift */,
+				33C3B90B20478ED6007CD24B /* Const.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */,
+				33C3B90820478E90007CD24B /* KeyboardViewModel.swift */,
 				33C3B8FC2046A07B007CD24B /* Info.plist */,
 			);
 			path = Lazy;
@@ -461,6 +469,7 @@
 				33C3B8E020464FE8007CD24B /* Regex.swift in Sources */,
 				33C3B8F020467BC7007CD24B /* HomeViewModel.swift in Sources */,
 				33C3B8E420464FE8007CD24B /* UIColor+Snipper.swift in Sources */,
+				33C3B90C20478ED6007CD24B /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +479,9 @@
 			files = (
 				33C3B9052046A5B3007CD24B /* ChainableView+Snippet.swift in Sources */,
 				33C3B8FB2046A07B007CD24B /* KeyboardViewController.swift in Sources */,
+				33C3B90A20478EC6007CD24B /* General.swift in Sources */,
+				33C3B90920478E90007CD24B /* KeyboardViewModel.swift in Sources */,
+				33C3B90D20478EE5007CD24B /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
