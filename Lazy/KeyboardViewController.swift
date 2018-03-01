@@ -17,8 +17,24 @@ class KeyboardViewController: UIInputViewController {
     private let buttonHeight: CGFloat = 40
     private var viewModel = KeyboardViewModel()
     
+    private lazy var scrollView: UIScrollView = {
+        let sv = UIScrollView()
+        sv.frame = CGRect(x: 10, y: 10, width: 300, height: 160)
+        sv.backgroundColor = .red
+        sv.contentOffset = CGPoint.zero
+        sv.showsVerticalScrollIndicator = false
+        sv.showsHorizontalScrollIndicator = false
+        sv.isPagingEnabled = true
+        return sv
+    }()
+    
     override func updateViewConstraints() {
         super.updateViewConstraints()
+        
+        let height = view.height;
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.fillSuperview()
+        view.heightAnchor.constraint(equalToConstant: height).isActive = true
         
         nextKeyboardButton.anchor(
             top: nil, leading: view.leadingAnchor,
@@ -48,6 +64,12 @@ class KeyboardViewController: UIInputViewController {
             padding: UIEdgeInsetsMake(10, 5, 10, 0),
             size: CGSize(width: 80, height: buttonHeight))
         
+        scrollView.anchor(top: view.topAnchor,
+                          leading: view.leadingAnchor,
+                          bottom: spaceKeyboardButton.topAnchor,
+                          trailing: deleteKeyboardButton.leadingAnchor,
+                          padding: UIEdgeInsets(top: 10, left: 10, bottom: 5, right: 5))
+        
     }
     
     override func viewDidLoad() {
@@ -65,16 +87,16 @@ class KeyboardViewController: UIInputViewController {
         deleteKeyboardButton.setTitle("⌫", for: .normal)
         view.addSubview(deleteKeyboardButton)
         
-        updateViewConstraints()
+        view.addSubview(scrollView)
         
+        updateViewConstraints()
     }
     
     override func textWillChange(_ textInput: UITextInput?) {
-        // The app is about to change the document's contents. Perform any preparation here.
+        
     }
     
     override func textDidChange(_ textInput: UITextInput?) {
-        // The app has just changed the document's contents, the document context has been updated.
         
         var textColor: UIColor
         let proxy = self.textDocumentProxy
@@ -85,7 +107,9 @@ class KeyboardViewController: UIInputViewController {
         }
         self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
-    
+}
+
+extension KeyboardViewController {
     
     private func makeKeyboardButton() -> UIButton {
         let button = UIButton(type: .custom)
@@ -95,26 +119,6 @@ class KeyboardViewController: UIInputViewController {
         button.layer.cornerRadius = 5;
         return button
     }
-
 }
-
-extension KeyboardViewController {
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

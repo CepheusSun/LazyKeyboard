@@ -15,4 +15,16 @@ final class KeyboardViewModel {
         let list = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
         return list.or([])!
     }()
+    
+    lazy var pageCount: Int = {
+        return list.count / 8 + 1
+    }()
+    
+    lazy var pages: [[Key]] = {
+        let key = Key(Key.KeyType.character)
+        key.letter = self.list[0]
+        return [[key]]
+    }()
 }
+
+
