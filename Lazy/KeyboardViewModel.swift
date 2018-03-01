@@ -17,13 +17,26 @@ final class KeyboardViewModel {
     }()
     
     lazy var pageCount: Int = {
+        if list.count == 0 {
+            return 0
+        }
         return list.count / 8 + 1
     }()
     
     lazy var pages: [[Key]] = {
-        let key = Key(Key.KeyType.character)
-        key.letter = self.list[0]
-        return [[key]]
+
+        var res: [[Key]] = []
+        (0..<pageCount).forEach({ _ in
+            res.append([])
+        })
+        
+        for (index, item) in list.enumerated() {
+            let i = index / 8
+            let j = index % 8
+            let key = Key(Key.KeyType.character(item))
+            res[i].append(key)
+        }
+        return res.map({$0.flatMap({$0})})
     }()
 }
 

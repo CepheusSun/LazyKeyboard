@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		334528B12048328C00E50EBB /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 334528B02048328C00E50EBB /* iconfont.ttf */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
 		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
@@ -53,6 +54,11 @@
 		33C3B90F20479113007CD24B /* CellWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8F120467C3C007CD24B /* CellWrapper.swift */; };
 		33C3B91020479307007CD24B /* UIView+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8BA20464FE8007CD24B /* UIView+Snippet.swift */; };
 		33C3B9132047AA7A007CD24B /* KeyboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B9122047AA7A007CD24B /* KeyboardEntity.swift */; };
+		33C3B9162047DEE5007CD24B /* KeyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B9142047DEE5007CD24B /* KeyCell.swift */; };
+		33C3B9172047DEE5007CD24B /* KeyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B9152047DEE5007CD24B /* KeyCell.xib */; };
+		33C3B9192047E584007CD24B /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B9182047E584007CD24B /* KeyboardView.swift */; };
+		33C3B91B2047E58C007CD24B /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B91A2047E58C007CD24B /* KeyboardView.xib */; };
+		33FD01E62048488300E66FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A620463EFD007CD24B /* Assets.xcassets */; };
 		803932F237919B68A336EE72 /* Pods_LazyKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */; };
 		8ABFE37F26698616012D562D /* Pods_Lazy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE234D5952DF1AD23CE47841 /* Pods_Lazy.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		334528B02048328C00E50EBB /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		33C3B89C20463EFD007CD24B /* LazyKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C3B89F20463EFD007CD24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33C3B8A120463EFD007CD24B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -127,6 +134,10 @@
 		33C3B90B20478ED6007CD24B /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		33C3B91120479911007CD24B /* Lazy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lazy.entitlements; sourceTree = "<group>"; };
 		33C3B9122047AA7A007CD24B /* KeyboardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardEntity.swift; sourceTree = "<group>"; };
+		33C3B9142047DEE5007CD24B /* KeyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCell.swift; sourceTree = "<group>"; };
+		33C3B9152047DEE5007CD24B /* KeyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyCell.xib; sourceTree = "<group>"; };
+		33C3B9182047E584007CD24B /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		33C3B91A2047E58C007CD24B /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A35C13F55F327734E0E7B7 /* Pods-Lazy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lazy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lazy/Pods-Lazy.debug.xcconfig"; sourceTree = "<group>"; };
 		7DA523F51689714C549D6DEF /* Pods-LazyKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -255,10 +266,15 @@
 		33C3B8F92046A07B007CD24B /* Lazy */ = {
 			isa = PBXGroup;
 			children = (
+				334528B02048328C00E50EBB /* iconfont.ttf */,
 				33C3B91120479911007CD24B /* Lazy.entitlements */,
 				33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */,
 				33C3B90820478E90007CD24B /* KeyboardViewModel.swift */,
 				33C3B9122047AA7A007CD24B /* KeyboardEntity.swift */,
+				33C3B9182047E584007CD24B /* KeyboardView.swift */,
+				33C3B91A2047E58C007CD24B /* KeyboardView.xib */,
+				33C3B9142047DEE5007CD24B /* KeyCell.swift */,
+				33C3B9152047DEE5007CD24B /* KeyCell.xib */,
 				33C3B8FC2046A07B007CD24B /* Info.plist */,
 			);
 			path = Lazy;
@@ -383,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33C3B8AA20463EFD007CD24B /* LaunchScreen.storyboard in Resources */,
+				33FD01E62048488300E66FF6 /* Assets.xcassets in Resources */,
 				33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,7 +408,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				334528B12048328C00E50EBB /* iconfont.ttf in Resources */,
 				33C3B9042046A4A4007CD24B /* Assets.xcassets in Resources */,
+				33C3B9172047DEE5007CD24B /* KeyCell.xib in Resources */,
+				33C3B91B2047E58C007CD24B /* KeyboardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,11 +557,13 @@
 				33C3B8FB2046A07B007CD24B /* KeyboardViewController.swift in Sources */,
 				33C3B90A20478EC6007CD24B /* General.swift in Sources */,
 				33C3B90920478E90007CD24B /* KeyboardViewModel.swift in Sources */,
+				33C3B9192047E584007CD24B /* KeyboardView.swift in Sources */,
 				33C3B90D20478EE5007CD24B /* Const.swift in Sources */,
 				33C3B90F20479113007CD24B /* CellWrapper.swift in Sources */,
 				33C3B91020479307007CD24B /* UIView+Snippet.swift in Sources */,
 				33C3B9132047AA7A007CD24B /* KeyboardEntity.swift in Sources */,
 				33C3B90E20478FC1007CD24B /* Optional+Snippet.swift in Sources */,
+				33C3B9162047DEE5007CD24B /* KeyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,14 +712,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LazyKeyboard/LazyKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VEMSS45948;
+				DEVELOPMENT_TEAM = J43BSF6P28;
 				INFOPLIST_FILE = LazyKeyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.LazyKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.Lazy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -709,14 +731,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LazyKeyboard/LazyKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VEMSS45948;
+				DEVELOPMENT_TEAM = J43BSF6P28;
 				INFOPLIST_FILE = LazyKeyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.LazyKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.Lazy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -726,14 +748,15 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Lazy/Lazy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VEMSS45948;
+				DEVELOPMENT_TEAM = J43BSF6P28;
 				INFOPLIST_FILE = Lazy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.LazyKeyboard.Lazy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.Lazy.Lazy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -743,14 +766,15 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Lazy/Lazy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VEMSS45948;
+				DEVELOPMENT_TEAM = J43BSF6P28;
 				INFOPLIST_FILE = Lazy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.LazyKeyboard.Lazy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.Lazy.Lazy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

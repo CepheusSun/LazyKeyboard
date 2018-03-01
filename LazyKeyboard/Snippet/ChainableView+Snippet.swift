@@ -7,30 +7,6 @@
 //
 
 import UIKit
-//import SnapKit
-//
-//extension UIView: NamespaceWrappable { }
-//extension NamespaceWrapper where T: UIView {
-//
-//    public func adhere(toSuperView: UIView) -> T {
-//        toSuperView.addSubview(wrapperValue)
-//        return wrapperValue
-//    }
-//
-//    @discardableResult
-//    func layout(_ snapKitMaker: (ConstraintMaker) -> Void) -> T {
-//        wrapperValue.snp.makeConstraints { (make) in
-//            snapKitMaker(make)
-//        }
-//        return wrapperValue
-//    }
-//
-//    @discardableResult
-//    func config(_ config: (T) -> Void) -> T {
-//        config(wrapperValue)
-//        return wrapperValue
-//    }
-//}
 
 extension UIView {
     
@@ -39,6 +15,18 @@ extension UIView {
                leading: superview?.leadingAnchor,
                bottom: superview?.bottomAnchor,
                trailing: superview?.trailingAnchor)
+    }
+    
+    func fillSuperviewAdaptSafeArea() {
+        if #available(iOS 11.0, *) {
+            anchor(
+                top: superview?.safeAreaLayoutGuide.topAnchor,
+                leading: superview?.safeAreaLayoutGuide.leadingAnchor,
+                bottom: superview?.safeAreaLayoutGuide.bottomAnchor,
+                trailing: superview?.safeAreaLayoutGuide.trailingAnchor)
+        } else {
+            fillSuperview()
+        }
     }
     
     func anchorSize(to view: UIView) {

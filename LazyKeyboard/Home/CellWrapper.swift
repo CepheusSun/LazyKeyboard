@@ -9,4 +9,5 @@
 import UIKit
 
 extension UITableViewCell: Reuse {}
-extension UICollectionViewCell: Reuse {}
+//extension UICollectionViewCell: NibReuse {}
+

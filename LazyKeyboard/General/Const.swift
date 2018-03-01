@@ -10,6 +10,6 @@ import Foundation
 
 struct C {
     
-    static let groupUserDefaults = UserDefaults(suiteName: "group.cepheussun.lazyKeyBoard")
+    static let groupUserDefaults = UserDefaults(suiteName: "group.CepheusSun.lazy")
     static let syllableKey = "syllable"
 }

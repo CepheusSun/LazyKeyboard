@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="iconfont.ttf">
+            <string>iconfont</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="KeyboardView" customModule="Lazy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="222"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HON-co-nFg">
+                    <rect key="frame" x="5" y="173" width="70" height="44"/>
+                    <color key="backgroundColor" red="0.69411764705882351" green="0.69411764705882351" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="jN1-fF-WST"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="iconfont" family="iconfont" pointSize="20"/>
+                    <state key="normal" title="">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idH-2f-XY6">
+                    <rect key="frame" x="80" y="173" width="205" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="iconfont" family="iconfont" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="spaceButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="vvf-3n-IT2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gc-0f-3AC">
+                    <rect key="frame" x="290" y="173" width="80" height="44"/>
+                    <color key="backgroundColor" red="0.69411764705882351" green="0.69411764705882351" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="IW7-Iq-Pku"/>
+                        <constraint firstAttribute="height" constant="44" id="SXb-Q3-oof"/>
+                    </constraints>
+                    <state key="normal" title="send">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rFC-lh-irT">
+                    <rect key="frame" x="0.0" y="0.0" width="290" height="173"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VOm-0z-4tL">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJa-ma-3yF">
+                    <rect key="frame" x="290" y="5" width="80" height="44"/>
+                    <color key="backgroundColor" red="0.69411764705882351" green="0.69411764705882351" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="iconfont" family="iconfont" pointSize="20"/>
+                    <state key="normal" title="">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="backSpaceButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="ky4-5a-F9A"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDK-8V-LX0">
+                    <rect key="frame" x="173.5" y="190.5" width="17" height="17"/>
+                    <fontDescription key="fontDescription" name="iconfont" family="iconfont" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="rJa-ma-3yF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="6s4-eB-xi5"/>
+                <constraint firstItem="idH-2f-XY6" firstAttribute="leading" secondItem="HON-co-nFg" secondAttribute="trailing" constant="5" id="9yQ-TY-nlH"/>
+                <constraint firstItem="rJa-ma-3yF" firstAttribute="width" secondItem="1Gc-0f-3AC" secondAttribute="width" id="KGJ-WA-7mG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Gc-0f-3AC" secondAttribute="trailing" constant="5" id="PmX-yV-S5z"/>
+                <constraint firstItem="eDK-8V-LX0" firstAttribute="centerY" secondItem="idH-2f-XY6" secondAttribute="centerY" constant="4" id="Sdy-dp-uln"/>
+                <constraint firstItem="rJa-ma-3yF" firstAttribute="height" secondItem="1Gc-0f-3AC" secondAttribute="height" id="TDT-LF-oZq"/>
+                <constraint firstItem="idH-2f-XY6" firstAttribute="bottom" secondItem="1Gc-0f-3AC" secondAttribute="bottom" id="UBf-1g-iRj"/>
+                <constraint firstItem="rJa-ma-3yF" firstAttribute="trailing" secondItem="1Gc-0f-3AC" secondAttribute="trailing" id="Uza-f1-KNe"/>
+                <constraint firstItem="idH-2f-XY6" firstAttribute="height" secondItem="1Gc-0f-3AC" secondAttribute="height" id="YTp-EM-eYv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="HON-co-nFg" secondAttribute="bottom" constant="5" id="biq-Fa-39z"/>
+                <constraint firstItem="eDK-8V-LX0" firstAttribute="centerX" secondItem="idH-2f-XY6" secondAttribute="centerX" id="cdE-ZT-78r"/>
+                <constraint firstItem="HON-co-nFg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="hdk-Un-DXX"/>
+                <constraint firstItem="rJa-ma-3yF" firstAttribute="leading" secondItem="rFC-lh-irT" secondAttribute="trailing" id="hxg-SQ-iW1"/>
+                <constraint firstItem="idH-2f-XY6" firstAttribute="top" secondItem="rFC-lh-irT" secondAttribute="bottom" id="sFI-aP-tob"/>
+                <constraint firstItem="HON-co-nFg" firstAttribute="height" secondItem="1Gc-0f-3AC" secondAttribute="height" id="tdr-1M-7cb"/>
+                <constraint firstItem="1Gc-0f-3AC" firstAttribute="leading" secondItem="idH-2f-XY6" secondAttribute="trailing" constant="5" id="txF-yM-Lua"/>
+                <constraint firstItem="rFC-lh-irT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="u7U-3b-fZQ"/>
+                <constraint firstItem="rFC-lh-irT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ulb-Vb-35f"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1Gc-0f-3AC" secondAttribute="bottom" constant="5" id="xLG-DU-ELG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="collectionView" destination="rFC-lh-irT" id="RGB-de-h1k"/>
+                <outlet property="deleteButton" destination="rJa-ma-3yF" id="TD4-Bo-gJ6"/>
+                <outlet property="nextButton" destination="HON-co-nFg" id="eiC-y9-cqi"/>
+                <outlet property="returnButton" destination="1Gc-0f-3AC" id="koG-lM-PA6"/>
+                <outlet property="spaceButton" destination="idH-2f-XY6" id="XMO-El-sKa"/>
+            </connections>
+            <point key="canvasLocation" x="-137.5" y="-109"/>
+        </view>
+    </objects>
+</document>

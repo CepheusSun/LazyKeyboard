@@ -10,7 +10,7 @@ import Foundation
 
 class Key {
     enum KeyType {
-        case character
+        case character(String)
         case backspace
         case space
         case keyboardChange
@@ -18,27 +18,11 @@ class Key {
     }
     
     var type: KeyType
-    var letter: String?
     
     init(_ type: KeyType) {
         self.type = type
     }
     
-    var isCharacter: Bool {
-        get {
-            return type == .character
-        }
-    }
-
-    var isSpecial: Bool {
-        get {
-            return type != .character
-        }
-    }
-    
-    func setLetter(_ letter: String) {
-        self.letter = letter
-    }
 }
 
 
