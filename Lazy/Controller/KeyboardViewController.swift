@@ -49,24 +49,18 @@ class KeyboardViewController: UIInputViewController {
         
         var str = ""
         switch self.textDocumentProxy.returnKeyType! {
-        case .go:
-            str = "Go"
-        case .send:
-            str = "Send"
-        case .search:
-            str = "Search"
-        case .google:
-            str = "Google"
-        case .done:
-            str = "Done"
-        case .next:
-            str = "Next"
-        case .join:
-            str = "Join"
-        case .continue:
-            str = "Continue"
-        default:
-            str = "Done"
+        case .go: str = "Go"
+        case .send: str = "发送"
+        case .search: str = "搜索"
+        case .google: str = "Google"
+        case .done: str = "完成"
+        case .next: str = "下一步"
+        case .join: str = "加入"
+        case .continue: str = "Continue"
+        case .default: str = "发送"
+        case.emergencyCall: str = "紧急呼叫"
+        case .route: str = "下一步"
+        case .yahoo: str = "Yahoo"
         }
         keyboard.setReturnKeyTitle(str)
     
