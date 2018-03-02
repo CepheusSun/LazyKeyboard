@@ -23,9 +23,9 @@ final class KeyboardViewModel {
         return list.count / 8 + 1
     }()
     
-    lazy var pages: [[Key]] = {
+    lazy var pages: [[KeyButton]] = {
 
-        var res: [[Key]] = []
+        var res: [[KeyButton]] = []
         (0..<pageCount).forEach({ _ in
             res.append([])
         })
@@ -33,7 +33,7 @@ final class KeyboardViewModel {
         for (index, item) in list.enumerated() {
             let i = index / 8
             let j = index % 8
-            let key = Key(Key.KeyType.character(item))
+            let key = KeyButton(KeyButton.KeyType.character(item))
             res[i].append(key)
         }
         return res.map({$0.flatMap({$0})})

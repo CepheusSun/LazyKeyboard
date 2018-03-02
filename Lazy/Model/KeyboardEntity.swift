@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Key {
+class KeyButton {
     enum KeyType {
         case character(String)
         case backspace

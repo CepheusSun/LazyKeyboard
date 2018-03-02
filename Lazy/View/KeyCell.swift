@@ -14,7 +14,7 @@ class KeyCell: UICollectionViewCell, NibReusable {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var bgView: UIView!
     
-    var key: Key! {
+    var key: KeyButton! {
         didSet {
             switch key.type {
             case .character(let letter):

@@ -17,14 +17,14 @@ class KeyboardView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var atButton: UIButton!
     
-    var pages: [[Key]] = [] {
+    var pages: [[KeyButton]] = [] {
         didSet {
             self.collectionView.reloadData()
         }
     }
     var kvos: [NSKeyValueObservation] = []
     
-    typealias KeyboardViewCallBack = (Key) -> ()
+    typealias KeyboardViewCallBack = (KeyButton) -> ()
     var callBack: KeyboardViewCallBack?
     
     weak var controller: UIViewController!
@@ -70,22 +70,22 @@ class KeyboardView: UIView {
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {
-        let key = Key(Key.KeyType.return)
+        let key = KeyButton(KeyButton.KeyType.return)
         self.callBack.ifSome { $0(key) }
     }
     
     @IBAction func spaceButtonAction(_ sender: Any) {
-        let key = Key(Key.KeyType.space)
+        let key = KeyButton(KeyButton.KeyType.space)
         self.callBack.ifSome { $0(key) }
     }
     
     @IBAction func backSpaceButtonAction(_ sender: Any) {
-        let key = Key(Key.KeyType.backspace)
+        let key = KeyButton(KeyButton.KeyType.backspace)
         self.callBack.ifSome { $0(key) }
     }
     
     @IBAction func atButtonAction(_ sender: Any) {
-        let key = Key(Key.KeyType.at)
+        let key = KeyButton(KeyButton.KeyType.at)
         self.callBack.ifSome { $0(key) }
     }
     
