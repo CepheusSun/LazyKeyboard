@@ -63,6 +63,7 @@ extension MoreController: UITableViewDelegate {
         let item: MoreItem = viewModel.list[indexPath.section].items[indexPath.row]
         item.action()
     }
+    
 }
 
 // MARK: - Premium

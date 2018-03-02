@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class KeyboardViewController: UIInputViewController {
 
@@ -29,18 +30,22 @@ class KeyboardViewController: UIInputViewController {
             switch $0.type {
             case .character(let letter):
                 self.textDocumentProxy.insertText(letter)
+                self.playKeySound()
             case .backspace:
                 self.textDocumentProxy.deleteBackward()
+                self.playKeySound()
             case .space:
                 self.textDocumentProxy.insertText(" ")
+                self.playKeySound()
             case .return:
                 self.textDocumentProxy.insertText("\n")
+                self.playKeySound()
             case .at:
                 self.textDocumentProxy.insertText("@")
+                self.playKeySound()
             case .keyboardChange: break
             }
         }
-        
         
         var str = ""
         switch self.textDocumentProxy.returnKeyType! {
@@ -67,6 +72,14 @@ class KeyboardViewController: UIInputViewController {
     
     }
 
+    func playKeySound() {
+        if viewModel.setting.isPressShake {
+            DispatchQueue.global(qos: .default).async(execute: {
+                // 按键音
+                AudioServicesPlaySystemSound(1104)
+            })
+        }
+    }
     
     override func textDidChange(_ textInput: UITextInput?) {
         

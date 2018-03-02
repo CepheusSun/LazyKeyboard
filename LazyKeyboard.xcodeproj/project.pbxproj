@@ -15,6 +15,7 @@
 		335E08132049312200304036 /* PremiumController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335E08112049312200304036 /* PremiumController.xib */; };
 		335E0815204937AC00304036 /* SettingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E0814204937AC00304036 /* SettingConfiguration.swift */; };
 		335E08182049385500304036 /* CodableUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8B920464FE8007CD24B /* CodableUserDefault.swift */; };
+		335E0819204945C300304036 /* SettingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E0814204937AC00304036 /* SettingConfiguration.swift */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
 		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
@@ -633,6 +634,7 @@
 				33C3B91020479307007CD24B /* UIView+Snippet.swift in Sources */,
 				33C3B9132047AA7A007CD24B /* KeyboardEntity.swift in Sources */,
 				33C3B90E20478FC1007CD24B /* Optional+Snippet.swift in Sources */,
+				335E0819204945C300304036 /* SettingConfiguration.swift in Sources */,
 				33C3B9162047DEE5007CD24B /* KeyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

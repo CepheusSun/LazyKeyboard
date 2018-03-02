@@ -25,7 +25,7 @@ struct App {
 
 final class SettingConfig: Codable {
     
-    var isLongPressShake: Bool = false {
+    var isPressShake: Bool = false {
         didSet {
             App.save(settingConfig: self)
         }
