@@ -146,9 +146,9 @@ extension MoreController: MFMessageComposeViewControllerDelegate {
 extension MoreController {
     func goToSocialNetwork(weibo: Bool) {
         if weibo {
-            self.openUrl(URL(string: "sinaweibo://userinfo?uid=#208883862#")!)
+            self.openUrl(URL(string: "sinaweibo://userinfo?uid=2453750463")!)
         } else {
-            self.openUrl(URL.init(string: "twitter://user?screen_name=CepheusSun")!)
+            self.openUrl(URL(string: "twitter://user?screen_name=CepheusSun")!)
         }
     }
 }
