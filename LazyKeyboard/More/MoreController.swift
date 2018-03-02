@@ -62,7 +62,15 @@ extension MoreController: UITableViewDelegate {
     }
 }
 
+// MARK: - 分享
+extension MoreController {
+    func loadShare() {
+        let share = UIActivityViewController(activityItems: ["懒人键盘", URL(string: C.appStoreUrl)!], applicationActivities: nil)
+        present(share, animated: true, completion: nil)
+    }
+}
 
+// MARK: - 跳转 App Store
 extension MoreController: SKStoreProductViewControllerDelegate {
     func loadAppStoreController() {
         let store = SKStoreProductViewController()
@@ -80,7 +88,7 @@ extension MoreController: SKStoreProductViewControllerDelegate {
 }
 
 
-// MARK: - 跳转发邮件短信
+// MARK: - 跳转发邮件
 extension MoreController: MFMailComposeViewControllerDelegate {
 
     func loadEmailController() {
@@ -109,6 +117,7 @@ extension MoreController: MFMailComposeViewControllerDelegate {
     }
 }
 
+// MARK: - 跳转发短信
 extension MoreController: MFMessageComposeViewControllerDelegate {
     func loadIMessageController() {
         

@@ -40,7 +40,9 @@ final class MoreViewModel {
                 MoreItem(title: "关于自动回车", showMore: nil, message: nil, switchState: nil){}]),
             
             MoreSection(header: nil, footer: nil, items: [
-                MoreItem(title: "分享应用", showMore: true, message: nil, switchState: nil){},
+                MoreItem(title: "分享应用", showMore: true, message: nil, switchState: nil){[unowned self] in
+                    self.controller?.loadShare()
+                },
                 MoreItem(title: "去 App Store 评分", showMore: true, message: nil, switchState: nil){[unowned self] in
                     self.controller?.loadAppStoreController()
                 }]),
