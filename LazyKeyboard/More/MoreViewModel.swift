@@ -56,8 +56,12 @@ final class MoreViewModel {
                 }]),
             
             MoreSection(header: "关注作者", footer: "Copyright © 2018 CepheusSun", items: [
-                MoreItem(title: "Twitter", showMore: nil, message: "@CepheusSun_", switchState: nil){},
-                MoreItem(title: "Weibo", showMore: nil, message: "@CepheusSun", switchState: nil){}])
+                MoreItem(title: "Twitter", showMore: nil, message: "@CepheusSun_", switchState: nil){[unowned self] in
+                    self.controller?.goToSocialNetwork(weibo: false)
+                },
+                MoreItem(title: "Weibo", showMore: nil, message: "@CepheusSun", switchState: nil){[unowned self] in
+                    self.controller?.goToSocialNetwork(weibo: true)
+                }])
         ]
 
 
