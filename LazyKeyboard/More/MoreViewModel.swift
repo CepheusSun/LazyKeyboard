@@ -29,7 +29,8 @@ final class MoreViewModel {
             
             MoreSection(header: "偏好设置", footer: nil, items: [
                 MoreItem(title: "按键震动", showMore: nil, message: nil, switchState: true) {},
-                MoreItem(title: "长按空格键跳转至主应用", showMore: nil, message: nil, switchState: true){}]),
+                MoreItem(title: "长按空格键跳转至主应用", showMore: nil, message: nil, switchState: true){},
+                MoreItem(title: "选择后直接发送", showMore: nil, message: nil, switchState: true){}]),
             
             MoreSection(header: nil, footer: "在键盘上长按回车即可打开。请勿过于依赖此功能", items: [
                 MoreItem(title: "关于自动回车", showMore: nil, message: nil, switchState: nil){}]),
