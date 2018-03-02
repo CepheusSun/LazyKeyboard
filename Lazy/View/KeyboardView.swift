@@ -59,7 +59,6 @@ class KeyboardView: UIView {
             }
             self.kvos.append(kvo!)
         }
-
         collectionView.register(cellType: KeyCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self

@@ -30,6 +30,7 @@ class KeyboardViewController: UIInputViewController {
             switch $0.type {
             case .character(let letter):
                 self.textDocumentProxy.insertText(letter)
+                self.autoSend()
                 self.playKeySound()
             case .backspace:
                 self.textDocumentProxy.deleteBackward()
@@ -71,6 +72,14 @@ class KeyboardViewController: UIInputViewController {
             DispatchQueue.global(qos: .default).async(execute: {
                 // 按键音
                 AudioServicesPlaySystemSound(1104)
+            })
+        }
+    }
+    
+    func autoSend() {
+        if viewModel.setting.isSendAfterSelected {
+            DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+                self.textDocumentProxy.insertText("\n")
             })
         }
     }
