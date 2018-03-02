@@ -22,6 +22,7 @@ class KeyboardView: UIView {
             self.collectionView.reloadData()
         }
     }
+    var kvos: [NSKeyValueObservation] = []
     
     typealias KeyboardViewCallBack = (Key) -> ()
     var callBack: KeyboardViewCallBack?
@@ -37,9 +38,27 @@ class KeyboardView: UIView {
     
     func setup() {
         nextButton.addTarget(controller, action: #selector(KeyboardViewController.handleInputModeList(from:with:)), for: .allTouchEvents)
-        
-        nextButton.setImage(UIImage.imageWithColor(UIColor.colorWithHexString("B1B1B1")), for: .normal)
-        nextButton.setImage(UIImage.imageWithColor(.white), for: .highlighted)
+    
+        [nextButton, returnButton, deleteButton, atButton].forEach { [unowned self] in
+            let kvo = $0?.observe(\.isHighlighted) { (obj, changed) in
+                if obj.isHighlighted {
+                    obj.backgroundColor = .white
+                } else {
+                    obj.backgroundColor = UIColor.colorWithHexString("B1B1B1")
+                }
+            }
+            self.kvos.append(kvo!)
+        }
+        [spaceButton].forEach { [unowned self] in
+            let kvo = $0?.observe(\.isHighlighted) { (obj, changed) in
+                if !obj.isHighlighted {
+                    obj.backgroundColor = .white
+                } else {
+                    obj.backgroundColor = UIColor.colorWithHexString("B1B1B1")
+                }
+            }
+            self.kvos.append(kvo!)
+        }
 
         collectionView.register(cellType: KeyCell.self)
         collectionView.delegate = self
