@@ -16,6 +16,8 @@ final class MoreViewModel {
         self.controller = controller
     }
     
+    let setting = App.getSettingConfig()
+    
     lazy var list: [MoreSection] =
         [
             MoreSection(header: "帮助", footer: "如果无法正常开启, 请自行前往”设置-通用-键盘-添加新键盘“进行设置。", items: [
@@ -34,9 +36,15 @@ final class MoreViewModel {
                 }]),
             
             MoreSection(header: "偏好设置", footer: nil, items: [
-                MoreItem(title: "按键震动", showMore: nil, message: nil, switchState: true) {},
-                MoreItem(title: "长按空格键跳转至主应用", showMore: nil, message: nil, switchState: true){},
-                MoreItem(title: "选择后直接发送", showMore: nil, message: nil, switchState: true){}]),
+                MoreItem(title: "按键震动", showMore: nil, message: nil, switchState: self.setting.isLongPressShake) {[unowned self] in
+                    self.setting.isLongPressShake = !self.setting.isLongPressShake
+                },
+                MoreItem(title: "长按空格键跳转至主应用", showMore: nil, message: nil, switchState: self.setting.isLongPressSpaceToMainApp){[unowned self] in
+                    self.setting.isLongPressSpaceToMainApp = !self.setting.isLongPressSpaceToMainApp
+                },
+                MoreItem(title: "选择后直接发送", showMore: nil, message: nil, switchState: self.setting.isSendAfterSelected){[unowned self] in
+                    self.setting.isSendAfterSelected = !self.setting.isSendAfterSelected
+                }]),
             
             MoreSection(header: nil, footer: "在键盘上长按回车即可打开。请勿过于依赖此功能", items: [
                 MoreItem(title: "关于自动回车", showMore: nil, message: nil, switchState: nil){}]),
@@ -65,6 +73,4 @@ final class MoreViewModel {
                     self.controller?.goToSocialNetwork(weibo: true)
                 }])
         ]
-
-
 }

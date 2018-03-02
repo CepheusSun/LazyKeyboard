@@ -14,6 +14,12 @@ struct MoreSection {
     
     var items: [MoreItem] = []
     
+//    init(header: String?, footer: String?, items: [MoreItem]) {
+//        self.header = header
+//        self.footer = footer
+//        self.items = items
+//    }
+    
 }
 
 struct MoreItem {
@@ -21,5 +27,19 @@ struct MoreItem {
     var showMore: Bool?
     var message: String?
     var switchState: Bool?
-    var action: () -> ()
+    var action: (() -> ())
+    
+//    init(title: String, showMore: Bool?, message: String?, switchState: Bool?, action: @escaping (() -> ())) {
+//        self.title = title
+//        self.showMore = showMore
+//        self.message = message
+//        self.switchState = switchState
+//        self.action = action
+//    }
+//
+    mutating func toggle(_ isOn: Bool) {
+        if self.switchState.hasSome {
+            self.switchState = isOn
+        }
+    }
 }

@@ -22,10 +22,7 @@ class MoreController: UIViewController {
         tableView.register(cellType: MoreTableViewCell.self)
         
     }
-
-
 }
-
 
 extension MoreController: UITableViewDataSource {
     
@@ -41,6 +38,12 @@ extension MoreController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(for: indexPath) as MoreTableViewCell
         let item: MoreItem = viewModel.list[indexPath.section].items[indexPath.row]
         cell.item = item
+        if item.switchState.hasSome {
+            cell.switchValueChangedCallback = { [unowned self] in
+                self.viewModel.list[indexPath.section].items[indexPath.row].toggle($0)
+                item.action()
+            }
+        }
         return cell
     }
     

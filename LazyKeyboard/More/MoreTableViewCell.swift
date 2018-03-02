@@ -50,8 +50,13 @@ class MoreTableViewCell: UITableViewCell {
         self.switch.isHidden = true
     }
     
+    var switchValueChangedCallback: ((Bool) -> ())?
+    
     @objc func switchValueChanged(_ sender: UISwitch) {
-        self.item.switchState = sender.isOn
+        item.switchState = sender.isOn
+        switchValueChangedCallback.ifSome {[unowned sender] in
+            $0(sender.isOn)
+        }
     }
     
 }
