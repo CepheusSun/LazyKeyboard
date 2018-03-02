@@ -37,8 +37,6 @@ class KeyboardView: UIView {
     func setup() {
         nextButton.addTarget(controller, action: #selector(KeyboardViewController.handleInputModeList(from:with:)), for: .allTouchEvents)
         
-        returnButton.addTarget(controller, action: #selector(KeyboardViewController.requestSupplementaryLexicon(completion:)), for: .allEvents)
-        
         collectionView.register(cellType: KeyCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
