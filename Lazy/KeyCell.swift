@@ -12,6 +12,7 @@ import Reusable
 class KeyCell: UICollectionViewCell, NibReusable {
 
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var bgView: UIView!
     
     var key: Key! {
         didSet {
@@ -23,4 +24,13 @@ class KeyCell: UICollectionViewCell, NibReusable {
             }
         }
     }
+    
+    func switchTo(hightLight: Bool) {
+        if hightLight {
+            bgView.backgroundColor = UIColor.colorWithHexString("B1B1B1")
+        } else {
+            bgView.backgroundColor = .white
+        }
+    }
+    
 }

@@ -48,6 +48,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="286" height="108"/>
             <connections>
+                <outlet property="bgView" destination="Pb0-Ng-9dA" id="v0c-4v-BGU"/>
                 <outlet property="label" destination="H7M-je-Zoh" id="8uT-zP-rxX"/>
             </connections>
             <point key="canvasLocation" x="-157" y="-326"/>

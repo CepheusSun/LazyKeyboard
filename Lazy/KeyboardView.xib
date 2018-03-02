@@ -68,6 +68,9 @@
                             <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="sendButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="iCt-yg-lQl"/>
+                    </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rFC-lh-irT">
                     <rect key="frame" x="0.0" y="0.0" width="290" height="173"/>

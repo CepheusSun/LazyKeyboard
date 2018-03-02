@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		334528B12048328C00E50EBB /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 334528B02048328C00E50EBB /* iconfont.ttf */; };
+		335E08042048ECE200304036 /* UIColor+Snipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8CD20464FE8007CD24B /* UIColor+Snipper.swift */; };
+		335E08062048EE5600304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
+		335E08072048EF3A00304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
 		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
@@ -89,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		334528B02048328C00E50EBB /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		335E08052048EE5600304036 /* UIImage+Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Snippet.swift"; sourceTree = "<group>"; };
 		33C3B89C20463EFD007CD24B /* LazyKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C3B89F20463EFD007CD24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33C3B8A120463EFD007CD24B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				33C3B8B920464FE8007CD24B /* CodableUserDefault.swift */,
+				335E08052048EE5600304036 /* UIImage+Snippet.swift */,
 				33C3B8BA20464FE8007CD24B /* UIView+Snippet.swift */,
 				33C3B8BB20464FE8007CD24B /* Generic+Snippet.swift */,
 				33C3B8BC20464FE8007CD24B /* UITextField+Snippet.swift */,
@@ -536,6 +541,7 @@
 				33C3B8DF20464FE8007CD24B /* URL+Snippet.swift in Sources */,
 				33C3B8D920464FE8007CD24B /* UITextView+Snippet.swift in Sources */,
 				33C3B8E320464FE8007CD24B /* Optional+Snippet.swift in Sources */,
+				335E08062048EE5600304036 /* UIImage+Snippet.swift in Sources */,
 				33C3B8DA20464FE8007CD24B /* Encrypt.swift in Sources */,
 				33C3B8B42046489C007CD24B /* MoreEntity.swift in Sources */,
 				33C3B8ED20465223007CD24B /* General.swift in Sources */,
@@ -554,10 +560,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				33C3B9052046A5B3007CD24B /* ChainableView+Snippet.swift in Sources */,
+				335E08072048EF3A00304036 /* UIImage+Snippet.swift in Sources */,
 				33C3B8FB2046A07B007CD24B /* KeyboardViewController.swift in Sources */,
 				33C3B90A20478EC6007CD24B /* General.swift in Sources */,
 				33C3B90920478E90007CD24B /* KeyboardViewModel.swift in Sources */,
 				33C3B9192047E584007CD24B /* KeyboardView.swift in Sources */,
+				335E08042048ECE200304036 /* UIColor+Snipper.swift in Sources */,
 				33C3B90D20478EE5007CD24B /* Const.swift in Sources */,
 				33C3B90F20479113007CD24B /* CellWrapper.swift in Sources */,
 				33C3B91020479307007CD24B /* UIView+Snippet.swift in Sources */,

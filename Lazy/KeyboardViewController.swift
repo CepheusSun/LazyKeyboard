@@ -33,11 +33,13 @@ class KeyboardViewController: UIInputViewController {
                 self.textDocumentProxy.deleteBackward()
             case .space:
                 self.textDocumentProxy.insertText(" ")
+            case .return:
+                self.textDocumentProxy.insertText("\n")
             case .keyboardChange: break
-            case .return: break
-//                self.dismissKeyboard()
+            
             }
         }
+        
         
         var str = ""
         switch self.textDocumentProxy.returnKeyType! {
@@ -61,8 +63,13 @@ class KeyboardViewController: UIInputViewController {
             str = "Done"
         }
         keyboard.setReturnKeyTitle(str)
-    }
     
+    }
+
+    
+    override func textDidChange(_ textInput: UITextInput?) {
+        
+    }
 }
 
 

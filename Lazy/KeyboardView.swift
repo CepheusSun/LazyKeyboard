@@ -37,6 +37,9 @@ class KeyboardView: UIView {
     func setup() {
         nextButton.addTarget(controller, action: #selector(KeyboardViewController.handleInputModeList(from:with:)), for: .allTouchEvents)
         
+        nextButton.setImage(UIImage.imageWithColor(UIColor.colorWithHexString("B1B1B1")), for: .normal)
+        nextButton.setImage(UIImage.imageWithColor(.white), for: .highlighted)
+
         collectionView.register(cellType: KeyCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -61,12 +64,10 @@ class KeyboardView: UIView {
         self.callBack.ifSome { $0(key) }
     }
     
-    
 }
 
 extension KeyboardView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print(pages)
         return pages.count
     }
     
@@ -99,7 +100,15 @@ extension KeyboardView: UICollectionViewDataSource, UICollectionViewDelegateFlow
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        
+        let cell: KeyCell? = collectionView.cellForItem(at: indexPath) as? KeyCell
+        cell?.switchTo(hightLight: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        let cell: KeyCell? = collectionView.cellForItem(at: indexPath) as? KeyCell
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+           cell?.switchTo(hightLight: false)
+        })
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
