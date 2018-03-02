@@ -57,7 +57,7 @@ class KeyboardViewController: UIInputViewController {
         case .next: str = "下一步"
         case .join: str = "加入"
         case .continue: str = "Continue"
-        case .default: str = "发送"
+        case .default: str = "完成"
         case.emergencyCall: str = "紧急呼叫"
         case .route: str = "下一步"
         case .yahoo: str = "Yahoo"
