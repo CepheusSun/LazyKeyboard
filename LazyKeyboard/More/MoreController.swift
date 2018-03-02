@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import StoreKit
+import MessageUI
 
 class MoreController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private let viewModel = MoreViewModel()
+    private lazy var viewModel: MoreViewModel = MoreViewModel(controller: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,5 +59,70 @@ extension MoreController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let item: MoreItem = viewModel.list[indexPath.section].items[indexPath.row]
         item.action()
+    }
+}
+
+
+extension MoreController: SKStoreProductViewControllerDelegate {
+    func loadAppStoreController() {
+        let store = SKStoreProductViewController()
+        store.delegate = self
+        store.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: "1354448059"]) { (isSuccess, error) in
+            if isSuccess {
+                self.present(store, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
+}
+
+
+// MARK: - 跳转发邮件短信
+extension MoreController: MFMailComposeViewControllerDelegate {
+
+    func loadEmailController() {
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.setSubject("")
+            mail.setToRecipients(["CepheusSun@gmail.com"])
+            mail.mailComposeDelegate = self
+            self.navigationController?.present(mail, animated: true, completion: nil)
+        } else {
+            self.openUrl(URL(string: "mailto:CepheusSun@gmail.com")!)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func openUrl(_ url: URL) {
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+}
+
+extension MoreController: MFMessageComposeViewControllerDelegate {
+    func loadIMessageController() {
+        
+        if MFMessageComposeViewController.canSendText() {
+            let mail = MFMessageComposeViewController()
+            mail.recipients = ["624162319@qq.com"]
+            mail.messageComposeDelegate = self
+            self.navigationController?.present(mail, animated: true, completion: nil)
+        } else {
+            self.openUrl(URL(string: "sms:624162319@qq.com")!)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

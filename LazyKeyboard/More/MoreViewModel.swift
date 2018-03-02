@@ -10,9 +10,13 @@ import UIKit
 
 final class MoreViewModel {
     
-    weak var controller: UIViewController?
+    weak var controller: MoreController?
+
+    init(controller: MoreController) {
+        self.controller = controller
+    }
     
-    var list: [MoreSection] =
+    lazy var list: [MoreSection] =
         [
             MoreSection(header: "帮助", footer: "如果无法正常开启, 请自行前往”设置-通用-键盘-添加新键盘“进行设置。", items: [
                 MoreItem(title: "开启键盘", showMore: true, message: nil, switchState: nil) {
@@ -37,19 +41,22 @@ final class MoreViewModel {
             
             MoreSection(header: nil, footer: nil, items: [
                 MoreItem(title: "分享应用", showMore: true, message: nil, switchState: nil){},
-                MoreItem(title: "去 App Store 评分", showMore: true, message: nil, switchState: nil){}]),
+                MoreItem(title: "去 App Store 评分", showMore: true, message: nil, switchState: nil){[unowned self] in
+                    self.controller?.loadAppStoreController()
+                }]),
             
             MoreSection(header: "反馈", footer: nil, items: [
-                MoreItem(title: "iMessage", showMore: nil, message: "624162319@qq.com", switchState: nil){},
-                MoreItem(title: "邮件", showMore: nil, message: "cepheussun@gmail.", switchState: nil){}]),
+                MoreItem(title: "iMessage", showMore: nil, message: "624162319@qq.com", switchState: nil){[unowned self] in
+                    self.controller?.loadIMessageController()
+                },
+                MoreItem(title: "邮件", showMore: nil, message: "CepheusSun@gmail.com", switchState: nil){[unowned self] in
+                    self.controller?.loadEmailController()
+                }]),
             
             MoreSection(header: "关注作者", footer: "Copyright © 2018 CepheusSun", items: [
                 MoreItem(title: "Twitter", showMore: nil, message: "@CepheusSun_", switchState: nil){},
                 MoreItem(title: "Weibo", showMore: nil, message: "@CepheusSun", switchState: nil){}])
         ]
-    
-    func xx()  {
 
-    }
 
 }
