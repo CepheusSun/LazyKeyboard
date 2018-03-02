@@ -170,6 +170,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		335E080A20491BFE00304036 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				33C3B8FC2046A07B007CD24B /* Info.plist */,
+				334528B02048328C00E50EBB /* iconfont.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		335E080B20491C1500304036 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		335E080C20491C1F00304036 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33C3B9182047E584007CD24B /* KeyboardView.swift */,
+				33C3B91A2047E58C007CD24B /* KeyboardView.xib */,
+				33C3B9142047DEE5007CD24B /* KeyCell.swift */,
+				33C3B9152047DEE5007CD24B /* KeyCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		335E080D20491C2E00304036 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33C3B9122047AA7A007CD24B /* KeyboardEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		335E080E20491C3A00304036 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				33C3B90820478E90007CD24B /* KeyboardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		33C3B89320463EFD007CD24B = {
 			isa = PBXGroup;
 			children = (
@@ -271,16 +315,12 @@
 		33C3B8F92046A07B007CD24B /* Lazy */ = {
 			isa = PBXGroup;
 			children = (
-				334528B02048328C00E50EBB /* iconfont.ttf */,
 				33C3B91120479911007CD24B /* Lazy.entitlements */,
-				33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */,
-				33C3B90820478E90007CD24B /* KeyboardViewModel.swift */,
-				33C3B9122047AA7A007CD24B /* KeyboardEntity.swift */,
-				33C3B9182047E584007CD24B /* KeyboardView.swift */,
-				33C3B91A2047E58C007CD24B /* KeyboardView.xib */,
-				33C3B9142047DEE5007CD24B /* KeyCell.swift */,
-				33C3B9152047DEE5007CD24B /* KeyCell.xib */,
-				33C3B8FC2046A07B007CD24B /* Info.plist */,
+				335E080E20491C3A00304036 /* ViewModel */,
+				335E080D20491C2E00304036 /* Model */,
+				335E080C20491C1F00304036 /* View */,
+				335E080B20491C1500304036 /* Controller */,
+				335E080A20491BFE00304036 /* Resources */,
 			);
 			path = Lazy;
 			sourceTree = "<group>";
