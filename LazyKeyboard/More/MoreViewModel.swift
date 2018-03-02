@@ -29,7 +29,9 @@ final class MoreViewModel {
                 }]),
             
             MoreSection(header: nil, footer: nil, items: [
-                MoreItem(title: "Premium版功能", showMore: true, message: nil, switchState: nil) {}]),
+                MoreItem(title: "Premium版功能", showMore: true, message: nil, switchState: nil) {[unowned self] in
+                    self.controller?.loadPremium()
+                }]),
             
             MoreSection(header: "偏好设置", footer: nil, items: [
                 MoreItem(title: "按键震动", showMore: nil, message: nil, switchState: true) {},

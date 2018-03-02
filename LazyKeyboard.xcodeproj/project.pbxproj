@@ -11,6 +11,8 @@
 		335E08042048ECE200304036 /* UIColor+Snipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8CD20464FE8007CD24B /* UIColor+Snipper.swift */; };
 		335E08062048EE5600304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
 		335E08072048EF3A00304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
+		335E08122049312200304036 /* PremiumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08102049312200304036 /* PremiumController.swift */; };
+		335E08132049312200304036 /* PremiumController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335E08112049312200304036 /* PremiumController.xib */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
 		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
@@ -93,6 +95,8 @@
 /* Begin PBXFileReference section */
 		334528B02048328C00E50EBB /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		335E08052048EE5600304036 /* UIImage+Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Snippet.swift"; sourceTree = "<group>"; };
+		335E08102049312200304036 /* PremiumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumController.swift; sourceTree = "<group>"; };
+		335E08112049312200304036 /* PremiumController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PremiumController.xib; sourceTree = "<group>"; };
 		33C3B89C20463EFD007CD24B /* LazyKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C3B89F20463EFD007CD24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33C3B8A120463EFD007CD24B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 		335E080F2049302D00304036 /* Premium */ = {
 			isa = PBXGroup;
 			children = (
+				335E08102049312200304036 /* PremiumController.swift */,
+				335E08112049312200304036 /* PremiumController.xib */,
 			);
 			path = Premium;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33C3B8AA20463EFD007CD24B /* LaunchScreen.storyboard in Resources */,
+				335E08132049312200304036 /* PremiumController.xib in Resources */,
 				33FD01E62048488300E66FF6 /* Assets.xcassets in Resources */,
 				33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */,
 			);
@@ -593,6 +600,7 @@
 				33C3B8DA20464FE8007CD24B /* Encrypt.swift in Sources */,
 				33C3B8B42046489C007CD24B /* MoreEntity.swift in Sources */,
 				33C3B8ED20465223007CD24B /* General.swift in Sources */,
+				335E08122049312200304036 /* PremiumController.swift in Sources */,
 				33C3B8D420464FE8007CD24B /* Bool+Snippet.swift in Sources */,
 				33C3B8E92046517C007CD24B /* MoreTableViewCell.swift in Sources */,
 				33C3B8DE20464FE8007CD24B /* Namespace+Snipper.swift in Sources */,

@@ -62,6 +62,13 @@ extension MoreController: UITableViewDelegate {
     }
 }
 
+// MARK: - Premium
+extension MoreController {
+    func loadPremium() {
+        present(UINavigationController(rootViewController: PremiumController()), animated: true, completion: nil)
+    }
+}
+
 // MARK: - 分享
 extension MoreController {
     func loadShare() {
