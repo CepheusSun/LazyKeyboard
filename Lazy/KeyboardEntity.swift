@@ -15,6 +15,7 @@ class Key {
         case space
         case keyboardChange
         case `return`
+        case at
     }
     
     var type: KeyType

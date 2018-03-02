@@ -35,8 +35,9 @@ class KeyboardViewController: UIInputViewController {
                 self.textDocumentProxy.insertText(" ")
             case .return:
                 self.textDocumentProxy.insertText("\n")
+            case .at:
+                self.textDocumentProxy.insertText("@")
             case .keyboardChange: break
-            
             }
         }
         

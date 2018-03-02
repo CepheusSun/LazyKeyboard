@@ -15,6 +15,7 @@ class KeyboardView: UIView {
     @IBOutlet weak var returnButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var atButton: UIButton!
     
     var pages: [[Key]] = [] {
         didSet {
@@ -61,6 +62,11 @@ class KeyboardView: UIView {
     
     @IBAction func backSpaceButtonAction(_ sender: Any) {
         let key = Key(Key.KeyType.backspace)
+        self.callBack.ifSome { $0(key) }
+    }
+    
+    @IBAction func atButtonAction(_ sender: Any) {
+        let key = Key(Key.KeyType.at)
         self.callBack.ifSome { $0(key) }
     }
     

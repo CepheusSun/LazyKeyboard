@@ -99,28 +99,49 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDK-8V-LX0">
-                    <rect key="frame" x="173.5" y="190.5" width="17" height="17"/>
+                    <rect key="frame" x="173.5" y="177" width="17" height="44"/>
                     <fontDescription key="fontDescription" name="iconfont" family="iconfont" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryu-VN-BU2">
+                    <rect key="frame" x="290" y="52" width="80" height="44"/>
+                    <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="iconfont" family="iconfont" pointSize="20"/>
+                    <state key="normal" title="@">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="atButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="u9G-o8-8cy"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="rJa-ma-3yF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="6s4-eB-xi5"/>
+                <constraint firstItem="ryu-VN-BU2" firstAttribute="height" secondItem="rJa-ma-3yF" secondAttribute="height" id="9em-HO-Y30"/>
                 <constraint firstItem="idH-2f-XY6" firstAttribute="leading" secondItem="HON-co-nFg" secondAttribute="trailing" constant="5" id="9yQ-TY-nlH"/>
                 <constraint firstItem="rJa-ma-3yF" firstAttribute="width" secondItem="1Gc-0f-3AC" secondAttribute="width" id="KGJ-WA-7mG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Gc-0f-3AC" secondAttribute="trailing" constant="5" id="PmX-yV-S5z"/>
                 <constraint firstItem="eDK-8V-LX0" firstAttribute="centerY" secondItem="idH-2f-XY6" secondAttribute="centerY" constant="4" id="Sdy-dp-uln"/>
+                <constraint firstItem="ryu-VN-BU2" firstAttribute="height" secondItem="eDK-8V-LX0" secondAttribute="height" id="Sf3-d2-qfK"/>
                 <constraint firstItem="rJa-ma-3yF" firstAttribute="height" secondItem="1Gc-0f-3AC" secondAttribute="height" id="TDT-LF-oZq"/>
                 <constraint firstItem="idH-2f-XY6" firstAttribute="bottom" secondItem="1Gc-0f-3AC" secondAttribute="bottom" id="UBf-1g-iRj"/>
                 <constraint firstItem="rJa-ma-3yF" firstAttribute="trailing" secondItem="1Gc-0f-3AC" secondAttribute="trailing" id="Uza-f1-KNe"/>
+                <constraint firstItem="ryu-VN-BU2" firstAttribute="trailing" secondItem="rJa-ma-3yF" secondAttribute="trailing" id="VEc-eL-NFG"/>
                 <constraint firstItem="idH-2f-XY6" firstAttribute="height" secondItem="1Gc-0f-3AC" secondAttribute="height" id="YTp-EM-eYv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="HON-co-nFg" secondAttribute="bottom" constant="5" id="biq-Fa-39z"/>
                 <constraint firstItem="eDK-8V-LX0" firstAttribute="centerX" secondItem="idH-2f-XY6" secondAttribute="centerX" id="cdE-ZT-78r"/>
                 <constraint firstItem="HON-co-nFg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="hdk-Un-DXX"/>
                 <constraint firstItem="rJa-ma-3yF" firstAttribute="leading" secondItem="rFC-lh-irT" secondAttribute="trailing" id="hxg-SQ-iW1"/>
+                <constraint firstItem="ryu-VN-BU2" firstAttribute="top" secondItem="rJa-ma-3yF" secondAttribute="bottom" constant="3" id="qtH-b7-DME"/>
                 <constraint firstItem="idH-2f-XY6" firstAttribute="top" secondItem="rFC-lh-irT" secondAttribute="bottom" id="sFI-aP-tob"/>
+                <constraint firstItem="ryu-VN-BU2" firstAttribute="width" secondItem="rJa-ma-3yF" secondAttribute="width" id="t4F-qG-iM7"/>
                 <constraint firstItem="HON-co-nFg" firstAttribute="height" secondItem="1Gc-0f-3AC" secondAttribute="height" id="tdr-1M-7cb"/>
                 <constraint firstItem="1Gc-0f-3AC" firstAttribute="leading" secondItem="idH-2f-XY6" secondAttribute="trailing" constant="5" id="txF-yM-Lua"/>
                 <constraint firstItem="rFC-lh-irT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="u7U-3b-fZQ"/>
@@ -130,6 +151,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="atButton" destination="ryu-VN-BU2" id="v2f-K4-cdD"/>
                 <outlet property="collectionView" destination="rFC-lh-irT" id="RGB-de-h1k"/>
                 <outlet property="deleteButton" destination="rJa-ma-3yF" id="TD4-Bo-gJ6"/>
                 <outlet property="nextButton" destination="HON-co-nFg" id="eiC-y9-cqi"/>
