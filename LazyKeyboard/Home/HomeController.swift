@@ -151,6 +151,7 @@ extension HomeController: UITextFieldDelegate {
                 self.viewModel.addSyllable(textField.text!)
             }
         textField.text = ""
+        currentEditedIndex = nil
         return true
     }
     

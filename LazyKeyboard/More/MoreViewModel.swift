@@ -65,7 +65,7 @@ final class MoreViewModel {
                     self.controller?.loadEmailController()
                 }]),
             
-            MoreSection(header: "关注作者", footer: "Copyright © 2018 CepheusSun", items: [
+            MoreSection(header: "关注作者", footer: self.getVersion(), items: [
                 MoreItem(title: "Twitter", showMore: nil, message: "@CepheusSun_", switchState: nil){[unowned self] in
                     self.controller?.goToSocialNetwork(weibo: false)
                 },
@@ -73,4 +73,12 @@ final class MoreViewModel {
                     self.controller?.goToSocialNetwork(weibo: true)
                 }])
         ]
+    
+    func getVersion() -> String {
+        let infoDictionary = Bundle.main.infoDictionary!
+        let appVersion = infoDictionary["CFBundleShortVersionString"]!
+        // 获取App的build版本
+        let appBuildVersion = infoDictionary["CFBundleVersion"]!
+        return "当前版本 " + "\(appVersion)" + "(\(appBuildVersion))" + " 🌟 " + "Made by CepheusSun"
+    }
 }
