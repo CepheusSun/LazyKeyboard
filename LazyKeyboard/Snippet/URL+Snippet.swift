@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension URL: ExpressibleByStringLiteral {
     
     // By using 'StaticString' we disable string interpolation, for safety

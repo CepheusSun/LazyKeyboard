@@ -126,11 +126,31 @@
                     <navigationItem key="navigationItem" title="更多" id="Yp6-vF-Goh"/>
                     <connections>
                         <outlet property="tableView" destination="E8l-bC-eaH" id="uUt-Vh-Cga"/>
+                        <segue destination="Spd-80-i4s" kind="show" identifier="toOpenSource" id="ec6-Dy-zjN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsW-gS-jOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="830" y="823"/>
+        </scene>
+        <!--开源许可证-->
+        <scene sceneID="xNI-Em-aUU">
+            <objects>
+                <tableViewController title="开源许可证" hidesBottomBarWhenPushed="YES" id="Spd-80-i4s" customClass="OpenSourceController" customModule="LazyKeyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CGX-5Z-3pR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Spd-80-i4s" id="Gdr-ei-6yB"/>
+                            <outlet property="delegate" destination="Spd-80-i4s" id="D8t-js-YGm"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kh2-iB-hmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1519.2" y="824.43778110944538"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B4K-xA-nG0">

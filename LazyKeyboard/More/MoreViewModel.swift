@@ -46,7 +46,7 @@ final class MoreViewModel {
                     self.setting.isSendAfterSelected = !self.setting.isSendAfterSelected
                 }]),
             
-            MoreSection(header: nil, footer: "在键盘上长按回车即可打开。请勿过于依赖此功能", items: [
+            MoreSection(header: nil, footer: "在键盘上长按回车即可打开。请勿过于依赖此功能。", items: [
                 MoreItem(title: "关于自动回车", showMore: nil, message: nil, switchState: nil){}]),
             
             MoreSection(header: nil, footer: nil, items: [
@@ -63,6 +63,11 @@ final class MoreViewModel {
                 },
                 MoreItem(title: "邮件", showMore: nil, message: "CepheusSun@gmail.com", switchState: nil){[unowned self] in
                     self.controller?.loadEmailController()
+                }]),
+            
+            MoreSection(header: nil, footer: "感谢开源世界的前辈们👍🏻", items: [
+                MoreItem(title: "开源许可证", showMore: true, message: nil, switchState: nil){[unowned self] in
+                    self.controller?.goToOpenSourceLicense()
                 }]),
             
             MoreSection(header: "关注作者", footer: self.getVersion(), items: [

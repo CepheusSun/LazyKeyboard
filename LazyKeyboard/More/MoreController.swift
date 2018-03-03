@@ -20,7 +20,6 @@ class MoreController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(cellType: MoreTableViewCell.self)
-        
     }
 }
 
@@ -76,7 +75,7 @@ extension MoreController {
 // MARK: - 分享
 extension MoreController {
     func loadShare() {
-        let share = UIActivityViewController(activityItems: ["懒人键盘", URL(string: C.appStoreUrl)!], applicationActivities: nil)
+        let share = UIActivityViewController(activityItems: ["懒人键盘", C.appStoreUrl], applicationActivities: nil)
         present(share, animated: true, completion: nil)
     }
 }
@@ -111,14 +110,16 @@ extension MoreController: MFMailComposeViewControllerDelegate {
             mail.mailComposeDelegate = self
             self.navigationController?.present(mail, animated: true, completion: nil)
         } else {
-            self.openUrl(URL(string: "mailto:CepheusSun@gmail.com")!)
+            self.openUrl("mailto:CepheusSun@gmail.com")
         }
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
+}
+
+extension UIViewController {
     func openUrl(_ url: URL) {
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url)
@@ -138,7 +139,7 @@ extension MoreController: MFMessageComposeViewControllerDelegate {
             mail.messageComposeDelegate = self
             self.navigationController?.present(mail, animated: true, completion: nil)
         } else {
-            self.openUrl(URL(string: "sms:624162319@qq.com")!)
+            self.openUrl("sms:624162319@qq.com")
         }
     }
     
@@ -147,12 +148,19 @@ extension MoreController: MFMessageComposeViewControllerDelegate {
     }
 }
 
+// 跳转社交网络
 extension MoreController {
     func goToSocialNetwork(weibo: Bool) {
         if weibo {
-            self.openUrl(URL(string: "sinaweibo://userinfo?uid=2453750463")!)
+            self.openUrl("sinaweibo://userinfo?uid=2453750463")
         } else {
-            self.openUrl(URL(string: "twitter://user?screen_name=CepheusSun")!)
+            self.openUrl("twitter://user?screen_name=CepheusSun")
         }
+    }
+}
+
+extension MoreController {
+    func goToOpenSourceLicense() {
+        performSegue(withIdentifier: "toOpenSource", sender: nil)
     }
 }
