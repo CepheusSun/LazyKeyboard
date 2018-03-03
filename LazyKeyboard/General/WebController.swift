@@ -59,7 +59,7 @@ final class WebController: UIViewController, WKNavigationDelegate {
         progressView.x = 0
         progressView.y = 0
         progressView.height = 2
-        progressView.right = view.right
+        progressView.width = view.width
         
         webURL.ifSome {[unowned self] (url) in
             let urlRequest = URLRequest(url: url)

@@ -18,7 +18,7 @@
 		335E0819204945C300304036 /* SettingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E0814204937AC00304036 /* SettingConfiguration.swift */; };
 		335E081F204AD56B00304036 /* OpenSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E081D204AD56B00304036 /* OpenSourceController.swift */; };
 		335E0822204AD77800304036 /* OpenSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E0821204AD77800304036 /* OpenSourceViewModel.swift */; };
-		335E0826204AE04F00304036 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E0825204AE04F00304036 /* WebView.swift */; };
+		335E0826204AE04F00304036 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E0825204AE04F00304036 /* WebController.swift */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
 		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
@@ -106,7 +106,7 @@
 		335E0814204937AC00304036 /* SettingConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingConfiguration.swift; sourceTree = "<group>"; };
 		335E081D204AD56B00304036 /* OpenSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceController.swift; sourceTree = "<group>"; };
 		335E0821204AD77800304036 /* OpenSourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceViewModel.swift; sourceTree = "<group>"; };
-		335E0825204AE04F00304036 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		335E0825204AE04F00304036 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		33C3B89C20463EFD007CD24B /* LazyKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C3B89F20463EFD007CD24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33C3B8A120463EFD007CD24B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 			children = (
 				33C3B8EC20465223007CD24B /* General.swift */,
 				33C3B90B20478ED6007CD24B /* Const.swift */,
-				335E0825204AE04F00304036 /* WebView.swift */,
+				335E0825204AE04F00304036 /* WebController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -610,7 +610,7 @@
 				33C3B8DD20464FE8007CD24B /* Enum+Snippet.swift in Sources */,
 				33C3B8F220467C3C007CD24B /* CellWrapper.swift in Sources */,
 				33C3B8D020464FE8007CD24B /* CodableUserDefault.swift in Sources */,
-				335E0826204AE04F00304036 /* WebView.swift in Sources */,
+				335E0826204AE04F00304036 /* WebController.swift in Sources */,
 				33C3B8E620464FE8007CD24B /* Number+Snippet.swift in Sources */,
 				33C3B8B720464A14007CD24B /* MoreViewModel.swift in Sources */,
 				335E0822204AD77800304036 /* OpenSourceViewModel.swift in Sources */,
