@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		334528B12048328C00E50EBB /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 334528B02048328C00E50EBB /* iconfont.ttf */; };
 		335E08042048ECE200304036 /* UIColor+Snipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8CD20464FE8007CD24B /* UIColor+Snipper.swift */; };
 		335E08062048EE5600304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
 		335E08072048EF3A00304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
@@ -69,6 +68,8 @@
 		33C3B9172047DEE5007CD24B /* KeyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B9152047DEE5007CD24B /* KeyCell.xib */; };
 		33C3B9192047E584007CD24B /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B9182047E584007CD24B /* KeyboardView.swift */; };
 		33C3B91B2047E58C007CD24B /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B91A2047E58C007CD24B /* KeyboardView.xib */; };
+		33F8642D204B04C900D9AF7D /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33F8642C204B04C900D9AF7D /* iconfont.ttf */; };
+		33F8642E204B04C900D9AF7D /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33F8642C204B04C900D9AF7D /* iconfont.ttf */; };
 		33FD01E62048488300E66FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A620463EFD007CD24B /* Assets.xcassets */; };
 		803932F237919B68A336EE72 /* Pods_LazyKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */; };
 		8ABFE37F26698616012D562D /* Pods_Lazy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE234D5952DF1AD23CE47841 /* Pods_Lazy.framework */; };
@@ -99,7 +100,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		334528B02048328C00E50EBB /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		335E08052048EE5600304036 /* UIImage+Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Snippet.swift"; sourceTree = "<group>"; };
 		335E08102049312200304036 /* PremiumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumController.swift; sourceTree = "<group>"; };
 		335E08112049312200304036 /* PremiumController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PremiumController.xib; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 		33C3B9152047DEE5007CD24B /* KeyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyCell.xib; sourceTree = "<group>"; };
 		33C3B9182047E584007CD24B /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		33C3B91A2047E58C007CD24B /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
+		33F8642C204B04C900D9AF7D /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A35C13F55F327734E0E7B7 /* Pods-Lazy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lazy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lazy/Pods-Lazy.debug.xcconfig"; sourceTree = "<group>"; };
 		7DA523F51689714C549D6DEF /* Pods-LazyKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				33C3B8FC2046A07B007CD24B /* Info.plist */,
-				334528B02048328C00E50EBB /* iconfont.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -269,6 +269,7 @@
 		33C3B89E20463EFD007CD24B /* LazyKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				33F8642B204B04BA00D9AF7D /* Resource */,
 				335E080F2049302D00304036 /* Premium */,
 				33C3B8F320468C37007CD24B /* LazyKeyboard.entitlements */,
 				33C3B8EE20467B46007CD24B /* Home */,
@@ -359,6 +360,14 @@
 				335E080A20491BFE00304036 /* Resources */,
 			);
 			path = Lazy;
+			sourceTree = "<group>";
+		};
+		33F8642B204B04BA00D9AF7D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				33F8642C204B04C900D9AF7D /* iconfont.ttf */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		4CA8088032E1D57A14E6D1F2 /* Frameworks */ = {
@@ -482,6 +491,7 @@
 				33C3B8AA20463EFD007CD24B /* LaunchScreen.storyboard in Resources */,
 				335E08132049312200304036 /* PremiumController.xib in Resources */,
 				33FD01E62048488300E66FF6 /* Assets.xcassets in Resources */,
+				33F8642D204B04C900D9AF7D /* iconfont.ttf in Resources */,
 				33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,7 +500,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				334528B12048328C00E50EBB /* iconfont.ttf in Resources */,
+				33F8642E204B04C900D9AF7D /* iconfont.ttf in Resources */,
 				33C3B9042046A4A4007CD24B /* Assets.xcassets in Resources */,
 				33C3B9172047DEE5007CD24B /* KeyCell.xib in Resources */,
 				33C3B91B2047E58C007CD24B /* KeyboardView.xib in Resources */,
