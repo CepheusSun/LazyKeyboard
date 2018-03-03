@@ -15,6 +15,9 @@ class OpenSourceController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(cellType: UITableViewCell.self)
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
     }
 }
 
