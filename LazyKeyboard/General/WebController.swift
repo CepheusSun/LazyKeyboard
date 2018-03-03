@@ -45,6 +45,7 @@ final class WebController: UIViewController, WKNavigationDelegate {
         let progress = UIProgressView(frame: .zero)
         progress.tintColor = .orange
         progress.trackTintColor = .white
+        progress.backgroundColor = .red
         view.addSubview(progress)
         return progress
     }()
@@ -58,8 +59,9 @@ final class WebController: UIViewController, WKNavigationDelegate {
         wkWebView.frame = view.bounds
         progressView.x = 0
         progressView.y = 0
-        progressView.height = 2
+        progressView.height = 20
         progressView.width = view.width
+        view.bringSubview(toFront: progressView)
         
         webURL.ifSome {[unowned self] (url) in
             let urlRequest = URLRequest(url: url)
@@ -71,8 +73,9 @@ final class WebController: UIViewController, WKNavigationDelegate {
         
         kvo = wkWebView.observe(\.estimatedProgress) {[weak self] (obj, changed) in
             let new = obj.estimatedProgress
+            print(new)
             if new == 1 {
-                self?.progressView.isHidden = true
+//                self?.progressView.isHidden = true
             } else {
                 self?.progressView.isHidden = false
                 self?.progressView.setProgress(Float(new), animated: true)

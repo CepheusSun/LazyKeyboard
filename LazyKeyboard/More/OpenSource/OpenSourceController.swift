@@ -14,10 +14,7 @@ class OpenSourceController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         tableView.register(cellType: UITableViewCell.self)
-        tableView.tableFooterView = UIView()
-
     }
 }
 
