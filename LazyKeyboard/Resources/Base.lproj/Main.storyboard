@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="815.20000000000005" y="133.5832083958021"/>
+            <point key="canvasLocation" x="361" y="134"/>
         </scene>
         <!--更多-->
         <scene sceneID="gcm-kr-WCW">
@@ -105,7 +105,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="E8l-bC-eaH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="E8l-bC-eaH">
                                 <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
@@ -131,13 +131,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsW-gS-jOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="823"/>
+            <point key="canvasLocation" x="-303" y="812"/>
         </scene>
         <!--开源许可证-->
         <scene sceneID="xNI-Em-aUU">
             <objects>
                 <tableViewController title="开源许可证" hidesBottomBarWhenPushed="YES" id="Spd-80-i4s" customClass="OpenSourceController" customModule="LazyKeyboard" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" id="CGX-5Z-3pR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" id="CGX-5Z-3pR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -151,7 +151,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kh2-iB-hmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1519.2" y="824.43778110944538"/>
+            <point key="canvasLocation" x="361" y="812"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B4K-xA-nG0">
@@ -170,7 +170,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfj-8M-MBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-302" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hvr-cS-WkG">
@@ -189,7 +189,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sLE-3Q-OqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="901"/>
+            <point key="canvasLocation" x="-994" y="812"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wuN-fY-Mf2">

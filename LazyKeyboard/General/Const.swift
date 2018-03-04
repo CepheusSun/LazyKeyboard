@@ -6,7 +6,7 @@
 //  Copyright © 2018年 CepheusSun. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct C {
     
@@ -14,4 +14,6 @@ struct C {
     static let syllableKey = "syllable"
     static let appStoreKey = "1354448059"
     static let appStoreUrl = "https://itunes.apple.com/cn/app/1354448059?mt=8"
+    
+    static let themeGreen = UIColor.colorWithHexString("1296DB")
 }

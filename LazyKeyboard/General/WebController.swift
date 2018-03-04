@@ -22,7 +22,6 @@ final class WebController: UIViewController, WKNavigationDelegate {
     
     var isShareAllowed: Bool = false
     
-    
     fileprivate lazy var wkWebView: WKWebView = {
         
         let infoDictionary = Bundle.main.infoDictionary!
@@ -37,15 +36,14 @@ final class WebController: UIViewController, WKNavigationDelegate {
         
         let web = WKWebView(frame: CGRect.zero, configuration: config)
         web.navigationDelegate = self
-        self.view.addSubview(web)
+        view.addSubview(web)
         return web
     }()
     
     lazy var progressView: UIProgressView = {
         let progress = UIProgressView(frame: .zero)
-        progress.tintColor = .orange
+        progress.tintColor = C.themeGreen
         progress.trackTintColor = .white
-        progress.backgroundColor = .red
         view.addSubview(progress)
         return progress
     }()
@@ -56,12 +54,9 @@ final class WebController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        edgesForExtendedLayout = .bottom
         wkWebView.frame = view.bounds
-        progressView.x = 0
-        progressView.y = 0
-        progressView.height = 20
-        progressView.width = view.width
-        view.bringSubview(toFront: progressView)
+        progressView.frame = CGRect(x: 0, y: 0, width: view.width, height: 2)
         
         webURL.ifSome {[unowned self] (url) in
             let urlRequest = URLRequest(url: url)
@@ -73,9 +68,8 @@ final class WebController: UIViewController, WKNavigationDelegate {
         
         kvo = wkWebView.observe(\.estimatedProgress) {[weak self] (obj, changed) in
             let new = obj.estimatedProgress
-            print(new)
             if new == 1 {
-//                self?.progressView.isHidden = true
+                self?.progressView.isHidden = true
             } else {
                 self?.progressView.isHidden = false
                 self?.progressView.setProgress(Float(new), animated: true)
@@ -98,7 +92,5 @@ extension WebController {
                 decisionHandler(.allow)
             }
         }
-
     }
-    
 }
