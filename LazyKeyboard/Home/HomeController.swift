@@ -144,6 +144,10 @@ extension HomeController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
+        if textField.text! == "" {
+            return true
+        }
         currentEditedIndex
             .ifSome { [unowned self, textField] in
                 self.viewModel.editSyllable(textField.text!, at: $0)
