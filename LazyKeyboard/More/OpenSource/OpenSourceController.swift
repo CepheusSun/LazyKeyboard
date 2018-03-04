@@ -15,7 +15,7 @@ class OpenSourceController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(cellType: UITableViewCell.self)
-        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 5))
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 10))
         if #available(iOS 11.0, *) {
             navigationItem.largeTitleDisplayMode = .never
         }
