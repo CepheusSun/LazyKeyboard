@@ -42,8 +42,9 @@ class KeyboardViewController: UIInputViewController {
                 self.textDocumentProxy.insertText("\n")
                 self.playKeySound()
             case .at:
-                self.textDocumentProxy.insertText("@")
-                self.playKeySound()
+                self.openMainApp()
+//                self.textDocumentProxy.insertText("@")
+//                self.playKeySound()
             case .keyboardChange: break
             }
         }
@@ -83,10 +84,24 @@ class KeyboardViewController: UIInputViewController {
             })
         }
     }
-    
-    override func textDidChange(_ textInput: UITextInput?) {
-        
+
+    func openMainApp() {
+//        var responder: UIResponder? = self
+//
+//        while responder.hasSome {
+//            if responder!.isKind(of: UIApplication.self) {
+//                break
+//            }
+//            responder = responder?.next
+//        }
+//
+        let url: URL = "cepheus://"
+//
+//        let application: UIApplication = responder as! UIApplication
+//        application.open(url, options: [:], completionHandler: nil)
+        extensionContext?.open(url, completionHandler: nil)
     }
+
 }
 
 

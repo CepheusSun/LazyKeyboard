@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3347C26A204BDEF000A79276 /* URL+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8C820464FE8007CD24B /* URL+Snippet.swift */; };
 		335E08042048ECE200304036 /* UIColor+Snipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8CD20464FE8007CD24B /* UIColor+Snipper.swift */; };
 		335E08062048EE5600304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
 		335E08072048EF3A00304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
@@ -664,6 +665,7 @@
 				33C3B91020479307007CD24B /* UIView+Snippet.swift in Sources */,
 				33C3B9132047AA7A007CD24B /* KeyboardEntity.swift in Sources */,
 				33C3B90E20478FC1007CD24B /* Optional+Snippet.swift in Sources */,
+				3347C26A204BDEF000A79276 /* URL+Snippet.swift in Sources */,
 				335E0819204945C300304036 /* SettingConfiguration.swift in Sources */,
 				33C3B9162047DEE5007CD24B /* KeyCell.swift in Sources */,
 			);
