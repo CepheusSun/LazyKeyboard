@@ -86,20 +86,7 @@ class KeyboardViewController: UIInputViewController {
     }
 
     func openMainApp() {
-//        var responder: UIResponder? = self
-//
-//        while responder.hasSome {
-//            if responder!.isKind(of: UIApplication.self) {
-//                break
-//            }
-//            responder = responder?.next
-//        }
-//
-        let url: URL = "cepheus://"
-//
-//        let application: UIApplication = responder as! UIApplication
-//        application.open(url, options: [:], completionHandler: nil)
-        extensionContext?.open(url, completionHandler: nil)
+        OpenMainKit.openMainApp(self, extensionContext: self.extensionContext!)
     }
 
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3347C26A204BDEF000A79276 /* URL+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8C820464FE8007CD24B /* URL+Snippet.swift */; };
+		3347C271204BE36D00A79276 /* OpenMainKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347C270204BE36D00A79276 /* OpenMainKit.m */; };
 		335E08042048ECE200304036 /* UIColor+Snipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8CD20464FE8007CD24B /* UIColor+Snipper.swift */; };
 		335E08062048EE5600304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
 		335E08072048EF3A00304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
@@ -101,6 +102,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3347C26B204BE33100A79276 /* Lazy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lazy-Bridging-Header.h"; sourceTree = "<group>"; };
+		3347C26F204BE36D00A79276 /* OpenMainKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenMainKit.h; sourceTree = "<group>"; };
+		3347C270204BE36D00A79276 /* OpenMainKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenMainKit.m; sourceTree = "<group>"; };
 		335E08052048EE5600304036 /* UIImage+Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Snippet.swift"; sourceTree = "<group>"; };
 		335E08102049312200304036 /* PremiumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumController.swift; sourceTree = "<group>"; };
 		335E08112049312200304036 /* PremiumController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PremiumController.xib; sourceTree = "<group>"; };
@@ -198,6 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */,
+				3347C26B204BE33100A79276 /* Lazy-Bridging-Header.h */,
+				3347C26F204BE36D00A79276 /* OpenMainKit.h */,
+				3347C270204BE36D00A79276 /* OpenMainKit.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -456,6 +463,7 @@
 					};
 					33C3B8F72046A07B007CD24B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -664,6 +672,7 @@
 				33C3B90F20479113007CD24B /* CellWrapper.swift in Sources */,
 				33C3B91020479307007CD24B /* UIView+Snippet.swift in Sources */,
 				33C3B9132047AA7A007CD24B /* KeyboardEntity.swift in Sources */,
+				3347C271204BE36D00A79276 /* OpenMainKit.m in Sources */,
 				33C3B90E20478FC1007CD24B /* Optional+Snippet.swift in Sources */,
 				3347C26A204BDEF000A79276 /* URL+Snippet.swift in Sources */,
 				335E0819204945C300304036 /* SettingConfiguration.swift in Sources */,
@@ -850,6 +859,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 74A35C13F55F327734E0E7B7 /* Pods-Lazy.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Lazy/Lazy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J43BSF6P28;
@@ -859,6 +869,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.Lazy.Lazy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Lazy/Controller/Lazy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -868,6 +880,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 980293BD81B44FD1303671C2 /* Pods-Lazy.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Lazy/Lazy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J43BSF6P28;
@@ -877,6 +890,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.Lazy.Lazy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Lazy/Controller/Lazy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
