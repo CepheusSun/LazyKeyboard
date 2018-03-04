@@ -62,6 +62,9 @@ class KeyboardView: UIView {
         collectionView.register(cellType: KeyCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        configBackSpaceButtonAction()
+        configSpaceButtonAction()
     }
     
     func setReturnKeyTitle(_ title: String) {
@@ -74,6 +77,7 @@ class KeyboardView: UIView {
     }
     
     @IBAction func spaceButtonAction(_ sender: Any) {
+        
         let key = KeyButton(KeyButton.KeyType.space)
         self.callBack.ifSome { $0(key) }
     }
@@ -88,6 +92,82 @@ class KeyboardView: UIView {
         self.callBack.ifSome { $0(key) }
     }
     
+    var backspaceDelayTimer: Timer?
+    var backspaceRepeatTimer: Timer?
+    let backspaceDelay: TimeInterval = 0.5
+    let backspaceRepeat: TimeInterval = 0.07
+}
+
+extension KeyboardView {
+    
+    private func configSpaceButtonAction() {
+        let cancelEvents: UIControlEvents = [UIControlEvents.touchUpInside, UIControlEvents.touchUpInside, UIControlEvents.touchDragExit, UIControlEvents.touchUpOutside, UIControlEvents.touchCancel, UIControlEvents.touchDragOutside]
+        
+        spaceButton.addTarget(self,
+                              action: #selector(backspaceDown(_:)),
+                              for: .touchDown)
+        spaceButton.addTarget(self,
+                              action: #selector(backspaceUp(_:)),
+                              for: cancelEvents)
+        
+        spaceButton.addTarget(self,
+                          action: #selector(highlightKey(_:)),
+                          for: [.touchDown, .touchDragInside, .touchDragEnter])
+        spaceButton.addTarget(self,
+                          action: #selector(unHighlightKey(_:)),
+                          for: [.touchUpInside, .touchUpOutside, .touchDragOutside, .touchDragExit, .touchCancel])
+    }
+    
+    
+    @objc func highlightKey(_ sender: UIButton) {
+        sender.isHighlighted = true
+    }
+    
+    @objc func unHighlightKey(_ sender: UIButton) {
+        sender.isHighlighted = false
+    }
+}
+
+extension KeyboardView {
+    private func configBackSpaceButtonAction() {
+        let cancelEvents: UIControlEvents = [UIControlEvents.touchUpInside, UIControlEvents.touchUpInside, UIControlEvents.touchDragExit, UIControlEvents.touchUpOutside, UIControlEvents.touchCancel, UIControlEvents.touchDragOutside]
+        deleteButton.addTarget(self,
+                              action: #selector(backspaceDown(_:)),
+                              for: .touchDown)
+        deleteButton.addTarget(self,
+                              action: #selector(backspaceUp(_:)),
+                              for: cancelEvents)
+    }
+    
+    func cancelBackspaceTimers() {
+        self.backspaceDelayTimer?.invalidate()
+        self.backspaceRepeatTimer?.invalidate()
+        self.backspaceDelayTimer = nil
+        self.backspaceRepeatTimer = nil
+    }
+    
+    @objc func backspaceDown(_ sender: Any) {
+        
+        cancelBackspaceTimers()
+        backspaceCallback()
+        
+        // trigger for subsequent deletes
+        self.backspaceDelayTimer = Timer.scheduledTimer(timeInterval: backspaceDelay - backspaceRepeat, target: self, selector: #selector(backspaceDelayCallback), userInfo: nil, repeats: false)
+    }
+    
+    @objc func backspaceUp(_ sender: Any) {
+        self.cancelBackspaceTimers()
+    }
+    
+    @objc func backspaceDelayCallback() {
+        self.backspaceDelayTimer = nil
+        self.backspaceRepeatTimer = Timer.scheduledTimer(timeInterval: backspaceRepeat, target: self, selector: #selector(backspaceCallback), userInfo: nil, repeats: true)
+    }
+    
+    @objc func backspaceCallback() {
+        let key = KeyButton(KeyButton.KeyType.backspace)
+        self.callBack.ifSome { $0(key) }
+    }
 }
 
 extension KeyboardView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
