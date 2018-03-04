@@ -269,7 +269,7 @@
 		33C3B89E20463EFD007CD24B /* LazyKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				33F8642B204B04BA00D9AF7D /* Resource */,
+				33F8642B204B04BA00D9AF7D /* Resources */,
 				335E080F2049302D00304036 /* Premium */,
 				33C3B8F320468C37007CD24B /* LazyKeyboard.entitlements */,
 				33C3B8EE20467B46007CD24B /* Home */,
@@ -278,9 +278,6 @@
 				33C3B8B520464939007CD24B /* More */,
 				33C3B89F20463EFD007CD24B /* AppDelegate.swift */,
 				33C3B8A320463EFD007CD24B /* Main.storyboard */,
-				33C3B8A620463EFD007CD24B /* Assets.xcassets */,
-				33C3B8A820463EFD007CD24B /* LaunchScreen.storyboard */,
-				33C3B8AB20463EFD007CD24B /* Info.plist */,
 			);
 			path = LazyKeyboard;
 			sourceTree = "<group>";
@@ -362,12 +359,15 @@
 			path = Lazy;
 			sourceTree = "<group>";
 		};
-		33F8642B204B04BA00D9AF7D /* Resource */ = {
+		33F8642B204B04BA00D9AF7D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				33C3B8A620463EFD007CD24B /* Assets.xcassets */,
+				33C3B8A820463EFD007CD24B /* LaunchScreen.storyboard */,
+				33C3B8AB20463EFD007CD24B /* Info.plist */,
 				33F8642C204B04C900D9AF7D /* iconfont.ttf */,
 			);
-			path = Resource;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		4CA8088032E1D57A14E6D1F2 /* Frameworks */ = {
@@ -815,7 +815,7 @@
 				CODE_SIGN_ENTITLEMENTS = LazyKeyboard/LazyKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J43BSF6P28;
-				INFOPLIST_FILE = LazyKeyboard/Info.plist;
+				INFOPLIST_FILE = LazyKeyboard/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.Lazy;
@@ -834,7 +834,7 @@
 				CODE_SIGN_ENTITLEMENTS = LazyKeyboard/LazyKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J43BSF6P28;
-				INFOPLIST_FILE = LazyKeyboard/Info.plist;
+				INFOPLIST_FILE = LazyKeyboard/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CepheusSun.Lazy;
