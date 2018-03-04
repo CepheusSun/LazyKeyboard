@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="287-n4-CGO">
-                                <rect key="frame" x="152.5" y="205.5" width="70" height="70"/>
+                                <rect key="frame" x="157.5" y="210.5" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="7Ky-l4-xgv"/>
-                                    <constraint firstAttribute="width" constant="70" id="MYJ-k8-pdn"/>
+                                    <constraint firstAttribute="height" constant="60" id="7Ky-l4-xgv"/>
+                                    <constraint firstAttribute="width" constant="60" id="MYJ-k8-pdn"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="懒人键盘 Made by CepheusSun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6p-gf-Ew4">

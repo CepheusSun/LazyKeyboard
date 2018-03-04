@@ -270,14 +270,12 @@
 			isa = PBXGroup;
 			children = (
 				33F8642B204B04BA00D9AF7D /* Resources */,
-				335E080F2049302D00304036 /* Premium */,
 				33C3B8F320468C37007CD24B /* LazyKeyboard.entitlements */,
 				33C3B8EE20467B46007CD24B /* Home */,
 				33C3B8EB20465219007CD24B /* General */,
 				33C3B8B820464FE8007CD24B /* Snippet */,
 				33C3B8B520464939007CD24B /* More */,
 				33C3B89F20463EFD007CD24B /* AppDelegate.swift */,
-				33C3B8A320463EFD007CD24B /* Main.storyboard */,
 			);
 			path = LazyKeyboard;
 			sourceTree = "<group>";
@@ -285,6 +283,7 @@
 		33C3B8B520464939007CD24B /* More */ = {
 			isa = PBXGroup;
 			children = (
+				335E080F2049302D00304036 /* Premium */,
 				335E081C204AD55500304036 /* OpenSource */,
 				33C3B8B120464813007CD24B /* MoreController.swift */,
 				33C3B8B32046489C007CD24B /* MoreEntity.swift */,
@@ -362,6 +361,7 @@
 		33F8642B204B04BA00D9AF7D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				33C3B8A320463EFD007CD24B /* Main.storyboard */,
 				33C3B8A620463EFD007CD24B /* Assets.xcassets */,
 				33C3B8A820463EFD007CD24B /* LaunchScreen.storyboard */,
 				33C3B8AB20463EFD007CD24B /* Info.plist */,
