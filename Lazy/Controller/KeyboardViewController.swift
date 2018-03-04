@@ -42,9 +42,8 @@ class KeyboardViewController: UIInputViewController {
                 self.textDocumentProxy.insertText("\n")
                 self.playKeySound()
             case .at:
-                self.openMainApp()
-//                self.textDocumentProxy.insertText("@")
-//                self.playKeySound()
+                self.textDocumentProxy.insertText("@")
+                self.playKeySound()
             case .keyboardChange: break
             }
         }
