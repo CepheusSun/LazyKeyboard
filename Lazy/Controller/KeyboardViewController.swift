@@ -88,6 +88,7 @@ class KeyboardViewController: UIInputViewController {
 
     func openMainApp() {
         if viewModel.setting.isLongPressSpaceToMainApp {
+            playKeySound()
             OpenMainKit.openMainApp(self, extensionContext: self.extensionContext!)
         }
     }
