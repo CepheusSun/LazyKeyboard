@@ -45,6 +45,8 @@ class KeyboardViewController: UIInputViewController {
                 self.textDocumentProxy.insertText("@")
                 self.playKeySound()
             case .keyboardChange: break
+            case .spaceLongPress:
+                self.openMainApp()
             }
         }
         
@@ -85,7 +87,9 @@ class KeyboardViewController: UIInputViewController {
     }
 
     func openMainApp() {
-        OpenMainKit.openMainApp(self, extensionContext: self.extensionContext!)
+        if viewModel.setting.isLongPressSpaceToMainApp {
+            OpenMainKit.openMainApp(self, extensionContext: self.extensionContext!)
+        }
     }
 
 }

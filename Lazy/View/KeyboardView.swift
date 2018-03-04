@@ -76,17 +76,6 @@ class KeyboardView: UIView {
         self.callBack.ifSome { $0(key) }
     }
     
-    @IBAction func spaceButtonAction(_ sender: Any) {
-        
-        let key = KeyButton(KeyButton.KeyType.space)
-        self.callBack.ifSome { $0(key) }
-    }
-    
-    @IBAction func backSpaceButtonAction(_ sender: Any) {
-        let key = KeyButton(KeyButton.KeyType.backspace)
-        self.callBack.ifSome { $0(key) }
-    }
-    
     @IBAction func atButtonAction(_ sender: Any) {
         let key = KeyButton(KeyButton.KeyType.at)
         self.callBack.ifSome { $0(key) }
@@ -96,6 +85,10 @@ class KeyboardView: UIView {
     var backspaceRepeatTimer: Timer?
     let backspaceDelay: TimeInterval = 0.5
     let backspaceRepeat: TimeInterval = 0.07
+    
+    var spaceDelayTimer: Timer?
+    let spaceDelay: TimeInterval = 1
+    
 }
 
 extension KeyboardView {
@@ -104,27 +97,43 @@ extension KeyboardView {
         let cancelEvents: UIControlEvents = [UIControlEvents.touchUpInside, UIControlEvents.touchUpInside, UIControlEvents.touchDragExit, UIControlEvents.touchUpOutside, UIControlEvents.touchCancel, UIControlEvents.touchDragOutside]
         
         spaceButton.addTarget(self,
-                              action: #selector(backspaceDown(_:)),
+                              action: #selector(spaceDown(_:)),
                               for: .touchDown)
         spaceButton.addTarget(self,
-                              action: #selector(backspaceUp(_:)),
+                              action: #selector(spaceUp(_:)),
                               for: cancelEvents)
+    }
+    
+    @objc func spaceDown(_ sender: Any) {
         
-        spaceButton.addTarget(self,
-                          action: #selector(highlightKey(_:)),
-                          for: [.touchDown, .touchDragInside, .touchDragEnter])
-        spaceButton.addTarget(self,
-                          action: #selector(unHighlightKey(_:)),
-                          for: [.touchUpInside, .touchUpOutside, .touchDragOutside, .touchDragExit, .touchCancel])
+        cancelSpaceTimers()
+        spaceCallback()
+        
+        // trigger for subsequent deletes
+        self.spaceDelayTimer = Timer.scheduledTimer(timeInterval: spaceDelay, target: self, selector: #selector(spaceLongPressCallback), userInfo: nil, repeats: false)
     }
     
-    
-    @objc func highlightKey(_ sender: UIButton) {
-        sender.isHighlighted = true
+    @objc func spaceUp(_ sender: Any) {
+        self.cancelSpaceTimers()
     }
     
-    @objc func unHighlightKey(_ sender: UIButton) {
-        sender.isHighlighted = false
+    func cancelSpaceTimers() {
+        spaceDelayTimer?.invalidate()
+        spaceDelayTimer = nil
+    }
+    
+    @objc func spaceCallback() {
+        cancelSpaceTimers()
+        
+        let key = KeyButton(KeyButton.KeyType.space)
+        self.callBack.ifSome { $0(key) }
+    }
+    
+    @objc func spaceLongPressCallback() {
+        cancelSpaceTimers()
+        
+        let key = KeyButton(KeyButton.KeyType.spaceLongPress)
+        self.callBack.ifSome { $0(key) }
     }
 }
 

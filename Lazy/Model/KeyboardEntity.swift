@@ -13,6 +13,7 @@ class KeyButton {
         case character(String)
         case backspace
         case space
+        case spaceLongPress
         case keyboardChange
         case `return`
         case at
