@@ -37,6 +37,7 @@ class KeyboardView: UIView {
     }
     
     func setup() {
+        
         nextButton.addTarget(controller, action: #selector(KeyboardViewController.handleInputModeList(from:with:)), for: .allTouchEvents)
     
         [nextButton, returnButton, deleteButton, atButton].forEach { [unowned self] in
@@ -138,6 +139,7 @@ extension KeyboardView {
 }
 
 extension KeyboardView {
+    
     private func configBackSpaceButtonAction() {
         let cancelEvents: UIControlEvents = [UIControlEvents.touchUpInside, UIControlEvents.touchUpInside, UIControlEvents.touchDragExit, UIControlEvents.touchUpOutside, UIControlEvents.touchCancel, UIControlEvents.touchDragOutside]
         deleteButton.addTarget(self,
@@ -180,6 +182,7 @@ extension KeyboardView {
 }
 
 extension KeyboardView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return pages.count
     }
