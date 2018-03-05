@@ -20,6 +20,7 @@ class MoreController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(cellType: MoreTableViewCell.self)
+        automaticallyAdjustsScrollViewInsets = false
     }
 }
 

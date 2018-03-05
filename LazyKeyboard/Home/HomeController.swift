@@ -25,7 +25,8 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(cellType: UITableViewCell.self)
-        
+        automaticallyAdjustsScrollViewInsets = false
+        print(tableView.frame)
         NotificationCenter.default
             .addObserver(self, selector: #selector(keyboardWillShow(notification:)),
                          name: .UIKeyboardWillShow, object: nil)
