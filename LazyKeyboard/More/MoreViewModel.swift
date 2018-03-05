@@ -27,7 +27,7 @@ final class MoreViewModel {
                         let url = URL(string: UIApplicationOpenSettingsURLString)!
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     } else {
-                        let url: URL = "App-Prefs:root=KeyBoard"
+                        let url: URL = "App-Prefs:root=General&path=Keyboard"
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
                 }]),
