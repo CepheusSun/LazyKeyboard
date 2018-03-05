@@ -22,11 +22,13 @@ final class MoreViewModel {
         [
             MoreSection(header: "帮助", footer: "如果无法正常开启, 请自行前往”设置-通用-键盘-添加新键盘“进行设置。", items: [
                 MoreItem(title: "开启键盘", showMore: true, message: nil, switchState: nil) {
-                    let url = URL(string: UIApplicationOpenSettingsURLString)!
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(url)
+                    
+                    if #available(iOS 11.0, *) {
+                        let url = URL(string: UIApplicationOpenSettingsURLString)!
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     } else {
-                        UIApplication.shared.openURL(url)
+                        let url: URL = "App-Prefs:root=KeyBoard"
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
                 }]),
             
