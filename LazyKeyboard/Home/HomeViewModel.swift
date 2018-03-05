@@ -21,6 +21,7 @@ final class HomeViewModel {
     func addSyllable(_ s: String) {
         list.append(s)
         C.groupUserDefaults?.set(list, forKey: C.syllableKey)
+        C.groupUserDefaults?.synchronize()
         self.output.onNext(true)
     }
     
@@ -29,6 +30,7 @@ final class HomeViewModel {
             list.remove(at: indexPath.row)
         }
         C.groupUserDefaults?.set(list, forKey: C.syllableKey)
+        C.groupUserDefaults?.synchronize()
     }
     
     func move(_ from: IndexPath, to: IndexPath) {
@@ -36,11 +38,13 @@ final class HomeViewModel {
         list.remove(at: from.row)
         list.insert(obj, at: to.row)
         C.groupUserDefaults?.set(list, forKey: C.syllableKey)
+        C.groupUserDefaults?.synchronize()
     }
     
     func editSyllable(_ s: String, at index: Int) {
         list[index] = s
         C.groupUserDefaults?.set(list, forKey: C.syllableKey)
+        C.groupUserDefaults?.synchronize()
         self.output.onNext(true)
     }
     
