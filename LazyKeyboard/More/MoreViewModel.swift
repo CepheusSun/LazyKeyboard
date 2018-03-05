@@ -36,7 +36,7 @@ final class MoreViewModel {
                 }]),
             
             MoreSection(header: "偏好设置", footer: nil, items: [
-                MoreItem(title: "按键震动", showMore: nil, message: nil, switchState: self.setting.isPressShake) {[unowned self] in
+                MoreItem(title: "按键音", showMore: nil, message: nil, switchState: self.setting.isPressShake) {[unowned self] in
                     self.setting.isPressShake = !self.setting.isPressShake
                 },
                 MoreItem(title: "长按空格键跳转至主应用", showMore: nil, message: nil, switchState: self.setting.isLongPressSpaceToMainApp){[unowned self] in

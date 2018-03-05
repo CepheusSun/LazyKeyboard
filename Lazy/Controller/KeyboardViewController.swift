@@ -12,6 +12,7 @@ import AudioToolbox
 class KeyboardViewController: UIInputViewController {
 
     private var viewModel = KeyboardViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,10 +20,16 @@ class KeyboardViewController: UIInputViewController {
         let keyboard = KeyboardView.create(with: self)
         keyboard.pages = viewModel.pages
         view.addSubview(keyboard)
+        
+        var height: CGFloat = 216
+        if UIScreen.main.bounds.height == 736 {
+           height = 226
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             keyboard.translatesAutoresizingMaskIntoConstraints = false
             keyboard.fillSuperviewAdaptSafeArea()
-            keyboard.heightAnchor.constraint(equalToConstant: 226).isActive = true
+            keyboard.heightAnchor.constraint(equalToConstant: height).isActive = true
         }
         
         keyboard.callBack = {[unowned self] in

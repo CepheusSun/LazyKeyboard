@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3347C26A204BDEF000A79276 /* URL+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8C820464FE8007CD24B /* URL+Snippet.swift */; };
 		3347C271204BE36D00A79276 /* OpenMainKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347C270204BE36D00A79276 /* OpenMainKit.m */; };
+		3347C273204CDB0200A79276 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3347C272204CDB0200A79276 /* CloudKit.framework */; };
 		335E08042048ECE200304036 /* UIColor+Snipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8CD20464FE8007CD24B /* UIColor+Snipper.swift */; };
 		335E08062048EE5600304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
 		335E08072048EF3A00304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
@@ -105,6 +106,7 @@
 		3347C26B204BE33100A79276 /* Lazy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lazy-Bridging-Header.h"; sourceTree = "<group>"; };
 		3347C26F204BE36D00A79276 /* OpenMainKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenMainKit.h; sourceTree = "<group>"; };
 		3347C270204BE36D00A79276 /* OpenMainKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenMainKit.m; sourceTree = "<group>"; };
+		3347C272204CDB0200A79276 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		335E08052048EE5600304036 /* UIImage+Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Snippet.swift"; sourceTree = "<group>"; };
 		335E08102049312200304036 /* PremiumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumController.swift; sourceTree = "<group>"; };
 		335E08112049312200304036 /* PremiumController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PremiumController.xib; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				803932F237919B68A336EE72 /* Pods_LazyKeyboard.framework in Frameworks */,
+				3347C273204CDB0200A79276 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +384,7 @@
 		4CA8088032E1D57A14E6D1F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3347C272204CDB0200A79276 /* CloudKit.framework */,
 				46324FAF6D284152F4C6773D /* Pods_LazyKeyboard.framework */,
 				EE234D5952DF1AD23CE47841 /* Pods_Lazy.framework */,
 			);
@@ -457,6 +461,12 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};

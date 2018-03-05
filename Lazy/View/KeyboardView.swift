@@ -200,7 +200,8 @@ extension KeyboardView: UICollectionViewDataSource, UICollectionViewDelegateFlow
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.width - 10) / 2 - 3, height: 39)
+        let height: CGFloat = self.height == 226 ? 39 : 36.5
+        return CGSize(width: (collectionView.width - 10) / 2 - 3, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
