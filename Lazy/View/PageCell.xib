@@ -20,106 +20,130 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5Q-gl-Idh">
-                        <rect key="frame" x="5" y="5" width="249.5" height="56.5"/>
-                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="5" y="4" width="253" height="56.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="buttonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="0bo-bU-Sz9"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7a-Op-chN">
-                        <rect key="frame" x="259" y="5" width="249.5" height="56.5"/>
-                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="261" y="4" width="253" height="56.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="buttonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="dGY-U5-LqR"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUY-bd-1jH">
-                        <rect key="frame" x="5" y="66.5" width="249.5" height="56"/>
-                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="5" y="65.5" width="253" height="56.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="buttonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="NIl-0O-kgS"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0K-bM-kMm">
-                        <rect key="frame" x="259" y="66" width="249.5" height="56"/>
-                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="261" y="65" width="253" height="56.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="buttonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Elx-bk-95k"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajh-0g-FtP">
-                        <rect key="frame" x="5" y="127.5" width="249.5" height="56.5"/>
-                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="5" y="127" width="253" height="56.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="buttonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="cPr-wh-9zw"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jh0-A6-plH">
-                        <rect key="frame" x="259" y="127" width="249.5" height="56.5"/>
-                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="261" y="126.5" width="253" height="56.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="buttonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tWd-1V-HED"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ys-gT-qu5">
-                        <rect key="frame" x="5" y="189" width="249.5" height="56"/>
-                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="5" y="188.5" width="253" height="56.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="buttonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="DOx-gA-sJz"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjz-px-0Kx">
-                        <rect key="frame" x="259.5" y="189" width="249.5" height="56"/>
-                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="261" y="188.5" width="253" height="56.5"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="buttonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="hsQ-wK-gj6"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="Tjz-px-0Kx" firstAttribute="top" secondItem="jh0-A6-plH" secondAttribute="bottom" constant="5" id="0Ca-GZ-1Je"/>
-                <constraint firstAttribute="trailing" secondItem="v0K-bM-kMm" secondAttribute="trailing" constant="5" id="20O-FO-h6t"/>
+                <constraint firstAttribute="trailing" secondItem="v0K-bM-kMm" secondAttribute="trailing" id="20O-FO-h6t"/>
                 <constraint firstItem="ajh-0g-FtP" firstAttribute="top" secondItem="vUY-bd-1jH" secondAttribute="bottom" constant="5" id="6aN-FL-gya"/>
                 <constraint firstItem="jh0-A6-plH" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="82b-Q0-nzH"/>
                 <constraint firstItem="vUY-bd-1jH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="BUa-oG-V5k"/>
@@ -129,17 +153,17 @@
                 <constraint firstItem="vUY-bd-1jH" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="ILA-Jn-3oh"/>
                 <constraint firstItem="v0K-bM-kMm" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="KWd-mb-6Xe"/>
                 <constraint firstItem="v0K-bM-kMm" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="MBz-pN-d1g"/>
-                <constraint firstItem="N5Q-gl-Idh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Na4-0x-Hnc"/>
+                <constraint firstItem="N5Q-gl-Idh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Na4-0x-Hnc"/>
                 <constraint firstItem="vUY-bd-1jH" firstAttribute="top" secondItem="N5Q-gl-Idh" secondAttribute="bottom" constant="5" id="OI3-7l-a8c"/>
                 <constraint firstItem="8ys-gT-qu5" firstAttribute="top" secondItem="ajh-0g-FtP" secondAttribute="bottom" constant="5" id="OJ8-Is-8Oi"/>
                 <constraint firstItem="S7a-Op-chN" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="OMc-Ag-vKo"/>
-                <constraint firstAttribute="trailing" secondItem="Tjz-px-0Kx" secondAttribute="trailing" constant="5" id="OzJ-Bc-mLV"/>
-                <constraint firstAttribute="trailing" secondItem="S7a-Op-chN" secondAttribute="trailing" constant="5" id="P3v-iZ-0PL"/>
+                <constraint firstAttribute="trailing" secondItem="Tjz-px-0Kx" secondAttribute="trailing" id="OzJ-Bc-mLV"/>
+                <constraint firstAttribute="trailing" secondItem="S7a-Op-chN" secondAttribute="trailing" id="P3v-iZ-0PL"/>
                 <constraint firstItem="ajh-0g-FtP" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="R5X-RR-hTb"/>
                 <constraint firstItem="S7a-Op-chN" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="RZA-Pc-pMv"/>
                 <constraint firstItem="ajh-0g-FtP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="XT2-CF-MpD"/>
                 <constraint firstItem="N5Q-gl-Idh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="XVi-uL-FAH"/>
-                <constraint firstItem="S7a-Op-chN" firstAttribute="leading" secondItem="N5Q-gl-Idh" secondAttribute="trailing" constant="5" id="YtN-jW-ma2"/>
+                <constraint firstItem="S7a-Op-chN" firstAttribute="leading" secondItem="N5Q-gl-Idh" secondAttribute="trailing" constant="3" id="YtN-jW-ma2"/>
                 <constraint firstItem="jh0-A6-plH" firstAttribute="top" secondItem="v0K-bM-kMm" secondAttribute="bottom" constant="5" id="cmJ-ID-pbX"/>
                 <constraint firstItem="vUY-bd-1jH" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="eYN-Iq-Hq0"/>
                 <constraint firstItem="Tjz-px-0Kx" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="g5l-dM-efi"/>
@@ -149,8 +173,8 @@
                 <constraint firstItem="Tjz-px-0Kx" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="pDe-Ej-eIw"/>
                 <constraint firstItem="ajh-0g-FtP" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="sLT-8p-V16"/>
                 <constraint firstItem="8ys-gT-qu5" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="uZM-LU-UuG"/>
-                <constraint firstAttribute="trailing" secondItem="jh0-A6-plH" secondAttribute="trailing" constant="5" id="vSB-dP-5fN"/>
-                <constraint firstItem="S7a-Op-chN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="wFM-XK-NmW"/>
+                <constraint firstAttribute="trailing" secondItem="jh0-A6-plH" secondAttribute="trailing" id="vSB-dP-5fN"/>
+                <constraint firstItem="S7a-Op-chN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="wFM-XK-NmW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="514" height="250"/>

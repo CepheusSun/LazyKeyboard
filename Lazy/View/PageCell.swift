@@ -13,6 +13,32 @@ class PageCell: UICollectionViewCell, NibReusable {
 
     @IBOutlet var buttonItems: [UIButton]!
     
+    var kvos: [NSKeyValueObservation] = []
+    
+    typealias PageCellCallBack = (Int) -> ()
+    
+    var callBack: PageCellCallBack?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = .red
+        setup()
+    }
+    
+    func setup() {
+        buttonItems.forEach { [unowned self] in
+            let kvo = $0.observe(\.isHighlighted) { (obj, changed) in
+                if obj.isHighlighted {
+                    
+                    obj.backgroundColor = UIColor.colorWithHexString("B1B1B1")
+                    
+                } else {
+                    obj.backgroundColor = .white
+                }
+            }
+            self.kvos.append(kvo)
+        }
+    }
     
     var keylist: [KeyButton]! {
         didSet {
@@ -25,10 +51,22 @@ class PageCell: UICollectionViewCell, NibReusable {
                 switch key.type {
                 case .character(let letter):
                      self.buttonItems[index].setTitle(letter, for: .normal)
-                default: label.text = ""
+                default:
+                    self.buttonItems[index].setTitle("", for: .normal)
                 }
-                
             }
         }
     }
+    
+    @IBAction func buttonAction(_ sender: UIButton) {
+        
+        let index = self.buttonItems.index(of: sender)
+        if index.hasSome {
+            self.callBack.ifSome {
+                $0(index!)
+            }
+        }
+    }
+    
+    
 }
