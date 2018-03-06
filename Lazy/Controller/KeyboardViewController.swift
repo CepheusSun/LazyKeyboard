@@ -74,6 +74,18 @@ class KeyboardViewController: UIInputViewController {
         }
         keyboard.setReturnKeyTitle(str)
     
+        
+        let darkMode = { () -> Bool in
+            let proxy = self.textDocumentProxy
+            return proxy.keyboardAppearance == UIKeyboardAppearance.dark
+        }()
+
+        if darkMode {
+            keyboard.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        } else {
+            keyboard.backgroundColor = UIColor.colorWithRGB(209, g: 213, b: 218)
+        }
+
     }
 
     func playKeySound() {

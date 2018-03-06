@@ -21,7 +21,6 @@ class PageCell: UICollectionViewCell, NibReusable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = .red
         setup()
     }
     
