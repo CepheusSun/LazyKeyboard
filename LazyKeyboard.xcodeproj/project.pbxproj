@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3325B9D6204E9BE100E5BF9C /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3325B9D4204E9BE100E5BF9C /* PageCell.swift */; };
+		3325B9D7204E9BE100E5BF9C /* PageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3325B9D5204E9BE100E5BF9C /* PageCell.xib */; };
 		3347C26A204BDEF000A79276 /* URL+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8C820464FE8007CD24B /* URL+Snippet.swift */; };
 		3347C271204BE36D00A79276 /* OpenMainKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347C270204BE36D00A79276 /* OpenMainKit.m */; };
 		3347C273204CDB0200A79276 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3347C272204CDB0200A79276 /* CloudKit.framework */; };
@@ -105,6 +107,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3325B9D4204E9BE100E5BF9C /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		3325B9D5204E9BE100E5BF9C /* PageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageCell.xib; sourceTree = "<group>"; };
 		3347C26B204BE33100A79276 /* Lazy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lazy-Bridging-Header.h"; sourceTree = "<group>"; };
 		3347C26F204BE36D00A79276 /* OpenMainKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenMainKit.h; sourceTree = "<group>"; };
 		3347C270204BE36D00A79276 /* OpenMainKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenMainKit.m; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				33C3B91A2047E58C007CD24B /* KeyboardView.xib */,
 				33C3B9142047DEE5007CD24B /* KeyCell.swift */,
 				33C3B9152047DEE5007CD24B /* KeyCell.xib */,
+				3325B9D4204E9BE100E5BF9C /* PageCell.swift */,
+				3325B9D5204E9BE100E5BF9C /* PageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,6 +543,7 @@
 				33C3B9042046A4A4007CD24B /* Assets.xcassets in Resources */,
 				33C3B9172047DEE5007CD24B /* KeyCell.xib in Resources */,
 				33C3B91B2047E58C007CD24B /* KeyboardView.xib in Resources */,
+				3325B9D7204E9BE100E5BF9C /* PageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +707,7 @@
 				33C3B9132047AA7A007CD24B /* KeyboardEntity.swift in Sources */,
 				3347C271204BE36D00A79276 /* OpenMainKit.m in Sources */,
 				33C3B90E20478FC1007CD24B /* Optional+Snippet.swift in Sources */,
+				3325B9D6204E9BE100E5BF9C /* PageCell.swift in Sources */,
 				3347C26A204BDEF000A79276 /* URL+Snippet.swift in Sources */,
 				335E0819204945C300304036 /* SettingConfiguration.swift in Sources */,
 				33C3B9162047DEE5007CD24B /* KeyCell.swift in Sources */,

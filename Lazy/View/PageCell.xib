@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PageCell" customModule="Lazy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="514" height="250"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="514" height="250"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5Q-gl-Idh">
+                        <rect key="frame" x="5" y="5" width="249.5" height="56.5"/>
+                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7a-Op-chN">
+                        <rect key="frame" x="259" y="5" width="249.5" height="56.5"/>
+                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUY-bd-1jH">
+                        <rect key="frame" x="5" y="66.5" width="249.5" height="56"/>
+                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0K-bM-kMm">
+                        <rect key="frame" x="259" y="66" width="249.5" height="56"/>
+                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajh-0g-FtP">
+                        <rect key="frame" x="5" y="127.5" width="249.5" height="56.5"/>
+                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jh0-A6-plH">
+                        <rect key="frame" x="259" y="127" width="249.5" height="56.5"/>
+                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ys-gT-qu5">
+                        <rect key="frame" x="5" y="189" width="249.5" height="56"/>
+                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjz-px-0Kx">
+                        <rect key="frame" x="259.5" y="189" width="249.5" height="56"/>
+                        <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Tjz-px-0Kx" firstAttribute="top" secondItem="jh0-A6-plH" secondAttribute="bottom" constant="5" id="0Ca-GZ-1Je"/>
+                <constraint firstAttribute="trailing" secondItem="v0K-bM-kMm" secondAttribute="trailing" constant="5" id="20O-FO-h6t"/>
+                <constraint firstItem="ajh-0g-FtP" firstAttribute="top" secondItem="vUY-bd-1jH" secondAttribute="bottom" constant="5" id="6aN-FL-gya"/>
+                <constraint firstItem="jh0-A6-plH" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="82b-Q0-nzH"/>
+                <constraint firstItem="vUY-bd-1jH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="BUa-oG-V5k"/>
+                <constraint firstItem="jh0-A6-plH" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="D3o-Kc-Vqx"/>
+                <constraint firstAttribute="bottom" secondItem="8ys-gT-qu5" secondAttribute="bottom" constant="5" id="DjE-Eu-b8b"/>
+                <constraint firstItem="8ys-gT-qu5" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="FyU-nh-KE4"/>
+                <constraint firstItem="vUY-bd-1jH" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="ILA-Jn-3oh"/>
+                <constraint firstItem="v0K-bM-kMm" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="KWd-mb-6Xe"/>
+                <constraint firstItem="v0K-bM-kMm" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="MBz-pN-d1g"/>
+                <constraint firstItem="N5Q-gl-Idh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Na4-0x-Hnc"/>
+                <constraint firstItem="vUY-bd-1jH" firstAttribute="top" secondItem="N5Q-gl-Idh" secondAttribute="bottom" constant="5" id="OI3-7l-a8c"/>
+                <constraint firstItem="8ys-gT-qu5" firstAttribute="top" secondItem="ajh-0g-FtP" secondAttribute="bottom" constant="5" id="OJ8-Is-8Oi"/>
+                <constraint firstItem="S7a-Op-chN" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="OMc-Ag-vKo"/>
+                <constraint firstAttribute="trailing" secondItem="Tjz-px-0Kx" secondAttribute="trailing" constant="5" id="OzJ-Bc-mLV"/>
+                <constraint firstAttribute="trailing" secondItem="S7a-Op-chN" secondAttribute="trailing" constant="5" id="P3v-iZ-0PL"/>
+                <constraint firstItem="ajh-0g-FtP" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="R5X-RR-hTb"/>
+                <constraint firstItem="S7a-Op-chN" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="RZA-Pc-pMv"/>
+                <constraint firstItem="ajh-0g-FtP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="XT2-CF-MpD"/>
+                <constraint firstItem="N5Q-gl-Idh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="XVi-uL-FAH"/>
+                <constraint firstItem="S7a-Op-chN" firstAttribute="leading" secondItem="N5Q-gl-Idh" secondAttribute="trailing" constant="5" id="YtN-jW-ma2"/>
+                <constraint firstItem="jh0-A6-plH" firstAttribute="top" secondItem="v0K-bM-kMm" secondAttribute="bottom" constant="5" id="cmJ-ID-pbX"/>
+                <constraint firstItem="vUY-bd-1jH" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="eYN-Iq-Hq0"/>
+                <constraint firstItem="Tjz-px-0Kx" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="g5l-dM-efi"/>
+                <constraint firstItem="8ys-gT-qu5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="gyD-pt-xL0"/>
+                <constraint firstAttribute="bottom" secondItem="Tjz-px-0Kx" secondAttribute="bottom" constant="5" id="jRM-bc-bCF"/>
+                <constraint firstItem="v0K-bM-kMm" firstAttribute="top" secondItem="S7a-Op-chN" secondAttribute="bottom" constant="5" id="nGr-m8-NRV"/>
+                <constraint firstItem="Tjz-px-0Kx" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="pDe-Ej-eIw"/>
+                <constraint firstItem="ajh-0g-FtP" firstAttribute="height" secondItem="N5Q-gl-Idh" secondAttribute="height" id="sLT-8p-V16"/>
+                <constraint firstItem="8ys-gT-qu5" firstAttribute="width" secondItem="N5Q-gl-Idh" secondAttribute="width" id="uZM-LU-UuG"/>
+                <constraint firstAttribute="trailing" secondItem="jh0-A6-plH" secondAttribute="trailing" constant="5" id="vSB-dP-5fN"/>
+                <constraint firstItem="S7a-Op-chN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="wFM-XK-NmW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="514" height="250"/>
+            <connections>
+                <outletCollection property="buttonItems" destination="N5Q-gl-Idh" collectionClass="NSMutableArray" id="uQk-dq-5QY"/>
+                <outletCollection property="buttonItems" destination="S7a-Op-chN" collectionClass="NSMutableArray" id="Me1-3L-rFe"/>
+                <outletCollection property="buttonItems" destination="vUY-bd-1jH" collectionClass="NSMutableArray" id="Ls2-pr-Uhz"/>
+                <outletCollection property="buttonItems" destination="v0K-bM-kMm" collectionClass="NSMutableArray" id="3IY-uW-Ssr"/>
+                <outletCollection property="buttonItems" destination="ajh-0g-FtP" collectionClass="NSMutableArray" id="S71-0d-dac"/>
+                <outletCollection property="buttonItems" destination="jh0-A6-plH" collectionClass="NSMutableArray" id="dlU-ef-VSd"/>
+                <outletCollection property="buttonItems" destination="8ys-gT-qu5" collectionClass="NSMutableArray" id="Pl0-yi-gic"/>
+                <outletCollection property="buttonItems" destination="Tjz-px-0Kx" collectionClass="NSMutableArray" id="Oae-o8-w0I"/>
+            </connections>
+            <point key="canvasLocation" x="-136" y="-25"/>
+        </collectionViewCell>
+    </objects>
+</document>
