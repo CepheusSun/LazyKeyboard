@@ -30,12 +30,18 @@ final class SettingConfig: Codable {
             App.save(settingConfig: self)
         }
     }
-    var isLongPressSpaceToMainApp: Bool = false {
+    var isLongPressSpaceToMainApp: Bool = true {
         didSet {
             App.save(settingConfig: self)
         }
     }
     var isSendAfterSelected: Bool = false {
+        didSet {
+            App.save(settingConfig: self)
+        }
+    }
+    
+    var isICloudAllowed: Bool = false {
         didSet {
             App.save(settingConfig: self)
         }

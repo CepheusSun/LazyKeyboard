@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 解决导航栏返回的时候底部一坨黑色的问题
         self.window?.backgroundColor = .white
         
+//        Cloud.shared.addToCloud()
+        
+//        Cloud.shared.queryFromCloud()
         return true
     }
 

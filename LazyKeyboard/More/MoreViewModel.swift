@@ -59,6 +59,14 @@ final class MoreViewModel {
                     self.controller?.loadAppStoreController()
                 }]),
             
+            MoreSection(header: "iCloud", footer: nil, items: [
+                MoreItem(title: "使用 iCloud", showMore: nil, message: nil, switchState: self.setting.isSendAfterSelected){[unowned self] in
+                    self.setting.isICloudAllowed = !self.setting.isICloudAllowed
+                },
+                MoreItem(title: "同步设置", showMore: nil, message: nil, switchState: nil){[unowned self] in
+                    print("设置同步")
+                }]),
+            
             MoreSection(header: "反馈", footer: nil, items: [
                 MoreItem(title: "iMessage", showMore: nil, message: "624162319@qq.com", switchState: nil){[unowned self] in
                     self.controller?.loadIMessageController()
@@ -68,7 +76,7 @@ final class MoreViewModel {
                 }]),
             
             MoreSection(header: nil, footer: "感谢开源世界的前辈们👍🏻", items: [
-                MoreItem(title: "开源许可证", showMore: true, message: nil, switchState: nil){[unowned self] in
+                MoreItem(title: "致敬开源社区", showMore: true, message: nil, switchState: nil){[unowned self] in
                     self.controller?.goToOpenSourceLicense()
                 }]),
             
