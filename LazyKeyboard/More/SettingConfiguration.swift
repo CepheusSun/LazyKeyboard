@@ -16,6 +16,12 @@ struct App {
         return user.get(for: key).or(SettingConfig())!
     }
     
+    static func isSettingExist() -> Bool {
+        let user = Defaults(userDefaults: C.groupUserDefaults!)
+        let key = Key<SettingConfig>("SettingConfiguration")
+        return user.get(for: key).hasSome
+    }
+    
     static func save(settingConfig: SettingConfig) {
         let user = Defaults(userDefaults: C.groupUserDefaults!)
         let key = Key<SettingConfig>("SettingConfiguration")

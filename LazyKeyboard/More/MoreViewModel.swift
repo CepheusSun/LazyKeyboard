@@ -59,17 +59,16 @@ final class MoreViewModel {
                     self.controller?.loadAppStoreController()
                 }]),
             
-            MoreSection(header: "iCloud", footer: nil, items: [
-                MoreItem(title: "使用 iCloud", showMore: nil, message: nil, switchState: nil){[unowned self] in
-                    self.setting.isICloudAllowed = !self.setting.isICloudAllowed
-                },
-                MoreItem(title: "同步设置", showMore: nil, message: nil, switchState: nil){[unowned self] in
-                    print("设置同步")
-                    // TDO: 将 iCloud 数据同步
-                }]),
+//            MoreSection(header: "iCloud", footer: nil, items: [
+//                MoreItem(title: "使用 iCloud", showMore: nil, message: nil, switchState: nil){[unowned self] in
+//                    self.setting.isICloudAllowed = !self.setting.isICloudAllowed
+//                },
+//                MoreItem(title: "同步设置", showMore: nil, message: nil, switchState: nil){[unowned self] in
+//                    self.controller?.syncICloud()
+//                }]),
             
             MoreSection(header: "反馈", footer: nil, items: [
-                MoreItem(title: "iMessage", showMore: nil, message: "624162319@qq.com", switchState: nil){[unowned self] in
+                MoreItem(title: "iMessage", showMore: nil, message: "", switchState: nil){[unowned self] in
                     self.controller?.loadIMessageController()
                 },
                 MoreItem(title: "邮件", showMore: nil, message: "CepheusSun@gmail.com", switchState: nil){[unowned self] in

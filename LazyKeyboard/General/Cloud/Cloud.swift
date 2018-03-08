@@ -30,7 +30,6 @@ final class Cloud {
     private let privateDatabase = CKContainer.default().privateCloudDatabase
     private let recordID = CKRecordID(recordName: "SyllableListt")
     
-    
     func addToCloud() {
         // 创建 record Object
         let artworkRecord = CKRecord(recordType: "Syllable", recordID: recordID)
@@ -65,15 +64,13 @@ final class Cloud {
     
     
     func fetchSettingFromCloud(_ callback: @escaping (SettingConfig?) -> ()) {
-
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Setting", predicate: predicate)
-        privateDatabase.perform(query, inZoneWith: nil) { (record, err) in
-            
-            if (record?.count).or(0)! > 0 {
+        
+        privateDatabase.fetch(withRecordID: recordID) {[weak self] (record, error) in
+            self?.settingRecord = record
+            if record.hasSome {
                 // 处理
                 let set = SettingConfig()
-                let rec = record![0]
+                let rec = record!
                 set.isICloudAllowed = rec.object(forKey: "isICloudAllowed") as! Int == 1
                 set.isLongPressSpaceToMainApp = rec.object(forKey: "isLongPressSpaceToMainApp") as! Int == 1
                 set.isPressShake = rec.object(forKey: "isLongPressSpaceToMainApp") as! Int == 1
@@ -83,10 +80,33 @@ final class Cloud {
                 callback(nil)
             }
         }
+
     }
     
-    func syncSettingsToCloud() {
+    private var settingRecord: CKRecord?
+    private var settingRecordID = CKRecordID(recordName: "Setting")
+    func syncSettingsToCloud(_ callback: @escaping (String?) -> () )  {
         
+        if !settingRecord.hasSome {
+            let setting = App.getSettingConfig()
+            settingRecord = CKRecord(recordType: "Setting", recordID: settingRecordID)
+            
+            settingRecord!["isICloudAllowed"] = (setting.isICloudAllowed ? 1 : 0) as CKRecordValue
+            settingRecord!["isLongPressSpaceToMainApp"] = (setting.isLongPressSpaceToMainApp ? 1 : 0) as CKRecordValue
+            settingRecord!["isPressShake"] = (setting.isPressShake ? 1 : 0) as CKRecordValue
+            settingRecord!["isSendAfterSelected"] = (setting.isSendAfterSelected ? 1 : 0) as CKRecordValue
+        }
+        
+        privateDatabase.save(settingRecord!) { (record, error) in
+            DispatchQueue.main.async {
+                error
+                    .ifSome{ _ in
+                        print(error)
+                        callback("同步失败")
+                    }.ifNone {
+                        callback(nil)
+                }
+            }
+        }
     }
-    
 }

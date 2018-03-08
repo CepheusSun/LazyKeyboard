@@ -19,39 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 解决导航栏返回的时候底部一坨黑色的问题
         self.window?.backgroundColor = .white
         
-
-        DispatchQueue(label: "queue").async {
-//            let setting = App.getSettingConfig()
-            
-
-            Cloud.shared.fetchSettingFromCloud({ (set) in
-                if set.hasSome {
-                    // success
-                } else {
-                    // 新建一个
-                }
-            })
-            
-//            if setting.hasSome {
-//                // success
-//            } else {
-//                Cloud.shared.fetchSettingFromCloud({ (set) in
-//                    if set.hasSome {
-//                        // success
-//                    } else {
-//                        // 新建一个
-//                    }
-//                })
-//            }
-           
-            
-            
-            
-            
-        }
-        
-        
-       
         return true
     }
 
