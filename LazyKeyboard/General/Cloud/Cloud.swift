@@ -59,8 +59,34 @@ final class Cloud {
                 print(err)
                 return
             }
-            print(record![0].object(forKey: "SyllableList"))
+//            print(record![0].object(forKey: "SyllableList"))
         }
+    }
+    
+    
+    func fetchSettingFromCloud(_ callback: @escaping (SettingConfig?) -> ()) {
+
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Setting", predicate: predicate)
+        privateDatabase.perform(query, inZoneWith: nil) { (record, err) in
+            
+            if (record?.count).or(0)! > 0 {
+                // 处理
+                let set = SettingConfig()
+                let rec = record![0]
+                set.isICloudAllowed = rec.object(forKey: "isICloudAllowed") as! Int == 1
+                set.isLongPressSpaceToMainApp = rec.object(forKey: "isLongPressSpaceToMainApp") as! Int == 1
+                set.isPressShake = rec.object(forKey: "isLongPressSpaceToMainApp") as! Int == 1
+                set.isSendAfterSelected = rec.object(forKey: "isLongPressSpaceToMainApp") as! Int == 1
+                callback(set)
+            } else {
+                callback(nil)
+            }
+        }
+    }
+    
+    func syncSettingsToCloud() {
+        
     }
     
 }

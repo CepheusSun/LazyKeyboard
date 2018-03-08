@@ -13,7 +13,7 @@ struct C {
     static let groupUserDefaults = UserDefaults(suiteName: "group.CepheusSun.lazy")
     static let syllableKey = "syllable"
     static let appStoreKey = "1354448059"
-    static let appStoreUrl = "https://itunes.apple.com/cn/app/1354448059?mt=8"
+    static let appStoreUrl = "https://itunes.apple.com/app/id1354448059"
     
     static let themeGreen = UIColor.colorWithHexString("1296DB")
 }

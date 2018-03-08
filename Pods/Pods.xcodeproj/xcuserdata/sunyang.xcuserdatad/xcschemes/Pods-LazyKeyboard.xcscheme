@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1CED4E243A46D4D001481DFF8859F625"
+               BlueprintIdentifier = "AD09E18F53CA05B7DC91990893529923"
                BuildableName = "Pods_LazyKeyboard.framework"
                BlueprintName = "Pods-LazyKeyboard"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1CED4E243A46D4D001481DFF8859F625"
+            BlueprintIdentifier = "AD09E18F53CA05B7DC91990893529923"
             BuildableName = "Pods_LazyKeyboard.framework"
             BlueprintName = "Pods-LazyKeyboard"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3325B9D6204E9BE100E5BF9C /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3325B9D4204E9BE100E5BF9C /* PageCell.swift */; };
 		3325B9D7204E9BE100E5BF9C /* PageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3325B9D5204E9BE100E5BF9C /* PageCell.xib */; };
+		3342724320510581002DA02E /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3342724220510581002DA02E /* Hud.swift */; };
 		3347C26A204BDEF000A79276 /* URL+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8C820464FE8007CD24B /* URL+Snippet.swift */; };
 		3347C271204BE36D00A79276 /* OpenMainKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347C270204BE36D00A79276 /* OpenMainKit.m */; };
 		3347C273204CDB0200A79276 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3347C272204CDB0200A79276 /* CloudKit.framework */; };
@@ -109,6 +110,7 @@
 /* Begin PBXFileReference section */
 		3325B9D4204E9BE100E5BF9C /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		3325B9D5204E9BE100E5BF9C /* PageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageCell.xib; sourceTree = "<group>"; };
+		3342724220510581002DA02E /* Hud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
 		3347C26B204BE33100A79276 /* Lazy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lazy-Bridging-Header.h"; sourceTree = "<group>"; };
 		3347C26F204BE36D00A79276 /* OpenMainKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenMainKit.h; sourceTree = "<group>"; };
 		3347C270204BE36D00A79276 /* OpenMainKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenMainKit.m; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				33C3B8EC20465223007CD24B /* General.swift */,
 				33C3B90B20478ED6007CD24B /* Const.swift */,
 				335E0825204AE04F00304036 /* WebController.swift */,
+				3342724220510581002DA02E /* Hud.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -623,12 +626,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LazyKeyboard/Pods-LazyKeyboard-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -662,6 +667,7 @@
 				33C3B8F220467C3C007CD24B /* CellWrapper.swift in Sources */,
 				33C3B8D020464FE8007CD24B /* CodableUserDefault.swift in Sources */,
 				335E0826204AE04F00304036 /* WebController.swift in Sources */,
+				3342724320510581002DA02E /* Hud.swift in Sources */,
 				33C3B8E620464FE8007CD24B /* Number+Snippet.swift in Sources */,
 				33C3B8B720464A14007CD24B /* MoreViewModel.swift in Sources */,
 				335E0822204AD77800304036 /* OpenSourceViewModel.swift in Sources */,
@@ -792,7 +798,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -843,7 +849,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

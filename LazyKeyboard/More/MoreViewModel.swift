@@ -50,22 +50,23 @@ final class MoreViewModel {
             
 //            MoreSection(header: nil, footer: "在键盘上长按回车即可打开。请勿过于依赖此功能。", items: [
 //                MoreItem(title: "关于自动回车", showMore: nil, message: nil, switchState: nil){}]),
+    
+            MoreSection(header: "支持", footer: "您的支持才是我坚持下去的动力。", items: [
+                MoreItem(title: "分享应用", showMore: true, message: nil, switchState: nil){[unowned self] in
+                    self.controller?.loadShare()
+                },
+                MoreItem(title: "去 App Store 评分", showMore: true, message: nil, switchState: nil){[unowned self] in
+                    self.controller?.loadAppStoreController()
+                }]),
             
-//            MoreSection(header: nil, footer: nil, items: [
-//                MoreItem(title: "分享应用", showMore: true, message: nil, switchState: nil){[unowned self] in
-//                    self.controller?.loadShare()
-//                },
-//                MoreItem(title: "去 App Store 评分", showMore: true, message: nil, switchState: nil){[unowned self] in
-//                    self.controller?.loadAppStoreController()
-//                }]),
-            
-//            MoreSection(header: "iCloud", footer: nil, items: [
-//                MoreItem(title: "使用 iCloud", showMore: nil, message: nil, switchState: self.setting.isSendAfterSelected){[unowned self] in
-//                    self.setting.isICloudAllowed = !self.setting.isICloudAllowed
-//                },
-//                MoreItem(title: "同步设置", showMore: nil, message: nil, switchState: nil){[unowned self] in
-//                    print("设置同步")
-//                }]),
+            MoreSection(header: "iCloud", footer: nil, items: [
+                MoreItem(title: "使用 iCloud", showMore: nil, message: nil, switchState: nil){[unowned self] in
+                    self.setting.isICloudAllowed = !self.setting.isICloudAllowed
+                },
+                MoreItem(title: "同步设置", showMore: nil, message: nil, switchState: nil){[unowned self] in
+                    print("设置同步")
+                    // TDO: 将 iCloud 数据同步
+                }]),
             
             MoreSection(header: "反馈", footer: nil, items: [
                 MoreItem(title: "iMessage", showMore: nil, message: "624162319@qq.com", switchState: nil){[unowned self] in

@@ -84,11 +84,18 @@ extension MoreController {
 // MARK: - 跳转 App Store
 extension MoreController: SKStoreProductViewControllerDelegate {
     func loadAppStoreController() {
-        let store = SKStoreProductViewController()
-        store.delegate = self
-        store.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: "1354448059"]) { (isSuccess, error) in
-            if isSuccess {
-                self.present(store, animated: true, completion: nil)
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        } else {
+            // Fallback on earlier versions
+            let store = SKStoreProductViewController()
+            store.delegate = self
+            store.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: C.appStoreKey]) { (isSuccess, error) in
+                if isSuccess {
+                    self.present(store, animated: true, completion: nil)
+                } else {
+                    // FIXME:
+                }
             }
         }
     }
