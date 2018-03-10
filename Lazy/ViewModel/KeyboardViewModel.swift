@@ -14,6 +14,10 @@ final class KeyboardViewModel {
     let setting = App.getSettingConfig()
     
     lazy var list: [String] = {
+        
+        let defaults = Defaults(userDefaults: C.groupUserDefaults!)
+        
+        
         let list = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
         return list.or([])!
     }()
