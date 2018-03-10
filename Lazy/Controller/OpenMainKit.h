@@ -10,7 +10,7 @@
 
 @interface OpenMainKit : NSObject
 
-+ (void)openMainApp:(UIViewController *)controller extensionContext:(NSExtensionContext *)context;
++ (void)openMainApp:(UIViewController * _Nonnull)controller extensionContext:( NSExtensionContext * _Nullable )context;
 
 @end
 

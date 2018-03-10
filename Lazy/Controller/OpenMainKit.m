@@ -10,7 +10,7 @@
 
 @implementation OpenMainKit
 
-+ (void)openMainApp:(UIViewController *)controller extensionContext:(NSExtensionContext *)context {
++ (void)openMainApp:(UIViewController * _Nonnull)controller extensionContext:(NSExtensionContext * _Nullable )context {
     
     UIResponder *responder = controller;
     while (responder) {
@@ -20,6 +20,9 @@
     NSString* toUtf8= @"cepheus://";
     NSURL* url = [NSURL URLWithString:toUtf8];
     [responder performSelector:@selector(openURL:) withObject:url];
-    [context openURL:url completionHandler:nil];
+    if (context) {
+        [context openURL:url completionHandler:nil];
+    }
 }
+
 @end
