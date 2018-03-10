@@ -13,8 +13,23 @@ class KeyboardViewController: UIInputViewController {
 
     private var viewModel = KeyboardViewModel()
     
+//    var heightConstraint: NSLayoutConstraint!
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.inputView?.addConstraint(self.heightConstraint)
+//    }
+//
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.heightConstraint = NSLayoutConstraint(
+//            item:self.inputView ?? <#default value#>,
+//            attribute:.Height,
+//            relatedBy:.Equal,
+//            toItem:nil,
+//            attribute:.NotAnAttribute,
+//            multiplier:0.0,
+//            constant:500)
         
         _ = view.height
         let keyboard = KeyboardView.create(with: self)
@@ -31,6 +46,7 @@ class KeyboardViewController: UIInputViewController {
             keyboard.fillSuperviewAdaptSafeArea()
             keyboard.heightAnchor.constraint(equalToConstant: height).isActive = true
         }
+        
         
         keyboard.callBack = {[unowned self] in
             
@@ -93,6 +109,7 @@ class KeyboardViewController: UIInputViewController {
             DispatchQueue.global(qos: .default).async(execute: {
                 // 按键音
                 AudioServicesPlaySystemSound(1104)
+//                UIDevice.current.playInputClick()
             })
         }
     }

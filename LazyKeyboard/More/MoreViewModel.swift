@@ -37,7 +37,7 @@ final class MoreViewModel {
 //                    self.controller?.loadPremium()
 //                }]),
             
-            MoreSection(header: "偏好设置", footer: nil, items: [
+            MoreSection(header: "偏好设置", footer: "自动发送相当于选择短语后自动添加一个回车。", items: [
                 MoreItem(title: "按键音", showMore: nil, message: nil, switchState: self.setting.isPressShake) {[unowned self] in
                     self.setting.isPressShake = !self.setting.isPressShake
                 },
