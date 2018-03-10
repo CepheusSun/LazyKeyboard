@@ -17,7 +17,10 @@ final class OpenSourceViewModel {
         
         ["title": "RxSwift",
          "address":"https://github.com/ReactiveX/RxSwift"],
-    
+
+        ["title": "SnapKit",
+         "address":"https://github.com/SnapKit/SnapKit"],
+        
     ]
     
     

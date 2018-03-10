@@ -8,19 +8,22 @@ PODS:
   - RxCocoa (4.0.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
+  - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - PKHUD (~> 5.0)
   - Reusable
   - RxCocoa
   - RxSwift
+  - SnapKit
 
 SPEC CHECKSUMS:
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 8fbab2817d7f6315ccada8a45d52641667464976
+PODFILE CHECKSUM: 682e35a23f507b6d6ca52a1cbc4e41bd15f55e7e
 
 COCOAPODS: 1.4.0.beta.2
