@@ -15,37 +15,26 @@ class KeyboardViewController: UIInputViewController {
     
 //    var heightConstraint: NSLayoutConstraint!
 //
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.inputView?.addConstraint(self.heightConstraint)
-//    }
-//
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        self.heightConstraint = NSLayoutConstraint(
-//            item:self.inputView ?? <#default value#>,
-//            attribute:.Height,
-//            relatedBy:.Equal,
-//            toItem:nil,
-//            attribute:.NotAnAttribute,
-//            multiplier:0.0,
-//            constant:500)
-        
-        _ = view.height
-        let keyboard = KeyboardView.create(with: self)
-        keyboard.pages = viewModel.pages
-        view.addSubview(keyboard)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         var height: CGFloat = 216
         if UIScreen.main.bounds.height == 736 {
-           height = 226
+            height = 226
         }
+    
+        keyboard.translatesAutoresizingMaskIntoConstraints = false
+        keyboard.fillSuperviewAdaptSafeArea()
+        keyboard.heightAnchor.constraint(equalToConstant: height).isActive = true
+    }
+
+    var keyboard: KeyboardView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            keyboard.translatesAutoresizingMaskIntoConstraints = false
-            keyboard.fillSuperviewAdaptSafeArea()
-            keyboard.heightAnchor.constraint(equalToConstant: height).isActive = true
-        }
+        _ = view.height
+        keyboard = KeyboardView.create(with: self)
+        keyboard.pages = viewModel.pages
+        view.addSubview(keyboard)
         
         
         keyboard.callBack = {[unowned self] in
@@ -109,7 +98,6 @@ class KeyboardViewController: UIInputViewController {
             DispatchQueue.global(qos: .default).async(execute: {
                 // 按键音
                 AudioServicesPlaySystemSound(1104)
-//                UIDevice.current.playInputClick()
             })
         }
     }
