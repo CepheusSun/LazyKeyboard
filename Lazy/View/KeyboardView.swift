@@ -24,6 +24,7 @@ class KeyboardView: UIView {
             self.collectionView.reloadData()
         }
     }
+    
     var kvos: [NSKeyValueObservation] = []
     
     typealias KeyboardViewCallBack = (KeyButton) -> ()
