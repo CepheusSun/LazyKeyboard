@@ -13,29 +13,29 @@ class KeyboardViewController: UIInputViewController {
 
     private var viewModel = KeyboardViewModel()
     
-//    var heightConstraint: NSLayoutConstraint!
-//
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        var height: CGFloat = 216
+        var height: CGFloat = 256
         if UIScreen.main.bounds.height == 736 {
-            height = 226
+            height = 266
         }
-    
+        
         keyboard.translatesAutoresizingMaskIntoConstraints = false
         keyboard.fillSuperviewAdaptSafeArea()
         keyboard.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
 
     var keyboard: KeyboardView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        _ = view.height
+        configKeyboard()
+    }
+
+    private func configKeyboard() {
         keyboard = KeyboardView.create(with: self)
         keyboard.pages = viewModel.pages
         view.addSubview(keyboard)
-        
         
         keyboard.callBack = {[unowned self] in
             
@@ -78,22 +78,22 @@ class KeyboardViewController: UIInputViewController {
         case .yahoo: str = "Yahoo"
         }
         keyboard.setReturnKeyTitle(str)
-    
+        
         
         let darkMode = { () -> Bool in
             let proxy = self.textDocumentProxy
             return proxy.keyboardAppearance == UIKeyboardAppearance.dark
         }()
-
+        
         if darkMode {
             keyboard.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         } else {
             keyboard.backgroundColor = UIColor.colorWithRGB(209, g: 213, b: 218)
         }
-
     }
+    
 
-    func playKeySound() {
+    private func playKeySound() {
         if viewModel.setting.isPressShake {
             DispatchQueue.global(qos: .default).async(execute: {
                 // 按键音
@@ -102,7 +102,7 @@ class KeyboardViewController: UIInputViewController {
         }
     }
     
-    func autoSend() {
+    private func autoSend() {
         if viewModel.setting.isSendAfterSelected {
             DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
                 self.textDocumentProxy.insertText("\n")
@@ -110,15 +110,10 @@ class KeyboardViewController: UIInputViewController {
         }
     }
 
-    func openMainApp() {
+    private func openMainApp() {
         if viewModel.setting.isLongPressSpaceToMainApp {
             playKeySound()
             OpenMainKit.openMainApp(self, extensionContext: self.extensionContext)
         }
     }
-
 }
-
-
-
-

@@ -19,5 +19,6 @@ target 'Lazy' do
     use_frameworks!
 
     pod 'Reusable'
+    pod 'SnapKit'
     
 end

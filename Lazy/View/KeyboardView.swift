@@ -15,6 +15,7 @@ class KeyboardView: UIView {
     @IBOutlet weak var returnButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var selectorScrollView: UIScrollView!
     @IBOutlet weak var atButton: UIButton!
     
     var pages: [[KeyButton]] = [] {
@@ -209,12 +210,9 @@ extension KeyboardView: UICollectionViewDataSource, UICollectionViewDelegateFlow
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height: CGFloat = self.height == 226 ? 180 : 170
-        
-        return CGSize(width: collectionView.width, height: height)
+        let width: CGFloat = UIScreen.main.bounds.width - 90
+        let height: CGFloat = self.height == 266 ? 180 : 170
+        return CGSize(width: width, height: height)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-    }
 }
