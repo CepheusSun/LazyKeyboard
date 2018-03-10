@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class KeyboardView: UIView {
 
@@ -34,8 +35,66 @@ class KeyboardView: UIView {
         let keyboard = Bundle.main.loadNibNamed("KeyboardView", owner: nil, options: nil)?.first as! KeyboardView
         keyboard.controller = controller
         keyboard.setup()
+        keyboard.setupSelector()
         return keyboard
     }
+    
+    var items: [UIButton] = []
+    func setupSelector() {
+        let array = ["我", "我是", "我是五", "我是五个", "我是五个字", "我是五个字"]
+
+        for (index, title) in array.enumerated() {
+            
+            let button = makeButton()
+            items.append(button)
+            button.setTitle(title, for: .normal)
+            selectorScrollView.addSubview(button)
+            if index == typeIndex {
+                button.isSelected = true
+                button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            }
+            let width = title.width(for: UIFont.systemFont(ofSize: 16), height: 20) + 10
+            button.snp.makeConstraints({ (make) in
+                if index == 0 {
+                    make.left.equalTo(selectorScrollView)
+                } else {
+                    make.left.equalTo(items[index - 1].snp.right)
+                }
+                make.width.equalTo(width)
+                make.top.equalTo(selectorScrollView)
+                make.height.equalTo(selectorScrollView)
+                if index == array.count - 1 {
+                    make.right.equalTo(selectorScrollView)
+                }
+            })
+        }
+        
+    }
+    
+    private func makeButton() -> UIButton {
+        let button = UIButton(type: .custom)
+        button.setTitleColor(UIColor.colorWithRGB(160, g: 160, b: 160), for: UIControlState.normal)
+        button.setTitleColor(UIColor.colorWithRGB(51, g: 51, b: 51), for: UIControlState.selected)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+        return button
+    }
+    
+    var typeIndex: Int = 0
+    @objc func buttonAction(_ sender: UIButton) {
+        
+        items.forEach({
+            $0.isSelected = false
+            $0.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        })
+        sender.isSelected = true
+        sender.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        
+        typeIndex = items.index(of: sender).or(0)!
+        collectionView.reloadData()
+        collectionView.contentOffset = .zero
+    }
+    
     
     func setup() {
         
@@ -211,8 +270,7 @@ extension KeyboardView: UICollectionViewDataSource, UICollectionViewDelegateFlow
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = UIScreen.main.bounds.width - 90
-        let height: CGFloat = self.height == 266 ? 180 : 170
-        return CGSize(width: width, height: height)
+        return CGSize(width: width, height: 170)
     }
 
 }

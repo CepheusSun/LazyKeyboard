@@ -81,7 +81,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJa-ma-3yF">
-                    <rect key="frame" x="290" y="45" width="80" height="44"/>
+                    <rect key="frame" x="290" y="42" width="80" height="44"/>
                     <color key="backgroundColor" red="0.69411764705882351" green="0.69411764705882351" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="iconfont" family="iconfont" pointSize="20"/>
                     <state key="normal" title="">
@@ -100,7 +100,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryu-VN-BU2">
-                    <rect key="frame" x="290" y="92" width="80" height="44"/>
+                    <rect key="frame" x="290" y="89" width="80" height="44"/>
                     <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="iconfont" family="iconfont" pointSize="20"/>
                     <state key="normal" title="@">
@@ -118,11 +118,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suc-nw-8UB">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bad-CA-UwQ">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bad-CA-UwQ">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                         </scrollView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="99O-l3-hmv"/>
                         <constraint firstItem="bad-CA-UwQ" firstAttribute="top" secondItem="suc-nw-8UB" secondAttribute="top" id="NTg-94-36M"/>
@@ -138,7 +138,7 @@
                 <constraint firstItem="suc-nw-8UB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="B43-2j-ppn"/>
                 <constraint firstItem="rFC-lh-irT" firstAttribute="top" secondItem="suc-nw-8UB" secondAttribute="bottom" id="Bsy-6c-5DN"/>
                 <constraint firstItem="rJa-ma-3yF" firstAttribute="width" secondItem="1Gc-0f-3AC" secondAttribute="width" id="KGJ-WA-7mG"/>
-                <constraint firstItem="rJa-ma-3yF" firstAttribute="top" secondItem="suc-nw-8UB" secondAttribute="bottom" constant="5" id="Msb-gZ-Hug"/>
+                <constraint firstItem="rJa-ma-3yF" firstAttribute="top" secondItem="suc-nw-8UB" secondAttribute="bottom" constant="2" id="Msb-gZ-Hug"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Gc-0f-3AC" secondAttribute="trailing" constant="5" id="PmX-yV-S5z"/>
                 <constraint firstItem="eDK-8V-LX0" firstAttribute="centerY" secondItem="idH-2f-XY6" secondAttribute="centerY" constant="4" id="Sdy-dp-uln"/>
                 <constraint firstItem="ryu-VN-BU2" firstAttribute="height" secondItem="eDK-8V-LX0" secondAttribute="height" id="Sf3-d2-qfK"/>

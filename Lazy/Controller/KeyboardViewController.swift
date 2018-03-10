@@ -15,12 +15,8 @@ class KeyboardViewController: UIInputViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        var height: CGFloat = 256
-        if UIScreen.main.bounds.height == 736 {
-            height = 266
-        }
-        
-        keyboard.translatesAutoresizingMaskIntoConstraints = false
+        let height: CGFloat = 256
+
         keyboard.fillSuperviewAdaptSafeArea()
         keyboard.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
