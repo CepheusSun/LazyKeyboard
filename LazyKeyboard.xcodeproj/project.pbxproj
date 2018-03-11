@@ -30,6 +30,7 @@
 		3360E810205443D200DA92DA /* String+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360E80E2054313800DA92DA /* String+Snippet.swift */; };
 		3360E81220544D0300DA92DA /* Syllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360E81120544D0300DA92DA /* Syllable.swift */; };
 		3360E81320544D0300DA92DA /* Syllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360E81120544D0300DA92DA /* Syllable.swift */; };
+		3360E8142054E46000DA92DA /* KeyboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B9122047AA7A007CD24B /* KeyboardEntity.swift */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
 		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
@@ -703,6 +704,7 @@
 				33C3B8E020464FE8007CD24B /* Regex.swift in Sources */,
 				33C3B8F020467BC7007CD24B /* HomeViewModel.swift in Sources */,
 				33C3B8E420464FE8007CD24B /* UIColor+Snipper.swift in Sources */,
+				3360E8142054E46000DA92DA /* KeyboardEntity.swift in Sources */,
 				33C3B90C20478ED6007CD24B /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

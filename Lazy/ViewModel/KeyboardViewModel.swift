@@ -13,36 +13,21 @@ final class KeyboardViewModel {
     
     let setting = App.getSettingConfig()
     
-    lazy var list: [String] = {
+    lazy var list: [SyllableSection] = {
         
-        let defaults = Defaults(userDefaults: C.groupUserDefaults!)
-        
-        
-        let list = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
-        return list.or([])!
-    }()
-    
-    lazy var pageCount: Int = {
-        if list.count == 0 {
-            return 0
+        let origin = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
+        if origin.hasSome {
+            // 数据转移
+            var section = SyllableSection()
+            section.list = origin!
+            section.title = "默认"
+            return [section]
+        } else {
+            let defaults = Defaults(userDefaults: C.groupUserDefaults!)
+            let key = Key<[SyllableSection]>(C.syllableKey)
+            let list = defaults.get(for: key)
+            return list.or([])!
         }
-        return list.count / 8 + 1
-    }()
-    
-    lazy var pages: [[KeyButton]] = {
-
-        var res: [[KeyButton]] = []
-        (0..<pageCount).forEach({ _ in
-            res.append([])
-        })
-        
-        for (index, item) in list.enumerated() {
-            let i = index / 8
-            let j = index % 8
-            let key = KeyButton(KeyButton.KeyType.character(item))
-            res[i].append(key)
-        }
-        return res.map({$0.flatMap({$0})})
     }()
 }
 

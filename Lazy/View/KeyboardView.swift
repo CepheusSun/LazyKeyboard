@@ -19,6 +19,13 @@ class KeyboardView: UIView {
     @IBOutlet weak var selectorScrollView: UIScrollView!
     @IBOutlet weak var atButton: UIButton!
     
+    var section: [SyllableSection] = [] {
+        didSet {
+            self.pages = section[self.typeIndex].pages
+            self.setupSelector()
+        }
+    }
+    
     var pages: [[KeyButton]] = [] {
         didSet {
             self.collectionView.reloadData()
@@ -36,14 +43,14 @@ class KeyboardView: UIView {
         let keyboard = Bundle.main.loadNibNamed("KeyboardView", owner: nil, options: nil)?.first as! KeyboardView
         keyboard.controller = controller
         keyboard.setup()
-        keyboard.setupSelector()
         return keyboard
     }
     
     var items: [UIButton] = []
     func setupSelector() {
-        let array = ["我", "我是", "我是五", "我是五个", "我是五个字", "我是五个字"]
-
+        selectorScrollView.subviews.forEach({$0.removeFromSuperview()})
+        items = []
+        let array = section.map({ $0.title })
         for (index, title) in array.enumerated() {
             
             let button = makeButton()
