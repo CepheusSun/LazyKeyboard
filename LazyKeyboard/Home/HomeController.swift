@@ -72,13 +72,21 @@ class HomeController: UIViewController {
 
 // MARK: - TableView
 extension HomeController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.list.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.list[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.list[section].list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath)
-        cell.textLabel?.text = viewModel.list[indexPath.row]
+        cell.textLabel?.text = viewModel.list[indexPath.section].list[indexPath.row]
         return cell
     }
     
@@ -101,7 +109,7 @@ extension HomeController: UITableViewDataSource {
         }
         let edit = UITableViewRowAction(style: .normal, title: "编辑") {[unowned self] (action, indexPath) in
             self.currentEditedIndex = indexPath.row
-            self.textField.text = self.viewModel.list[indexPath.row]
+            self.textField.text = self.viewModel.list[indexPath.section].list[indexPath.row]
             self.addAction(self.navigationItem.rightBarButtonItem!)
         }
         return [delete, edit]

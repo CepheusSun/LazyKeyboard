@@ -13,13 +13,26 @@ final class HomeViewModel {
     
     var output = PublishSubject<Bool>()
 
-    var list: [String] = {
-        var list = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
-        return list.or([])!
+    var list: [SyllableSection] = {
+        
+        let origin = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
+        if origin.hasSome {
+            // 数据转移
+            var section = SyllableSection()
+            section.list = origin!
+            section.title = "默认"
+            return [section]
+        } else {
+            let defaults = Defaults(userDefaults: C.groupUserDefaults!)
+            let key = Key<[SyllableSection]>(C.syllableKey)
+            let list = defaults.get(for: key)
+            return list.or([])!
+        }
     }()
     
     func addSyllable(_ s: String) {
-        list.append(s)
+        // FIXME:
+        list[0].list.append(s)
         C.groupUserDefaults?.set(list, forKey: C.syllableKey)
         C.groupUserDefaults?.synchronize()
         self.output.onNext(true)
@@ -42,7 +55,7 @@ final class HomeViewModel {
     }
     
     func editSyllable(_ s: String, at index: Int) {
-        list[index] = s
+        list[0].list[index] = s
         C.groupUserDefaults?.set(list, forKey: C.syllableKey)
         C.groupUserDefaults?.synchronize()
         self.output.onNext(true)
