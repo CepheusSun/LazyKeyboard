@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCB1EB7AB8B2C991609D00A64AF3E3D9"
+               BlueprintIdentifier = "7DFE8C22522F1D11E784899A1D424ABD"
                BuildableName = "Pods_LazyKeyboard.framework"
                BlueprintName = "Pods-LazyKeyboard"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCB1EB7AB8B2C991609D00A64AF3E3D9"
+            BlueprintIdentifier = "7DFE8C22522F1D11E784899A1D424ABD"
             BuildableName = "Pods_LazyKeyboard.framework"
             BlueprintName = "Pods-LazyKeyboard"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -21,6 +21,11 @@ final class OpenSourceViewModel {
         ["title": "SnapKit",
          "address":"https://github.com/SnapKit/SnapKit"],
         
+        ["title": "PKHUD",
+         "address":"https://github.com/pkluz/PKHUD"],
+        
+        ["title": "IceCream",
+         "address":"https://github.com/caiyue1993/IceCream"],
     ]
     
     

@@ -32,6 +32,9 @@ final class HomeViewModel {
     
     func addSyllable(_ s: String) {
         // FIXME:
+        if list.count == 0 {
+            list.append(SyllableSection())
+        }
         list[0].list.append(s)
         C.groupUserDefaults?.set(list, forKey: C.syllableKey)
         C.groupUserDefaults?.synchronize()

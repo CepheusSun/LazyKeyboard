@@ -57,7 +57,8 @@ final class MoreViewModel {
                 },
                 MoreItem(title: "去 App Store 评分", showMore: true, message: nil, switchState: nil){[unowned self] in
                     self.controller?.loadAppStoreController()
-                }]),
+                }
+                ]),
             
 //            MoreSection(header: "iCloud", footer: nil, items: [
 //                MoreItem(title: "使用 iCloud", showMore: nil, message: nil, switchState: nil){[unowned self] in
@@ -68,25 +69,25 @@ final class MoreViewModel {
 //                }]),
             
             MoreSection(header: "反馈", footer: nil, items: [
-                MoreItem(title: "iMessage", showMore: nil, message: "", switchState: nil){[unowned self] in
-                    self.controller?.loadIMessageController()
-                },
+//                MoreItem(title: "iMessage", showMore: nil, message: "", switchState: nil){[unowned self] in
+//                    self.controller?.loadIMessageController()
+//                },
                 MoreItem(title: "邮件", showMore: nil, message: "CepheusSun@gmail.com", switchState: nil){[unowned self] in
                     self.controller?.loadEmailController()
                 }]),
             
-            MoreSection(header: nil, footer: "感谢开源世界的前辈们👍🏻", items: [
-                MoreItem(title: "致敬开源社区", showMore: true, message: nil, switchState: nil){[unowned self] in
-                    self.controller?.goToOpenSourceLicense()
-                }]),
+//            MoreSection(header: nil, footer: "感谢开源世界的前辈们👍🏻", items: [
+//                MoreItem(title: "致敬开源社区", showMore: true, message: nil, switchState: nil){[unowned self] in
+//                    self.controller?.goToOpenSourceLicense()
+//                }]),
             
-            MoreSection(header: "关注作者", footer: self.getVersion(), items: [
-                MoreItem(title: "Twitter", showMore: nil, message: "@CepheusSun_", switchState: nil){[unowned self] in
-                    self.controller?.goToSocialNetwork(weibo: false)
-                },
-                MoreItem(title: "Weibo", showMore: nil, message: "@CepheusSun", switchState: nil){[unowned self] in
-                    self.controller?.goToSocialNetwork(weibo: true)
-                }])
+//            MoreSection(header: "关注作者", footer: self.getVersion(), items: [
+//                MoreItem(title: "Twitter", showMore: nil, message: "@CepheusSun_", switchState: nil){[unowned self] in
+//                    self.controller?.goToSocialNetwork(weibo: false)
+//                },
+//                MoreItem(title: "Weibo", showMore: nil, message: "@CepheusSun", switchState: nil){[unowned self] in
+//                    self.controller?.goToSocialNetwork(weibo: true)
+//                }])
         ]
     
     func getVersion() -> String {
