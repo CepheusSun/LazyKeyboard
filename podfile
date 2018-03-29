@@ -22,5 +22,7 @@ target 'Lazy' do
 
     pod 'Reusable'
     pod 'SnapKit'
+    pod 'IceCream', '~> 1.3.1'
+
     
 end

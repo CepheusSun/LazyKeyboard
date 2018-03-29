@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import IceCream
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    var syncEngine: SyncEngine<SyllableSection>?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // 解决导航栏返回的时候底部一坨黑色的问题
         self.window?.backgroundColor = .white
+        
+        syncEngine = SyncEngine<SyllableSection>()
+        application.registerForRemoteNotifications()
         
         return true
     }
