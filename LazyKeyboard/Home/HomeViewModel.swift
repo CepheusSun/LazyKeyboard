@@ -8,59 +8,61 @@
 
 import Foundation
 import RxSwift
+import RealmSwift
+import Realm
 
 final class HomeViewModel {
     
     var output = PublishSubject<Bool>()
-
-    var list: [SyllableSection] = {
-        
-        let origin = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
-        if origin.hasSome {
-            // 数据转移
-            var section = SyllableSection()
-            section.list = origin!
-            section.title = "默认"
-            return [section]
-        } else {
-            let defaults = Defaults(userDefaults: C.groupUserDefaults!)
-            let key = Key<[SyllableSection]>(C.syllableKey)
-            let list = defaults.get(for: key)
-            return list.or([])!
-        }
-    }()
+    
+    var db = RealmManager<Syllable>()
+    var notificationToken: NotificationToken!
+    var list: Results<Syllable>!
+    
+    init() {
+        list = db.select().sorted(byKeyPath: "rank")
+        print(list)
+    }
     
     func addSyllable(_ s: String) {
-        // FIXME:
-        if list.count == 0 {
-            list.append(SyllableSection())
-        }
-        list[0].list.append(s)
-        C.groupUserDefaults?.set(list, forKey: C.syllableKey)
-        C.groupUserDefaults?.synchronize()
+
+        let syllable = Syllable()
+        syllable.type = "默认"
+        syllable.content = s
+        syllable.rank = list.count
+        db.insert(syllable)
         self.output.onNext(true)
     }
     
-    func delete(_ s: [IndexPath]) {
-        s.forEach { (indexPath) in
-            list.remove(at: indexPath.row)
-        }
-        C.groupUserDefaults?.set(list, forKey: C.syllableKey)
-        C.groupUserDefaults?.synchronize()
+    func delete(_ s: IndexPath) {
+        db.delete(list[s.row])
+        db.realm.beginWrite()
+        list.filter({$0.rank > s.row}).forEach({$0.rank -= 1})
+        try! db.realm.commitWrite()
+        self.output.onNext(true)
     }
     
     func move(_ from: IndexPath, to: IndexPath) {
-        let obj = list[from.row]
-        list.remove(at: from.row)
-        list.insert(obj, at: to.row)
-        C.groupUserDefaults?.set(list, forKey: C.syllableKey)
-        C.groupUserDefaults?.synchronize()
+        db.realm.beginWrite()
+        // 往上排序
+        if from.row > to.row { //
+            let temp = list[from.row]
+            list.filter({$0.rank >= to.row && $0.rank < from.row}).forEach({$0.rank += 1})
+            temp.rank = to.row
+        } else {
+            let temp = list[from.row]
+            list.filter({$0.rank > from.row && $0.rank <= to.row}).forEach({$0.rank -= 1})
+            temp.rank = to.row
+        }
+        try! db.realm.commitWrite()
+        self.output.onNext(true)
     }
     
     func editSyllable(_ s: String, at index: Int) {
-        list[0].list[index] = s
-        C.groupUserDefaults?.set(list, forKey: C.syllableKey)
-        C.groupUserDefaults?.synchronize()
+        let syllable = list[index]
+        db.realm.beginWrite()
+        syllable.content = s
+        try! db.realm.commitWrite()
         self.output.onNext(true)
     }
     

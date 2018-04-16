@@ -19,9 +19,9 @@ class KeyboardView: UIView {
     @IBOutlet weak var selectorScrollView: UIScrollView!
     @IBOutlet weak var atButton: UIButton!
     
-    var section: [SyllableSection] = [] {
+    var section: [Syllable] = [] {
         didSet {
-            self.pages = section[self.typeIndex].pages
+//            self.pages = 1//section[self.typeIndex].pages
             self.setupSelector()
         }
     }
@@ -50,32 +50,32 @@ class KeyboardView: UIView {
     func setupSelector() {
         selectorScrollView.subviews.forEach({$0.removeFromSuperview()})
         items = []
-        let array = section.map({ $0.title })
-        for (index, title) in array.enumerated() {
-            
-            let button = makeButton()
-            items.append(button)
-            button.setTitle(title, for: .normal)
-            selectorScrollView.addSubview(button)
-            if index == typeIndex {
-                button.isSelected = true
-                button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-            }
-            let width = title.width(for: UIFont.systemFont(ofSize: 16), height: 20) + 10
-            button.snp.makeConstraints({ (make) in
-                if index == 0 {
-                    make.left.equalTo(selectorScrollView)
-                } else {
-                    make.left.equalTo(items[index - 1].snp.right)
-                }
-                make.width.equalTo(width)
-                make.top.equalTo(selectorScrollView)
-                make.height.equalTo(selectorScrollView)
-                if index == array.count - 1 {
-                    make.right.equalTo(selectorScrollView)
-                }
-            })
-        }
+//        let array = []//section.map({ $0.title })
+//        for (index, title) in array.enumerated() {
+//            
+//            let button = makeButton()
+//            items.append(button)
+//            button.setTitle(title, for: .normal)
+//            selectorScrollView.addSubview(button)
+//            if index == typeIndex {
+//                button.isSelected = true
+//                button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+//            }
+//            let width = title.width(for: UIFont.systemFont(ofSize: 16), height: 20) + 10
+//            button.snp.makeConstraints({ (make) in
+//                if index == 0 {
+//                    make.left.equalTo(selectorScrollView)
+//                } else {
+//                    make.left.equalTo(items[index - 1].snp.right)
+//                }
+//                make.width.equalTo(width)
+//                make.top.equalTo(selectorScrollView)
+//                make.height.equalTo(selectorScrollView)
+//                if index == array.count - 1 {
+//                    make.right.equalTo(selectorScrollView)
+//                }
+//            })
+//        }
         
     }
     

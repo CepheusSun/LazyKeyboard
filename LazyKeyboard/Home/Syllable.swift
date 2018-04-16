@@ -13,8 +13,8 @@ import RealmSwift
 
 final class Syllable: Object, Codable {
     
-    @objc dynamic var content: String?
-    @objc dynamic var type: String?
+    @objc dynamic var content: String = ""
+    @objc dynamic var type: String = "默认"
     @objc dynamic var alias: String?
     @objc dynamic var rank: Int = 0
     @objc dynamic var isDeleted = false

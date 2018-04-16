@@ -32,6 +32,7 @@
 		3360E8142054E46000DA92DA /* KeyboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B9122047AA7A007CD24B /* KeyboardEntity.swift */; };
 		3384055F206A377100596166 /* SyllableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3384055E206A377100596166 /* SyllableSection.swift */; };
 		338A10BA208482CA009B6CE7 /* SyllableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3384055E206A377100596166 /* SyllableSection.swift */; };
+		338A10BC20848882009B6CE7 /* RealmTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A10BB20848882009B6CE7 /* RealmTool.swift */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
 		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
@@ -132,6 +133,7 @@
 		3360E80E2054313800DA92DA /* String+Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Snippet.swift"; sourceTree = "<group>"; };
 		3360E81120544D0300DA92DA /* Syllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syllable.swift; sourceTree = "<group>"; };
 		3384055E206A377100596166 /* SyllableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableSection.swift; sourceTree = "<group>"; };
+		338A10BB20848882009B6CE7 /* RealmTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTool.swift; sourceTree = "<group>"; };
 		33C3B89C20463EFD007CD24B /* LazyKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C3B89F20463EFD007CD24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33C3B8A120463EFD007CD24B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				33C3B8B820464FE8007CD24B /* Snippet */,
 				33C3B8B520464939007CD24B /* More */,
 				33C3B89F20463EFD007CD24B /* AppDelegate.swift */,
+				338A10BB20848882009B6CE7 /* RealmTool.swift */,
 			);
 			path = LazyKeyboard;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				33C3B8E120464FE8007CD24B /* Delay+Snippet.swift in Sources */,
 				33C3B8E520464FE8007CD24B /* Array+Snippet.swift in Sources */,
 				33C3B8B220464813007CD24B /* MoreController.swift in Sources */,
+				338A10BC20848882009B6CE7 /* RealmTool.swift in Sources */,
 				33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */,
 				33C3B8DB20464FE8007CD24B /* ChainableView+Snippet.swift in Sources */,
 				33C3B8D220464FE8007CD24B /* Generic+Snippet.swift in Sources */,

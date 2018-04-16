@@ -72,21 +72,14 @@ class HomeController: UIViewController {
 
 // MARK: - TableView
 extension HomeController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.list.count
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.list[section].title
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.list[section].list.count
+        return viewModel.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath)
-        cell.textLabel?.text = viewModel.list[indexPath.section].list[indexPath.row]
+        cell.textLabel?.text = viewModel.list[indexPath.row].content
         return cell
     }
     
@@ -104,12 +97,11 @@ extension HomeController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .default, title: "删除") {[unowned self] (action, indexPath) in
-            self.viewModel.delete([indexPath])
-            tableView.deleteRows(at: [indexPath], with: .none)
+            self.viewModel.delete(indexPath)
         }
         let edit = UITableViewRowAction(style: .normal, title: "编辑") {[unowned self] (action, indexPath) in
             self.currentEditedIndex = indexPath.row
-            self.textField.text = self.viewModel.list[indexPath.section].list[indexPath.row]
+            self.textField.text = self.viewModel.list[indexPath.row].content
             self.addAction(self.navigationItem.rightBarButtonItem!)
         }
         return [delete, edit]
