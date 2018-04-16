@@ -21,7 +21,7 @@ class KeyboardView: UIView {
     
     var section: [Syllable] = [] {
         didSet {
-            self.pages = section[self.typeIndex].pages
+//            self.pages = 1//section[self.typeIndex].pages
             self.setupSelector()
         }
     }
@@ -50,9 +50,9 @@ class KeyboardView: UIView {
     func setupSelector() {
         selectorScrollView.subviews.forEach({$0.removeFromSuperview()})
         items = []
-        let array = []//section.map({ $0.title })
+        let array = ["分类1", "分类2"]
         for (index, title) in array.enumerated() {
-            
+
             let button = makeButton()
             items.append(button)
             button.setTitle(title, for: .normal)
@@ -76,7 +76,6 @@ class KeyboardView: UIView {
                 }
             })
         }
-        
     }
     
     private func makeButton() -> UIButton {
