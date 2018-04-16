@@ -25,43 +25,6 @@ class MoreController: UIViewController {
     }
 }
 
-// icloud
-extension MoreController {
-    func configICloud() {
-        DispatchQueue(label: "queue").async {
-            if App.isSettingExist() {
-                // success
-            } else {
-
-                Cloud.shared.fetchSettingFromCloud({ (set) in
-                    DispatchQueue.main.sync {
-                        self.hideHud()
-                        if set.hasSome {
-                            // success
-                            App.save(settingConfig: set!)
-                            self.viewModel = MoreViewModel(controller: self)
-                            self.tableView.reloadData()
-                        } else {
-                            // 新建一个
-                            App.save(settingConfig: SettingConfig())
-                        }
-                    }
-                })
-            }
-        }
-    }
-    
-    func syncICloud() {
-        Cloud.shared.syncSettingsToCloud {
-            $0.ifSome{ [weak self] in
-                self?.show($0, loading: false) }
-                .ifNone { [weak self] in
-                    self?.show("同步成功")
-            }
-        }
-    }
-}
-
 extension MoreController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {

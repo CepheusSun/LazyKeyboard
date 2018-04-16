@@ -19,10 +19,17 @@ final class HomeViewModel {
     var list: Results<Syllable>!
     
     init() {
-        let d = Defaults(userDefaults: C.groupUserDefaults!)
-        let res = d.get(for: Key<Syllable>(C.syllableKey))
-        
-        
+        let res = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
+        if let r = res {
+            for (index, item) in r.enumerated() {
+                let syllable: Syllable = Syllable()
+                syllable.type = "默认"
+                syllable.content = item
+                syllable.rank = index
+                db.insert(syllable)
+            }
+            C.groupUserDefaults?.removeObject(forKey: C.syllableKey)
+        }
         list = db.select().sorted(byKeyPath: "rank")
     }
     
