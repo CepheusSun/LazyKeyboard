@@ -21,7 +21,7 @@ class KeyboardView: UIView {
     
     var section: [Syllable] = [] {
         didSet {
-//            self.pages = 1//section[self.typeIndex].pages
+            self.pages = section[self.typeIndex].pages
             self.setupSelector()
         }
     }
