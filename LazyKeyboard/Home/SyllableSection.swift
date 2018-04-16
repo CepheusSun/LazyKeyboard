@@ -37,7 +37,7 @@ final class SyllableSection: Object, Codable {
             let key = KeyButton(KeyButton.KeyType.character(item))
             res[i].append(key)
         }
-        return res.map({$0.flatMap({$0})})
+        return res.map({$0.compactMap({$0})})
     }()
 }
 

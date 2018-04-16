@@ -14,7 +14,6 @@
 		3347C271204BE36D00A79276 /* OpenMainKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347C270204BE36D00A79276 /* OpenMainKit.m */; };
 		3347C273204CDB0200A79276 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3347C272204CDB0200A79276 /* CloudKit.framework */; };
 		334C45B3204D358800EE82AA /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C45B2204D358800EE82AA /* Cloud.swift */; };
-		334C45B6204D35EF00EE82AA /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C45B5204D35EF00EE82AA /* Document.swift */; };
 		335E08042048ECE200304036 /* UIColor+Snipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8CD20464FE8007CD24B /* UIColor+Snipper.swift */; };
 		335E08062048EE5600304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
 		335E08072048EF3A00304036 /* UIImage+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E08052048EE5600304036 /* UIImage+Snippet.swift */; };
@@ -32,6 +31,7 @@
 		3360E81320544D0300DA92DA /* Syllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360E81120544D0300DA92DA /* Syllable.swift */; };
 		3360E8142054E46000DA92DA /* KeyboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B9122047AA7A007CD24B /* KeyboardEntity.swift */; };
 		3384055F206A377100596166 /* SyllableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3384055E206A377100596166 /* SyllableSection.swift */; };
+		338A10BA208482CA009B6CE7 /* SyllableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3384055E206A377100596166 /* SyllableSection.swift */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
 		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
@@ -122,7 +122,6 @@
 		3347C270204BE36D00A79276 /* OpenMainKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenMainKit.m; sourceTree = "<group>"; };
 		3347C272204CDB0200A79276 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		334C45B2204D358800EE82AA /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
-		334C45B5204D35EF00EE82AA /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		335E08052048EE5600304036 /* UIImage+Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Snippet.swift"; sourceTree = "<group>"; };
 		335E08102049312200304036 /* PremiumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumController.swift; sourceTree = "<group>"; };
 		335E08112049312200304036 /* PremiumController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PremiumController.xib; sourceTree = "<group>"; };
@@ -216,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				334C45B2204D358800EE82AA /* Cloud.swift */,
-				334C45B5204D35EF00EE82AA /* Document.swift */,
 			);
 			path = Cloud;
 			sourceTree = "<group>";
@@ -486,7 +484,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = CepheusSun;
 				TargetAttributes = {
 					33C3B89B20463EFD007CD24B = {
@@ -645,7 +643,6 @@
 				33C3B8E120464FE8007CD24B /* Delay+Snippet.swift in Sources */,
 				33C3B8E520464FE8007CD24B /* Array+Snippet.swift in Sources */,
 				33C3B8B220464813007CD24B /* MoreController.swift in Sources */,
-				334C45B6204D35EF00EE82AA /* Document.swift in Sources */,
 				33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */,
 				33C3B8DB20464FE8007CD24B /* ChainableView+Snippet.swift in Sources */,
 				33C3B8D220464FE8007CD24B /* Generic+Snippet.swift in Sources */,
@@ -709,6 +706,7 @@
 				3360E81320544D0300DA92DA /* Syllable.swift in Sources */,
 				335E0819204945C300304036 /* SettingConfiguration.swift in Sources */,
 				33C3B9162047DEE5007CD24B /* KeyCell.swift in Sources */,
+				338A10BA208482CA009B6CE7 /* SyllableSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,6 +754,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -763,6 +762,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -813,6 +813,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -820,6 +821,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

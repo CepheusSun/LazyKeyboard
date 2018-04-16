@@ -8,6 +8,18 @@
 
 import UIKit
 
+
+protocol With {}
+extension With where Self: AnyObject {
+    @discardableResult
+    func with<T>(_ property: ReferenceWritableKeyPath<Self, T>, setTo value: T) -> Self {
+        self[keyPath: property] = value
+        return self
+    }
+}
+extension UIView: With {}
+
+
 extension UIView {
     
     func fillSuperview() {
@@ -15,6 +27,7 @@ extension UIView {
                leading: superview?.leadingAnchor,
                bottom: superview?.bottomAnchor,
                trailing: superview?.trailingAnchor)
+        
     }
     
     func fillSuperviewAdaptSafeArea() {
