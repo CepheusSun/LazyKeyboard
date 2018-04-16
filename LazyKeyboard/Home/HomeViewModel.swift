@@ -19,6 +19,10 @@ final class HomeViewModel {
     var list: Results<Syllable>!
     
     init() {
+        let d = Defaults(userDefaults: C.groupUserDefaults!)
+        let res = d.get(for: Key<Syllable>(C.syllableKey))
+        
+        
         list = db.select().sorted(byKeyPath: "rank")
     }
     
