@@ -33,6 +33,7 @@
 		3384055F206A377100596166 /* SyllableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3384055E206A377100596166 /* SyllableSection.swift */; };
 		338A10BA208482CA009B6CE7 /* SyllableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3384055E206A377100596166 /* SyllableSection.swift */; };
 		338A10BC20848882009B6CE7 /* RealmTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A10BB20848882009B6CE7 /* RealmTool.swift */; };
+		338A10BD2084F12F009B6CE7 /* RealmTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A10BB20848882009B6CE7 /* RealmTool.swift */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
 		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
@@ -693,6 +694,7 @@
 				33C3B9052046A5B3007CD24B /* ChainableView+Snippet.swift in Sources */,
 				335E08072048EF3A00304036 /* UIImage+Snippet.swift in Sources */,
 				33C3B8FB2046A07B007CD24B /* KeyboardViewController.swift in Sources */,
+				338A10BD2084F12F009B6CE7 /* RealmTool.swift in Sources */,
 				3360E810205443D200DA92DA /* String+Snippet.swift in Sources */,
 				33C3B90A20478EC6007CD24B /* General.swift in Sources */,
 				33C3B90920478E90007CD24B /* KeyboardViewModel.swift in Sources */,

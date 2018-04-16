@@ -16,12 +16,10 @@ final class HomeViewModel {
     var output = PublishSubject<Bool>()
     
     var db = RealmManager<Syllable>()
-    var notificationToken: NotificationToken!
     var list: Results<Syllable>!
     
     init() {
         list = db.select().sorted(byKeyPath: "rank")
-        print(list)
     }
     
     func addSyllable(_ s: String) {
@@ -47,11 +45,11 @@ final class HomeViewModel {
         // 往上排序
         if from.row > to.row { //
             let temp = list[from.row]
-            list.filter({$0.rank >= to.row && $0.rank < from.row}).forEach({$0.rank += 1})
+            list.filter{$0.rank >= to.row && $0.rank < from.row}.forEach{$0.rank += 1}
             temp.rank = to.row
         } else {
             let temp = list[from.row]
-            list.filter({$0.rank > from.row && $0.rank <= to.row}).forEach({$0.rank -= 1})
+            list.filter{$0.rank > from.row && $0.rank <= to.row}.forEach{$0.rank -= 1}
             temp.rank = to.row
         }
         try! db.realm.commitWrite()

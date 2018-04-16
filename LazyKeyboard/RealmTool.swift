@@ -34,18 +34,11 @@ final class RealmManager<T: Object> {
         return res
     }
     
-//     修改，将修改后的模型传入
-//    func update(_ s: T) {
-//        try! realm.write {
-//            self.realm.add(s, update: true)
-//        }
-//    }
-    
     var realm: Realm!
     
     func configRealm() {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let filePath = paths[0] + "/\(Model.self).realm"
+        let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: C.groupAppIdentifier)?.absoluteString
+        let filePath = path! + "/\(Model.self).realm"
         var realmConfiguration = Realm.Configuration()
         realmConfiguration.fileURL = URL(string: filePath)!
         // 数据库版本号

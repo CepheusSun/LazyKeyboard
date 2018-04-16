@@ -10,7 +10,9 @@ import UIKit
 
 struct C {
     
+    static let groupAppIdentifier = "group.CepheusSun.lazy"
     static let groupUserDefaults = UserDefaults(suiteName: "group.CepheusSun.lazy")
+
     static let syllableKey = "syllable"
     static let appStoreKey = "1354448059"
     static let appStoreUrl = "https://itunes.apple.com/app/id1354448059"
