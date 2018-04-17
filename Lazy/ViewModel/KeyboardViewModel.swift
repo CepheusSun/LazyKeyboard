@@ -17,6 +17,17 @@ final class KeyboardViewModel {
     var list: [Syllable] = []
     
     init() {
+        let res = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
+        if let r = res {
+            for (index, item) in r.enumerated() {
+                let syllable: Syllable = Syllable()
+                syllable.type = "默认"
+                syllable.content = item
+                syllable.rank = index
+                db.insert(syllable)
+            }
+            C.groupUserDefaults?.removeObject(forKey: C.syllableKey)
+        }
         let temp = db.select().sorted(byKeyPath: "rank")
         for x in temp.enumerated() {
             list.append(x.element)
