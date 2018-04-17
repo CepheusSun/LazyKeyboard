@@ -8,6 +8,7 @@
 
 import UIKit
 
-extension UITableViewCell: Reuse {}
+final class LKTableViewCell: UITableViewCell, Reuse {}
+
 //extension UICollectionViewCell: NibReuse {}
 

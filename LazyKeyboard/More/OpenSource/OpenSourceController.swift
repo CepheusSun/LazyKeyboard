@@ -14,7 +14,7 @@ class OpenSourceController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(cellType: UITableViewCell.self)
+        tableView.register(cellType: LKTableViewCell.self)
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 10))
         if #available(iOS 11.0, *) {
             navigationItem.largeTitleDisplayMode = .never
@@ -28,7 +28,7 @@ extension OpenSourceController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath)
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: LKTableViewCell.self)
         cell.textLabel?.text = viewModel.list[indexPath.row]["title"]
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
         cell.accessoryType = .disclosureIndicator

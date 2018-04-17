@@ -23,8 +23,8 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.register(cellType: UITableViewCell.self)
+
+        tableView.register(cellType: HomeTableViewCell.self)
         automaticallyAdjustsScrollViewInsets = false
         NotificationCenter.default
             .addObserver(self, selector: #selector(keyboardWillShow(notification:)),
@@ -78,9 +78,8 @@ extension HomeController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath)
-        cell.textLabel?.text = viewModel.list[indexPath.row].content
-        cell.detailTextLabel?.text = viewModel.list[indexPath.row].type
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: HomeTableViewCell.self)
+        cell.model = viewModel.list[indexPath.row];
         return cell
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoreTableViewCell: UITableViewCell {
+class MoreTableViewCell: UITableViewCell, Reuse {
 
     var item: MoreItem! {
         didSet {
