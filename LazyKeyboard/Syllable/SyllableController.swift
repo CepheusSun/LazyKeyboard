@@ -170,7 +170,7 @@ extension SyllableController {
     
     private func configLongPress() {
         let ges = UILongPressGestureRecognizer.init(target: self, action: #selector(longPressAction(_:)))
-        ges.minimumPressDuration = 1.0
+        ges.minimumPressDuration = 0.6
         tableView.addGestureRecognizer(ges)
     }
     

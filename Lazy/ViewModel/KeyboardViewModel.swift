@@ -41,7 +41,7 @@ final class KeyboardViewModel {
         for (index, item) in list.enumerated() {
             let i = index / 8
             let j = index % 8
-            let key = KeyButton(KeyButton.KeyType.character(item.content))
+            let key = KeyButton(KeyButton.KeyType.character(item))
             res[i].append(key)
         }
         return res.map({$0.compactMap({$0})})

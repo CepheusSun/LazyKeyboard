@@ -49,7 +49,11 @@ class PageCell: UICollectionViewCell, NibReusable {
                 
                 switch key.type {
                 case .character(let letter):
-                     self.buttonItems[index].setTitle(letter, for: .normal)
+                    if letter.alias.hasSome {
+                        self.buttonItems[index].setTitle(letter.alias, for: .normal)
+                    } else {
+                        self.buttonItems[index].setTitle(letter.content, for: .normal)
+                    }
                 default:
                     self.buttonItems[index].setTitle("", for: .normal)
                 }

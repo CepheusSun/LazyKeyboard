@@ -18,7 +18,11 @@ class KeyCell: UICollectionViewCell, NibReusable {
         didSet {
             switch key.type {
             case .character(let letter):
-                label.text = letter
+                if letter.alias.hasSome {
+                    label.text = letter.alias!
+                } else {
+                    letter.alias = letter.content
+                }
             default:
                 label.text = ""
             }

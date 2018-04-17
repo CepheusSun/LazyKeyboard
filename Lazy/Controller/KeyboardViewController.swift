@@ -38,7 +38,7 @@ class KeyboardViewController: UIInputViewController {
             
             switch $0.type {
             case .character(let letter):
-                self.textDocumentProxy.insertText(letter)
+                self.textDocumentProxy.insertText(letter.content)
                 self.autoSend()
                 self.playKeySound()
             case .backspace:

@@ -10,7 +10,7 @@ import Foundation
 
 class KeyButton {
     enum KeyType {
-        case character(String)
+        case character(Syllable)
         case backspace
         case space
         case spaceLongPress
