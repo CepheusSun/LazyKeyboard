@@ -11,7 +11,7 @@ import RxSwift
 import RealmSwift
 import Realm
 
-final class HomeViewModel {
+final class SyllableViewModel {
     
     var output = PublishSubject<Bool>()
     

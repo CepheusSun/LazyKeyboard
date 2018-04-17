@@ -9,9 +9,9 @@
 import UIKit
 import RxSwift
 
-class HomeController: UIViewController {
+class SyllableController: UIViewController {
 
-    private var viewModel = HomeViewModel()
+    private var viewModel = SyllableViewModel()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var inputContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var textField: UITextField!
@@ -24,7 +24,7 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(cellType: HomeTableViewCell.self)
+        tableView.register(cellType: SyllableTableViewCell.self)
         automaticallyAdjustsScrollViewInsets = false
         NotificationCenter.default
             .addObserver(self, selector: #selector(keyboardWillShow(notification:)),
@@ -33,12 +33,14 @@ class HomeController: UIViewController {
         NotificationCenter.default
             .addObserver(self, selector: #selector(keyboardWillHide(notification:)),
                          name: .UIKeyboardWillHide, object: nil)
-         
+        
+        configLongPress()
         
         viewModel.output.asObserver()
             .subscribe(onNext: {[weak self] _ in
                 self?.tableView.reloadData()
             }).disposed(by: bag)
+        
     }
     
     var editionStatus = false
@@ -71,14 +73,14 @@ class HomeController: UIViewController {
 }
 
 // MARK: - TableView
-extension HomeController: UITableViewDataSource {
+extension SyllableController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: HomeTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SyllableTableViewCell.self)
         cell.model = viewModel.list[indexPath.row];
         return cell
     }
@@ -108,14 +110,14 @@ extension HomeController: UITableViewDataSource {
     }
 }
 
-extension HomeController: UITableViewDelegate {
+extension SyllableController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 // MARK: - 键盘
-extension HomeController: UITextFieldDelegate {
+extension SyllableController: UITextFieldDelegate {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let userInfo = notification.userInfo,
            let value = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue,
@@ -157,6 +159,36 @@ extension HomeController: UITextFieldDelegate {
         textField.text = ""
         currentEditedIndex = nil
         return true
+    }
+    
+}
+
+//单个 cell 的长按手势
+extension SyllableController {
+    
+    private func configLongPress() {
+        let ges = UILongPressGestureRecognizer.init(target: self, action: #selector(longPressAction(_:)))
+        ges.minimumPressDuration = 1.0
+        tableView.addGestureRecognizer(ges)
+    }
+    
+    @objc private func longPressAction(_ gesture: UILongPressGestureRecognizer) {
+        if gesture.state == .began {
+            let point = gesture.location(in: tableView)
+            let indexPath = tableView.indexPathForRow(at: point)
+            if indexPath.hasSome {
+                let alert = UIAlertControllerStyle.actionSheet.controller(title: "设置分组", message: nil, actions:
+                    [
+                        "分组1".alertAction(style: .default, handler: {_ in
+                            
+                        }),
+                        "取消".alertAction(style: .cancel, handler: { _ in
+                            
+                        })
+                    ])
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
 }

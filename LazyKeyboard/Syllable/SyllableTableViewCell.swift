@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell, NibReuse {
+class SyllableTableViewCell: UITableViewCell, NibReuse {
 
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!

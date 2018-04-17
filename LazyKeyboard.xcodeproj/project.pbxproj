@@ -29,12 +29,12 @@
 		3360E81220544D0300DA92DA /* Syllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360E81120544D0300DA92DA /* Syllable.swift */; };
 		3360E81320544D0300DA92DA /* Syllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360E81120544D0300DA92DA /* Syllable.swift */; };
 		3360E8142054E46000DA92DA /* KeyboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B9122047AA7A007CD24B /* KeyboardEntity.swift */; };
-		33740F9A2085D25400E2939E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33740F982085D25400E2939E /* HomeTableViewCell.swift */; };
-		33740F9B2085D25400E2939E /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33740F992085D25400E2939E /* HomeTableViewCell.xib */; };
+		33740F9A2085D25400E2939E /* SyllableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33740F982085D25400E2939E /* SyllableTableViewCell.swift */; };
+		33740F9B2085D25400E2939E /* SyllableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33740F992085D25400E2939E /* SyllableTableViewCell.xib */; };
 		338A10BC20848882009B6CE7 /* RealmTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A10BB20848882009B6CE7 /* RealmTool.swift */; };
 		338A10BD2084F12F009B6CE7 /* RealmTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A10BB20848882009B6CE7 /* RealmTool.swift */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
-		33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* HomeController.swift */; };
+		33C3B8A220463EFD007CD24B /* SyllableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8A120463EFD007CD24B /* SyllableController.swift */; };
 		33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A320463EFD007CD24B /* Main.storyboard */; };
 		33C3B8AA20463EFD007CD24B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C3B8A820463EFD007CD24B /* LaunchScreen.storyboard */; };
 		33C3B8B220464813007CD24B /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8B120464813007CD24B /* MoreController.swift */; };
@@ -65,7 +65,7 @@
 		33C3B8E620464FE8007CD24B /* Number+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8CF20464FE8007CD24B /* Number+Snippet.swift */; };
 		33C3B8E92046517C007CD24B /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8E72046517C007CD24B /* MoreTableViewCell.swift */; };
 		33C3B8ED20465223007CD24B /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8EC20465223007CD24B /* General.swift */; };
-		33C3B8F020467BC7007CD24B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8EF20467BC7007CD24B /* HomeViewModel.swift */; };
+		33C3B8F020467BC7007CD24B /* SyllableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8EF20467BC7007CD24B /* SyllableViewModel.swift */; };
 		33C3B8F220467C3C007CD24B /* CellWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8F120467C3C007CD24B /* CellWrapper.swift */; };
 		33C3B8FB2046A07B007CD24B /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B8FA2046A07B007CD24B /* KeyboardViewController.swift */; };
 		33C3B8FF2046A07B007CD24B /* Lazy.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 33C3B8F82046A07B007CD24B /* Lazy.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -131,12 +131,12 @@
 		335E0825204AE04F00304036 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		3360E80E2054313800DA92DA /* String+Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Snippet.swift"; sourceTree = "<group>"; };
 		3360E81120544D0300DA92DA /* Syllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syllable.swift; sourceTree = "<group>"; };
-		33740F982085D25400E2939E /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		33740F992085D25400E2939E /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		33740F982085D25400E2939E /* SyllableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableTableViewCell.swift; sourceTree = "<group>"; };
+		33740F992085D25400E2939E /* SyllableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SyllableTableViewCell.xib; sourceTree = "<group>"; };
 		338A10BB20848882009B6CE7 /* RealmTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTool.swift; sourceTree = "<group>"; };
 		33C3B89C20463EFD007CD24B /* LazyKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C3B89F20463EFD007CD24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33C3B8A120463EFD007CD24B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		33C3B8A120463EFD007CD24B /* SyllableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableController.swift; sourceTree = "<group>"; };
 		33C3B8A420463EFD007CD24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33C3B8A620463EFD007CD24B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33C3B8A920463EFD007CD24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		33C3B8CF20464FE8007CD24B /* Number+Snippet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+Snippet.swift"; sourceTree = "<group>"; };
 		33C3B8E72046517C007CD24B /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		33C3B8EC20465223007CD24B /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
-		33C3B8EF20467BC7007CD24B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		33C3B8EF20467BC7007CD24B /* SyllableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableViewModel.swift; sourceTree = "<group>"; };
 		33C3B8F120467C3C007CD24B /* CellWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWrapper.swift; sourceTree = "<group>"; };
 		33C3B8F320468C37007CD24B /* LazyKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LazyKeyboard.entitlements; sourceTree = "<group>"; };
 		33C3B8F82046A07B007CD24B /* Lazy.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Lazy.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -304,7 +304,7 @@
 			children = (
 				33C3B8F320468C37007CD24B /* LazyKeyboard.entitlements */,
 				33F8642B204B04BA00D9AF7D /* Resources */,
-				33C3B8EE20467B46007CD24B /* Home */,
+				33C3B8EE20467B46007CD24B /* Syllable */,
 				33C3B8EB20465219007CD24B /* General */,
 				33C3B8B820464FE8007CD24B /* Snippet */,
 				33C3B8B520464939007CD24B /* More */,
@@ -371,17 +371,17 @@
 			path = General;
 			sourceTree = "<group>";
 		};
-		33C3B8EE20467B46007CD24B /* Home */ = {
+		33C3B8EE20467B46007CD24B /* Syllable */ = {
 			isa = PBXGroup;
 			children = (
-				33C3B8A120463EFD007CD24B /* HomeController.swift */,
-				33C3B8EF20467BC7007CD24B /* HomeViewModel.swift */,
+				33C3B8A120463EFD007CD24B /* SyllableController.swift */,
+				33C3B8EF20467BC7007CD24B /* SyllableViewModel.swift */,
 				33C3B8F120467C3C007CD24B /* CellWrapper.swift */,
 				3360E81120544D0300DA92DA /* Syllable.swift */,
-				33740F982085D25400E2939E /* HomeTableViewCell.swift */,
-				33740F992085D25400E2939E /* HomeTableViewCell.xib */,
+				33740F982085D25400E2939E /* SyllableTableViewCell.swift */,
+				33740F992085D25400E2939E /* SyllableTableViewCell.xib */,
 			);
-			path = Home;
+			path = Syllable;
 			sourceTree = "<group>";
 		};
 		33C3B8F92046A07B007CD24B /* Lazy */ = {
@@ -537,7 +537,7 @@
 				335E08132049312200304036 /* PremiumController.xib in Resources */,
 				33FD01E62048488300E66FF6 /* Assets.xcassets in Resources */,
 				33F8642D204B04C900D9AF7D /* iconfont.ttf in Resources */,
-				33740F9B2085D25400E2939E /* HomeTableViewCell.xib in Resources */,
+				33740F9B2085D25400E2939E /* SyllableTableViewCell.xib in Resources */,
 				33C3B8A520463EFD007CD24B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,13 +630,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C3B8A220463EFD007CD24B /* HomeController.swift in Sources */,
+				33C3B8A220463EFD007CD24B /* SyllableController.swift in Sources */,
 				33C3B8DC20464FE8007CD24B /* Extension+Snippet.swift in Sources */,
 				33C3B8D520464FE8007CD24B /* StatusBar+Snippet.swift in Sources */,
 				33C3B8D720464FE8007CD24B /* Operator.swift in Sources */,
 				33C3B8D320464FE8007CD24B /* UITextField+Snippet.swift in Sources */,
 				3360E81220544D0300DA92DA /* Syllable.swift in Sources */,
-				33740F9A2085D25400E2939E /* HomeTableViewCell.swift in Sources */,
+				33740F9A2085D25400E2939E /* SyllableTableViewCell.swift in Sources */,
 				33C3B8E120464FE8007CD24B /* Delay+Snippet.swift in Sources */,
 				33C3B8E520464FE8007CD24B /* Array+Snippet.swift in Sources */,
 				33C3B8B220464813007CD24B /* MoreController.swift in Sources */,
@@ -671,7 +671,7 @@
 				33C3B8E92046517C007CD24B /* MoreTableViewCell.swift in Sources */,
 				33C3B8DE20464FE8007CD24B /* Namespace+Snipper.swift in Sources */,
 				33C3B8E020464FE8007CD24B /* Regex.swift in Sources */,
-				33C3B8F020467BC7007CD24B /* HomeViewModel.swift in Sources */,
+				33C3B8F020467BC7007CD24B /* SyllableViewModel.swift in Sources */,
 				33C3B8E420464FE8007CD24B /* UIColor+Snipper.swift in Sources */,
 				3360E8142054E46000DA92DA /* KeyboardEntity.swift in Sources */,
 				33C3B90C20478ED6007CD24B /* Const.swift in Sources */,
