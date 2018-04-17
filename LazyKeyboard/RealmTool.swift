@@ -37,10 +37,12 @@ final class RealmManager<T: Object> {
     var realm: Realm!
     
     func configRealm() {
+        
         let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: C.groupAppIdentifier)
         let fileURL = path!.appendingPathComponent("\(Model.self).realm")
-        
+
         var realmConfiguration = Realm.Configuration()
+        
         realmConfiguration.fileURL = fileURL
         // 数据库版本号
         let currentVersion: UInt64 = 1;
@@ -50,12 +52,13 @@ final class RealmManager<T: Object> {
                 // 数据库迁移相关的东西
             }
         }
-
+        
+        print(fileURL)
+        Realm.Configuration.defaultConfiguration = realmConfiguration
         do {
-            print(fileURL)
-            realm = try Realm.init(configuration: realmConfiguration)
+            realm = try Realm()
         } catch {
-            fatalError("错了错了错了❌❌\(fileURL)\(error)")
+            fatalError("错了错了错了❌❌\(fileURL)。。。xxxxxxx。。。\(error)")
         }
         
     }
