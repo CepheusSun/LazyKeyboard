@@ -75,4 +75,16 @@ final class SyllableViewModel {
         self.output.onNext(true)
     }
     
+    func editSyllableAlias(_ s: String?, at index: Int) {
+        var res = s
+        if s == "" {
+            res = nil
+        }
+        let syllable = list[index]
+        db.realm.beginWrite()
+        syllable.alias = res
+        try! db.realm.commitWrite()
+        self.output.onNext(true)
+    }
+    
 }

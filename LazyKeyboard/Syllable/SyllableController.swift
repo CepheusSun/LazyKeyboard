@@ -16,6 +16,8 @@ class SyllableController: UIViewController {
     @IBOutlet weak var inputContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var textField: UITextField!
     
+    var aliasTextField: UITextField!
+
     // 当前正在编辑的字段, 如果是新增, 该字段为nil
     var currentEditedIndex: Int?
     
@@ -177,19 +179,34 @@ extension SyllableController {
             let point = gesture.location(in: tableView)
             let indexPath = tableView.indexPathForRow(at: point)
             if indexPath.hasSome {
-                let alert = UIAlertControllerStyle.actionSheet.controller(title: "设置分组", message: nil, actions:
+                let alert = UIAlertControllerStyle.actionSheet.controller(title: nil, message: nil, actions:
                     [
-                        "分组1".alertAction(style: .default, handler: {_ in
-                            
+                        "移动到其他分组".alertAction(style: .default, handler: {_ in
+                            // TDO: 移动分组
                         }),
-                        "取消".alertAction(style: .cancel, handler: { _ in
-                            
-                        })
+                        "设置别名".alertAction(style: .default, handler: {_ in
+                            self.setAlias(indexPath!)
+                        }),
+                        "取消".alertAction(style: .cancel, handler: nil)
                     ])
                 self.present(alert, animated: true, completion: nil)
             }
         }
     }
     
+    private func setAlias(_ indexPath: IndexPath) {
+        
+        let alert = UIAlertControllerStyle.alert.controller(title: nil, message: "设置别名", actions:
+            [
+                "取消".alertAction(style: .cancel, handler: nil),
+                "确定".alertAction(style: .default, handler: { _ in
+                    self.viewModel.editSyllableAlias(self.aliasTextField.text, at: indexPath.row)
+                })
+            ])
+        alert.addTextField {
+            self.aliasTextField = $0
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
