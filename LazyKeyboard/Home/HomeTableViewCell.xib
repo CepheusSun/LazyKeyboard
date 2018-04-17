@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7l-8I-mDT">
-                        <rect key="frame" x="15" y="7" width="417" height="51.5"/>
+                        <rect key="frame" x="20" y="7" width="412" height="51.5"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="lGN-zW-8sF"/>
                         </constraints>
@@ -42,7 +42,7 @@
                     <constraint firstItem="yod-LL-DXy" firstAttribute="leading" secondItem="e7l-8I-mDT" secondAttribute="trailing" constant="10" id="CIn-61-1ge"/>
                     <constraint firstItem="yod-LL-DXy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Pvt-01-s09"/>
                     <constraint firstItem="e7l-8I-mDT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="UGx-X3-yPN"/>
-                    <constraint firstItem="e7l-8I-mDT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="gpT-y4-e9o"/>
+                    <constraint firstItem="e7l-8I-mDT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="gpT-y4-e9o"/>
                     <constraint firstItem="e7l-8I-mDT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="luw-Om-Lq7"/>
                     <constraint firstAttribute="trailing" secondItem="yod-LL-DXy" secondAttribute="trailing" constant="10" id="wat-g0-Ybz"/>
                 </constraints>
