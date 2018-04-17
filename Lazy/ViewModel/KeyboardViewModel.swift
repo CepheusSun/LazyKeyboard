@@ -24,7 +24,6 @@ final class KeyboardViewModel {
         print(list)
     }
     
-    
     lazy var pageCount: Int = {
         if list.count == 0 {
             return 0

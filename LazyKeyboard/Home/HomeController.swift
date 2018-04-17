@@ -80,6 +80,7 @@ extension HomeController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath)
         cell.textLabel?.text = viewModel.list[indexPath.row].content
+        cell.detailTextLabel?.text = viewModel.list[indexPath.row].type
         return cell
     }
     
