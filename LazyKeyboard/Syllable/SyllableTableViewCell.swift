@@ -17,7 +17,14 @@ class SyllableTableViewCell: UITableViewCell, NibReuse {
         didSet {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = 6;
-            let attributeString = NSAttributedString(string: model.content, attributes: [NSAttributedStringKey.paragraphStyle: paragraphStyle])
+            let attributeString = NSMutableAttributedString(string: model.content)
+            
+            model.alias.ifSome {
+                let alias = NSAttributedString(string: "(别名:\($0))", attributes: [NSAttributedStringKey.foregroundColor: C.themeGreen])
+                attributeString.append(alias)
+            }
+            attributeString.addAttributes([NSAttributedStringKey.paragraphStyle: paragraphStyle], range:NSRange.init(location: 0, length: attributeString.length))
+            
             contentLabel.attributedText = attributeString;
             typeLabel.text = model.type
         }
