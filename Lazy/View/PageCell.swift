@@ -50,9 +50,12 @@ class PageCell: UICollectionViewCell, NibReusable {
                 switch key.type {
                 case .character(let letter):
                     if letter.alias.hasSome {
+                        //FIXME: 以后加一个 attribute
                         self.buttonItems[index].setTitle(letter.alias, for: .normal)
+                        self.buttonItems[index].titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
                     } else {
                         self.buttonItems[index].setTitle(letter.content, for: .normal)
+                        self.buttonItems[index].titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
                     }
                 default:
                     self.buttonItems[index].setTitle("", for: .normal)

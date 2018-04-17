@@ -20,8 +20,12 @@ class KeyCell: UICollectionViewCell, NibReusable {
             case .character(let letter):
                 if letter.alias.hasSome {
                     label.text = letter.alias!
+//                    label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+                    label.textColor = .red
                 } else {
-                    letter.alias = letter.content
+                    label.text = letter.content
+//                    label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    label.textColor = .black
                 }
             default:
                 label.text = ""

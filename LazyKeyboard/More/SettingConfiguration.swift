@@ -41,7 +41,14 @@ final class SettingConfig: Codable {
             App.save(settingConfig: self)
         }
     }
+    
     var isSendAfterSelected: Bool = false {
+        didSet {
+            App.save(settingConfig: self)
+        }
+    }
+
+    var isAliasSendAfterSelected: Bool = false {
         didSet {
             App.save(settingConfig: self)
         }

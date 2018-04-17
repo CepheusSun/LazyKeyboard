@@ -50,7 +50,7 @@ class KeyboardView: UIView {
     func setupSelector() {
         selectorScrollView.subviews.forEach({$0.removeFromSuperview()})
         items = []
-        let array = ["分类1", "分类2"]
+        let array = ["感谢使用懒人键盘"]
         for (index, title) in array.enumerated() {
 
             let button = makeButton()

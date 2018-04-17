@@ -39,7 +39,10 @@ class KeyboardViewController: UIInputViewController {
             switch $0.type {
             case .character(let letter):
                 self.textDocumentProxy.insertText(letter.content)
-                self.autoSend()
+                // 有别名
+                if !(letter.alias.hasSome && self.viewModel.setting.isAliasSendAfterSelected == false) {
+                    self.autoSend()
+                }
                 self.playKeySound()
             case .backspace:
                 self.textDocumentProxy.deleteBackward()
@@ -100,6 +103,7 @@ class KeyboardViewController: UIInputViewController {
     }
     
     private func autoSend() {
+        
         if viewModel.setting.isSendAfterSelected {
             DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
                 self.textDocumentProxy.insertText("\n")

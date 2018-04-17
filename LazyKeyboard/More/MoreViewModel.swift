@@ -48,6 +48,14 @@ final class MoreViewModel {
                     self.setting.isSendAfterSelected = !self.setting.isSendAfterSelected
                 }]),
             
+            MoreSection(header: nil, footer: "只有当选择后直接发送打开时生效", items: [
+                MoreItem(title: "选择别名后直接发送", showMore: nil, message: nil, switchState: self.setting.isAliasSendAfterSelected){[unowned self] in
+                    self.setting.isAliasSendAfterSelected = !self.setting.isAliasSendAfterSelected
+                }]),
+            
+
+
+            
 //            MoreSection(header: nil, footer: "在键盘上长按回车即可打开。请勿过于依赖此功能。", items: [
 //                MoreItem(title: "关于自动回车", showMore: nil, message: nil, switchState: nil){}]),
     
