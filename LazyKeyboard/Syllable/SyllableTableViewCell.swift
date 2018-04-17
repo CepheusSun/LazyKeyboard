@@ -20,7 +20,7 @@ class SyllableTableViewCell: UITableViewCell, NibReuse {
             let attributeString = NSMutableAttributedString(string: model.content)
             
             model.alias.ifSome {
-                let alias = NSAttributedString(string: "(别名:\($0))", attributes: [NSAttributedStringKey.foregroundColor: C.themeGreen])
+                let alias = NSAttributedString(string: "(别名：\($0))", attributes: [NSAttributedStringKey.foregroundColor: C.themeGreen])
                 attributeString.append(alias)
             }
             attributeString.addAttributes([NSAttributedStringKey.paragraphStyle: paragraphStyle], range:NSRange.init(location: 0, length: attributeString.length))
