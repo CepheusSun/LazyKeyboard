@@ -27,8 +27,8 @@ final class HomeViewModel {
             let typeObj = TypeObject()
             typeObj.content = "默认"
             db.insert(typeObj)
+            dbType = db.select()
         }
-        dbType = db.select()
         list = dbType[0].content.components(separatedBy: "&&&")
     }
     

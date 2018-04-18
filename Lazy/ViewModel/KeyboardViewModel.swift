@@ -15,7 +15,10 @@ final class KeyboardViewModel {
     let setting = App.getSettingConfig()
     var db = RealmManager<Syllable>()
     var list: [Syllable] = []
-    
+
+    var typeDB = RealmManager<TypeObject>()
+    var typelist: [String] = []
+
     init() {
         let res = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
         if let r = res {
@@ -32,7 +35,15 @@ final class KeyboardViewModel {
         for x in temp.enumerated() {
             list.append(x.element)
         }
-        print(list)
+        
+        var typeObject = typeDB.select()
+        if typeObject.isEmpty {
+            let typeObj = TypeObject()
+            typeObj.content = "默认"
+            typeDB.insert(typeObj)
+            typeObject = typeDB.select()
+        }
+        typelist = typeObject[0].content.components(separatedBy: "&&&")
     }
     
     lazy var pageCount: Int = {

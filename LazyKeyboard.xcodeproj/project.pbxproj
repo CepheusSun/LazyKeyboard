@@ -34,6 +34,7 @@
 		33740F9F208743CF00E2939E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33740F9E208743CF00E2939E /* HomeController.swift */; };
 		33740FA12087443100E2939E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33740FA02087443100E2939E /* HomeViewModel.swift */; };
 		33740FA32087472300E2939E /* TypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33740FA22087472300E2939E /* TypeObject.swift */; };
+		33740FA4208777F100E2939E /* TypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33740FA22087472300E2939E /* TypeObject.swift */; };
 		338A10BC20848882009B6CE7 /* RealmTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A10BB20848882009B6CE7 /* RealmTool.swift */; };
 		338A10BD2084F12F009B6CE7 /* RealmTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A10BB20848882009B6CE7 /* RealmTool.swift */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
@@ -712,6 +713,7 @@
 				335E08182049385500304036 /* CodableUserDefault.swift in Sources */,
 				33C3B9192047E584007CD24B /* KeyboardView.swift in Sources */,
 				335E08042048ECE200304036 /* UIColor+Snipper.swift in Sources */,
+				33740FA4208777F100E2939E /* TypeObject.swift in Sources */,
 				33C3B90D20478EE5007CD24B /* Const.swift in Sources */,
 				33C3B90F20479113007CD24B /* CellWrapper.swift in Sources */,
 				33C3B91020479307007CD24B /* UIView+Snippet.swift in Sources */,

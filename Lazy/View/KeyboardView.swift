@@ -32,6 +32,8 @@ class KeyboardView: UIView {
         }
     }
     
+    var typeList: [String] = []
+    
     var kvos: [NSKeyValueObservation] = []
     
     typealias KeyboardViewCallBack = (KeyButton) -> ()
@@ -50,7 +52,7 @@ class KeyboardView: UIView {
     func setupSelector() {
         selectorScrollView.subviews.forEach({$0.removeFromSuperview()})
         items = []
-        let array = ["感谢使用懒人键盘"]
+        let array = typeList
         for (index, title) in array.enumerated() {
 
             let button = makeButton()

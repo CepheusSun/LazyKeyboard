@@ -32,6 +32,7 @@ class KeyboardViewController: UIInputViewController {
         keyboard = KeyboardView.create(with: self)
         keyboard.section = viewModel.list
         keyboard.pages = viewModel.pages
+        keyboard.typeList = viewModel.typelist
         view.addSubview(keyboard)
         
         keyboard.callBack = {[unowned self] in
