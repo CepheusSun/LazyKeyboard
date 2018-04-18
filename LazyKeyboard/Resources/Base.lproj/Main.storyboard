@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,13 +15,13 @@
         <!--短语列表-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SyllableController" customModule="LazyKeyboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SyllableController" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="SyllableController" customModule="LazyKeyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lVs-VF-EIO">
-                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="mmb-mY-Hc0"/>
@@ -76,16 +77,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="短语列表" id="GHy-aL-BV6">
-                        <barButtonItem key="leftBarButtonItem" title="编辑" id="jHO-dj-vrp">
-                            <connections>
-                                <action selector="editAction:" destination="BYZ-38-t0r" id="wtT-jh-bUh"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wck-2v-zOc">
-                            <connections>
-                                <action selector="addAction:" destination="BYZ-38-t0r" id="Z51-gR-lij"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Wck-2v-zOc">
+                                <connections>
+                                    <action selector="addAction:" destination="BYZ-38-t0r" id="Z51-gR-lij"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="编辑" id="jHO-dj-vrp">
+                                <connections>
+                                    <action selector="editAction:" destination="BYZ-38-t0r" id="wtT-jh-bUh"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="inputContentViewTopConstraint" destination="yFG-mZ-oYV" id="c3D-UN-uY2"/>
@@ -95,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361" y="134"/>
+            <point key="canvasLocation" x="1308" y="134"/>
         </scene>
         <!--更多-->
         <scene sceneID="gcm-kr-WCW">
@@ -131,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsW-gS-jOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-303" y="812"/>
+            <point key="canvasLocation" x="-234" y="812"/>
         </scene>
         <!--开源许可证-->
         <scene sceneID="xNI-Em-aUU">
@@ -151,7 +154,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kh2-iB-hmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361" y="812"/>
+            <point key="canvasLocation" x="622" y="812"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B4K-xA-nG0">
@@ -165,7 +168,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="jc8-L7-1AO"/>
+                        <segue destination="WOP-co-6nw" kind="relationship" relationship="rootViewController" id="zIy-mR-0BS"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfj-8M-MBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -209,6 +212,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYD-QA-32R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-994" y="134"/>
+        </scene>
+        <!--短语分类-->
+        <scene sceneID="dXr-vC-RlH">
+            <objects>
+                <viewController id="WOP-co-6nw" customClass="HomeController" customModule="LazyKeyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9y7-Yq-jfk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s56-eF-Zgb">
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WOP-co-6nw" id="5KO-Pq-GXa"/>
+                                    <outlet property="delegate" destination="WOP-co-6nw" id="jF0-yA-hxt"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPV-SX-AIp">
+                                <rect key="frame" x="0.0" y="667" width="375" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="HV2-c8-89h">
+                                        <rect key="frame" x="20" y="2" width="301" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="WOP-co-6nw" id="sK8-c4-5fc"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlj-hA-9Eo">
+                                        <rect key="frame" x="331" y="5" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Dlj-hA-9Eo" secondAttribute="height" multiplier="1:1" id="DxN-Yt-vaF"/>
+                                        </constraints>
+                                        <state key="normal" image="keyboard_hide"/>
+                                        <connections>
+                                            <action selector="hideKeyboardAction:" destination="WOP-co-6nw" eventType="touchUpInside" id="DeV-1d-aBs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="HV2-c8-89h" secondAttribute="bottom" constant="2" id="9LT-4K-E8j"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dlj-hA-9Eo" secondAttribute="trailing" constant="10" id="ESh-6n-yDv"/>
+                                    <constraint firstItem="HV2-c8-89h" firstAttribute="top" secondItem="FPV-SX-AIp" secondAttribute="top" constant="2" id="IND-El-Etg"/>
+                                    <constraint firstItem="Dlj-hA-9Eo" firstAttribute="leading" secondItem="HV2-c8-89h" secondAttribute="trailing" constant="10" id="fsL-58-RI5"/>
+                                    <constraint firstAttribute="height" constant="44" id="gDW-aP-GqX"/>
+                                    <constraint firstItem="Dlj-hA-9Eo" firstAttribute="top" secondItem="FPV-SX-AIp" secondAttribute="top" constant="5" id="gmf-YE-n5k"/>
+                                    <constraint firstItem="HV2-c8-89h" firstAttribute="leading" secondItem="FPV-SX-AIp" secondAttribute="leading" constant="20" id="w4q-Qg-eb9"/>
+                                    <constraint firstItem="Dlj-hA-9Eo" firstAttribute="centerY" secondItem="FPV-SX-AIp" secondAttribute="centerY" id="yr0-jf-OiC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FPV-SX-AIp" firstAttribute="leading" secondItem="uKj-cZ-tcR" secondAttribute="leading" id="BrT-rL-G7m"/>
+                            <constraint firstItem="uKj-cZ-tcR" firstAttribute="trailing" secondItem="s56-eF-Zgb" secondAttribute="trailing" id="Qix-Qi-Dty"/>
+                            <constraint firstItem="uKj-cZ-tcR" firstAttribute="bottom" secondItem="s56-eF-Zgb" secondAttribute="bottom" id="Y28-J7-Bcy"/>
+                            <constraint firstItem="FPV-SX-AIp" firstAttribute="trailing" secondItem="uKj-cZ-tcR" secondAttribute="trailing" id="cd7-xT-JSB"/>
+                            <constraint firstItem="s56-eF-Zgb" firstAttribute="top" secondItem="uKj-cZ-tcR" secondAttribute="top" id="d7H-cd-m0s"/>
+                            <constraint firstItem="s56-eF-Zgb" firstAttribute="leading" secondItem="uKj-cZ-tcR" secondAttribute="leading" id="gNC-5M-Hio"/>
+                            <constraint firstItem="FPV-SX-AIp" firstAttribute="top" secondItem="9y7-Yq-jfk" secondAttribute="bottom" id="gq4-tO-eMK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uKj-cZ-tcR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="短语分类" id="Yl4-mQ-Cy8">
+                        <barButtonItem key="leftBarButtonItem" title="编辑" id="iZD-lc-66Y">
+                            <connections>
+                                <action selector="editAction:" destination="WOP-co-6nw" id="ecX-Td-Hse"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TfY-tR-JyU">
+                            <connections>
+                                <action selector="addAction:" destination="WOP-co-6nw" id="jjo-Uv-6ms"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputContentViewTopConstraint" destination="gq4-tO-eMK" id="rym-Uq-v3i"/>
+                        <outlet property="tableView" destination="s56-eF-Zgb" id="ntf-gc-7xy"/>
+                        <outlet property="textField" destination="HV2-c8-89h" id="sZb-fN-uOV"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toSyllableList" id="UE3-EG-AQe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jK-pv-JK1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="134"/>
         </scene>
     </scenes>
     <resources>

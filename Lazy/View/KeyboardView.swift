@@ -97,11 +97,10 @@ class KeyboardView: UIView {
         sender.isSelected = true
         sender.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         
-        typeIndex = items.index(of: sender).or(0)!
+        typeIndex = items.index(of: sender).or(0)
         collectionView.reloadData()
         collectionView.contentOffset = .zero
     }
-    
     
     func setup() {
         

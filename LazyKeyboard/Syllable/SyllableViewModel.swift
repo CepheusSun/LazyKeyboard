@@ -18,7 +18,7 @@ final class SyllableViewModel {
     var db = RealmManager<Syllable>()
     var list: Results<Syllable>!
     
-    init() {
+    init(with type: String) {
         let res = C.groupUserDefaults?.object(forKey: C.syllableKey) as? [String]
         if let r = res {
             for (index, item) in r.enumerated() {
@@ -30,13 +30,13 @@ final class SyllableViewModel {
             }
             C.groupUserDefaults?.removeObject(forKey: C.syllableKey)
         }
-        list = db.select().sorted(byKeyPath: "rank")
+        list = db.select().filter("type = '\(type)'").sorted(byKeyPath: "rank")
     }
     
-    func addSyllable(_ s: String) {
+    func addSyllable(_ s: String, type: String) {
 
         let syllable = Syllable()
-        syllable.type = "默认"
+        syllable.type = type
         syllable.content = s
         syllable.rank = list.count
         db.insert(syllable)
@@ -83,6 +83,20 @@ final class SyllableViewModel {
         let syllable = list[index]
         db.realm.beginWrite()
         syllable.alias = res
+        try! db.realm.commitWrite()
+        self.output.onNext(true)
+    }
+
+    // 分组相关
+    func changeSyllableType(from: String, to: String, at index: Int) {
+        // 修改分组, 走到这里代表这个分组之前一定是已经存在了的
+        db.realm.beginWrite()
+        // 修改
+        let temp = list[index]
+        temp.type = to
+        temp.rank = db.select().filter("type = '\(to)'").count
+        // 当前的往上移动1个
+        list.filter{$0.rank >= index}.forEach{$0.rank -= 1}
         try! db.realm.commitWrite()
         self.output.onNext(true)
     }

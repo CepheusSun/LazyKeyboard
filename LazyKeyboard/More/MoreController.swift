@@ -21,7 +21,6 @@ class MoreController: UIViewController {
         
         tableView.register(cellType: MoreTableViewCell.self)
         automaticallyAdjustsScrollViewInsets = false
-//        configICloud()
     }
 }
 

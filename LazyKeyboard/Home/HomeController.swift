@@ -1,57 +1,51 @@
 //
-//  ViewController.swift
+//  HomeController.swift
 //  LazyKeyboard
 //
-//  Created by sunny on 2018/2/28.
+//  Created by sunny on 2018/4/18.
 //  Copyright © 2018年 CepheusSun. All rights reserved.
 //
 
 import UIKit
 import RxSwift
 
-class SyllableController: UIViewController {
 
-    private var viewModel: SyllableViewModel!
+class HomeController: UIViewController {
+    // perform Segue 用
+    var selectedIndex: Int?
     
-    var type: String = "默认"
-    var typeList: [String] = []
+    private var viewModel = HomeViewModel()
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var inputContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var textField: UITextField!
     
-    var aliasTextField: UITextField!
+    var bag = DisposeBag()
 
     // 当前正在编辑的字段, 如果是新增, 该字段为nil
     var currentEditedIndex: Int?
     
-    var bag = DisposeBag()
-    
+    static let cellIndetifier = "UITableViewCellHomeIdentifier"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if #available(iOS 11.0, *) {
-            navigationItem.largeTitleDisplayMode = .never
-        }
-        
-        viewModel = SyllableViewModel(with: type)
-        tableView.register(cellType: SyllableTableViewCell.self)
+
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: HomeController.cellIndetifier)
         automaticallyAdjustsScrollViewInsets = false
         NotificationCenter.default
             .addObserver(self, selector: #selector(keyboardWillShow(notification:)),
                          name: .UIKeyboardWillShow, object: nil)
-
+        
         NotificationCenter.default
             .addObserver(self, selector: #selector(keyboardWillHide(notification:)),
                          name: .UIKeyboardWillHide, object: nil)
-        
-        configLongPress()
         
         viewModel.output.asObserver()
             .subscribe(onNext: {[weak self] _ in
                 self?.tableView.reloadData()
             }).disposed(by: bag)
-        
     }
+
+    
     
     var editionStatus = false
     @IBAction func editAction(_ sender: UIBarButtonItem) {
@@ -78,27 +72,29 @@ class SyllableController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
-
+        
     }
+    
+    
 }
 
 // MARK: - TableView
-extension SyllableController: UITableViewDataSource {
-
+extension HomeController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SyllableTableViewCell.self)
-        cell.model = viewModel.list[indexPath.row];
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeController.cellIndetifier, for: indexPath)
+        cell.textLabel?.text = viewModel.list[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
+    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         return .delete
     }
@@ -113,25 +109,38 @@ extension SyllableController: UITableViewDataSource {
         }
         let edit = UITableViewRowAction(style: .normal, title: "编辑") {[unowned self] (action, indexPath) in
             self.currentEditedIndex = indexPath.row
-            self.textField.text = self.viewModel.list[indexPath.row].content
+            self.textField.text = self.viewModel.list[indexPath.row]
             self.addAction(self.navigationItem.rightBarButtonItem!)
         }
         return [delete, edit]
     }
 }
 
-extension SyllableController: UITableViewDelegate {
+extension HomeController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "toSyllableList", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSyllableList" {
+            let vc: SyllableController = segue.destination as! SyllableController
+            vc.type = viewModel.list[selectedIndex.or(0)]
+            vc.typeList = viewModel.list
+            selectedIndex = nil
+        }
+    }
+    
 }
 
 // MARK: - 键盘
-extension SyllableController: UITextFieldDelegate {
+extension HomeController: UITextFieldDelegate {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let userInfo = notification.userInfo,
-           let value = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue,
-           let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt {
+            let value = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue,
+            let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt {
             let frame = value.cgRectValue
             let intersection = frame.intersection(self.view.frame)
             let deltaY = intersection.height
@@ -162,72 +171,12 @@ extension SyllableController: UITextFieldDelegate {
         }
         currentEditedIndex
             .ifSome { [unowned self, textField] in
-                self.viewModel.editSyllable(textField.text!, at: $0)
+                self.viewModel.edit(textField.text!, at: $0)
             }.ifNone {[unowned self, textField] in
-                self.viewModel.addSyllable(textField.text!, type: self.type)
-            }
+                self.viewModel.add(textField.text!)
+        }
         textField.text = ""
         currentEditedIndex = nil
         return true
     }
 }
-
-//单个 cell 的长按手势
-extension SyllableController {
-    
-    private func configLongPress() {
-        let ges = UILongPressGestureRecognizer.init(target: self, action: #selector(longPressAction(_:)))
-        ges.minimumPressDuration = 0.6
-        tableView.addGestureRecognizer(ges)
-    }
-    
-    @objc private func longPressAction(_ gesture: UILongPressGestureRecognizer) {
-        if gesture.state == .began {
-            let point = gesture.location(in: tableView)
-            let indexPath = tableView.indexPathForRow(at: point)
-            if indexPath.hasSome {
-                let alert = UIAlertControllerStyle.actionSheet.controller(title: nil, message: nil, actions:
-                    [
-                        "移动到其他分组".alertAction(style: .default, handler: {_ in
-                            self.changeType(indexPath!)
-                        }),
-                        "设置别名".alertAction(style: .default, handler: {_ in
-                            self.setAlias(indexPath!)
-                        }),
-                        "取消".alertAction(style: .cancel, handler: nil)
-                    ])
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
-    }
-    
-    private func setAlias(_ indexPath: IndexPath) {
-        
-        let alert = UIAlertControllerStyle.alert.controller(title: nil, message: "设置别名", actions:
-            [
-                "取消".alertAction(style: .cancel, handler: nil),
-                "确定".alertAction(style: .default, handler: { _ in
-                    self.viewModel.editSyllableAlias(self.aliasTextField.text, at: indexPath.row)
-                })
-            ])
-        alert.addTextField {
-            self.aliasTextField = $0
-        }
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    private func changeType(_ indexPath: IndexPath) {
-        
-        var actions = typeList.filter{$0 != type}.map {
-            return $0.alertAction(style: .default) {
-                let action: UIAlertAction = $0 as UIAlertAction
-                self.viewModel.changeSyllableType(from: self.type, to: action.title! , at: indexPath.row)
-            }
-        }
-        actions.append("取消".alertAction(style: .cancel, handler: nil))
-        let alert = UIAlertControllerStyle.actionSheet.controller(title: nil, message: "移动到其他分组", actions: actions)
-        self.present(alert, animated: true, completion: nil)
-
-    }
-}
-

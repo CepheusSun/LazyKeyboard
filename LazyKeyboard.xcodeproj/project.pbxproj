@@ -31,6 +31,9 @@
 		3360E8142054E46000DA92DA /* KeyboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B9122047AA7A007CD24B /* KeyboardEntity.swift */; };
 		33740F9A2085D25400E2939E /* SyllableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33740F982085D25400E2939E /* SyllableTableViewCell.swift */; };
 		33740F9B2085D25400E2939E /* SyllableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33740F992085D25400E2939E /* SyllableTableViewCell.xib */; };
+		33740F9F208743CF00E2939E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33740F9E208743CF00E2939E /* HomeController.swift */; };
+		33740FA12087443100E2939E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33740FA02087443100E2939E /* HomeViewModel.swift */; };
+		33740FA32087472300E2939E /* TypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33740FA22087472300E2939E /* TypeObject.swift */; };
 		338A10BC20848882009B6CE7 /* RealmTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A10BB20848882009B6CE7 /* RealmTool.swift */; };
 		338A10BD2084F12F009B6CE7 /* RealmTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A10BB20848882009B6CE7 /* RealmTool.swift */; };
 		33C3B8A020463EFD007CD24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3B89F20463EFD007CD24B /* AppDelegate.swift */; };
@@ -133,6 +136,9 @@
 		3360E81120544D0300DA92DA /* Syllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syllable.swift; sourceTree = "<group>"; };
 		33740F982085D25400E2939E /* SyllableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableTableViewCell.swift; sourceTree = "<group>"; };
 		33740F992085D25400E2939E /* SyllableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SyllableTableViewCell.xib; sourceTree = "<group>"; };
+		33740F9E208743CF00E2939E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		33740FA02087443100E2939E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		33740FA22087472300E2939E /* TypeObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeObject.swift; sourceTree = "<group>"; };
 		338A10BB20848882009B6CE7 /* RealmTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTool.swift; sourceTree = "<group>"; };
 		33C3B89C20463EFD007CD24B /* LazyKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C3B89F20463EFD007CD24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -279,6 +285,16 @@
 			path = OpenSource;
 			sourceTree = "<group>";
 		};
+		33740F9D2087435C00E2939E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				33740F9E208743CF00E2939E /* HomeController.swift */,
+				33740FA02087443100E2939E /* HomeViewModel.swift */,
+				33740FA22087472300E2939E /* TypeObject.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		33C3B89320463EFD007CD24B = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +318,7 @@
 		33C3B89E20463EFD007CD24B /* LazyKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				33740F9D2087435C00E2939E /* Home */,
 				33C3B8F320468C37007CD24B /* LazyKeyboard.entitlements */,
 				33F8642B204B04BA00D9AF7D /* Resources */,
 				33C3B8EE20467B46007CD24B /* Syllable */,
@@ -650,6 +667,7 @@
 				33C3B8D020464FE8007CD24B /* CodableUserDefault.swift in Sources */,
 				335E0826204AE04F00304036 /* WebController.swift in Sources */,
 				3342724320510581002DA02E /* Hud.swift in Sources */,
+				33740F9F208743CF00E2939E /* HomeController.swift in Sources */,
 				33C3B8E620464FE8007CD24B /* Number+Snippet.swift in Sources */,
 				33C3B8B720464A14007CD24B /* MoreViewModel.swift in Sources */,
 				335E0822204AD77800304036 /* OpenSourceViewModel.swift in Sources */,
@@ -665,12 +683,14 @@
 				33C3B8DA20464FE8007CD24B /* Encrypt.swift in Sources */,
 				33C3B8B42046489C007CD24B /* MoreEntity.swift in Sources */,
 				33C3B8ED20465223007CD24B /* General.swift in Sources */,
+				33740FA32087472300E2939E /* TypeObject.swift in Sources */,
 				335E08122049312200304036 /* PremiumController.swift in Sources */,
 				335E081F204AD56B00304036 /* OpenSourceController.swift in Sources */,
 				33C3B8D420464FE8007CD24B /* Bool+Snippet.swift in Sources */,
 				33C3B8E92046517C007CD24B /* MoreTableViewCell.swift in Sources */,
 				33C3B8DE20464FE8007CD24B /* Namespace+Snipper.swift in Sources */,
 				33C3B8E020464FE8007CD24B /* Regex.swift in Sources */,
+				33740FA12087443100E2939E /* HomeViewModel.swift in Sources */,
 				33C3B8F020467BC7007CD24B /* SyllableViewModel.swift in Sources */,
 				33C3B8E420464FE8007CD24B /* UIColor+Snipper.swift in Sources */,
 				3360E8142054E46000DA92DA /* KeyboardEntity.swift in Sources */,
