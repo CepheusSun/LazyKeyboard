@@ -181,9 +181,9 @@ extension SyllableController {
             if indexPath.hasSome {
                 let alert = UIAlertControllerStyle.actionSheet.controller(title: nil, message: nil, actions:
                     [
-                        "移动到其他分组".alertAction(style: .default, handler: {_ in
-                            // TDO: 移动分组
-                        }),
+//                        "移动到其他分组".alertAction(style: .default, handler: {_ in
+//                            // TDO: 移动分组
+//                        }),
                         "设置别名".alertAction(style: .default, handler: {_ in
                             self.setAlias(indexPath!)
                         }),
