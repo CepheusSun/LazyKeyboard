@@ -30,7 +30,6 @@ class KeyboardViewController: UIInputViewController {
 
     private func configKeyboard() {
         keyboard = KeyboardView.create(with: self)
-        keyboard.section = viewModel.list
         keyboard.pages = viewModel.pages
         keyboard.typeList = viewModel.typelist
         view.addSubview(keyboard)

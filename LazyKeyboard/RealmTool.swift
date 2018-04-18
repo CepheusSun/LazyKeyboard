@@ -53,7 +53,7 @@ final class RealmManager<T: Object> {
             }
         }
         
-        print(fileURL)
+        
         Realm.Configuration.defaultConfiguration = realmConfiguration
         do {
             realm = try Realm()

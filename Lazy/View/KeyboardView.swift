@@ -18,21 +18,18 @@ class KeyboardView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var selectorScrollView: UIScrollView!
     @IBOutlet weak var atButton: UIButton!
-    
-    var section: [Syllable] = [] {
-        didSet {
-//            self.pages = 1//section[self.typeIndex].pages
-            self.setupSelector()
-        }
-    }
-    
+
     var pages: [[KeyButton]] = [] {
         didSet {
             self.collectionView.reloadData()
         }
     }
     
-    var typeList: [String] = []
+    var typeList: [String] = [] {
+        didSet {
+            self.setupSelector()
+        }
+    }
     
     var kvos: [NSKeyValueObservation] = []
     
