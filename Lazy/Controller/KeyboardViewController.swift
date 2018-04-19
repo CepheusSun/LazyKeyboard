@@ -30,9 +30,13 @@ class KeyboardViewController: UIInputViewController {
 
     private func configKeyboard() {
         keyboard = KeyboardView.create(with: self)
-        keyboard.pages = viewModel.pages
-        keyboard.typeList = viewModel.typelist
+        self.keyboard.typeList = self.viewModel.typelist
+        keyboard.typeSelectedCallback = { [unowned self] in
+            self.viewModel.refresh(type: self.viewModel.typelist[$0])
+            self.keyboard.pages = self.viewModel.pages
+        }
         view.addSubview(keyboard)
+        keyboard.typeSelectedCallback!(0)
         
         keyboard.callBack = {[unowned self] in
             

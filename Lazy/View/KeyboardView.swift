@@ -85,7 +85,7 @@ class KeyboardView: UIView {
         button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
         return button
     }
-    
+    var typeSelectedCallback: ((Int) -> ())?
     var typeIndex: Int = 0
     @objc func buttonAction(_ sender: UIButton) {
         
@@ -96,7 +96,11 @@ class KeyboardView: UIView {
         sender.isSelected = true
         sender.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         
-        typeIndex = items.index(of: sender).or(0)
+        let idx = items.index(of: sender).or(0)
+        typeIndex = idx
+        typeSelectedCallback.ifSome {
+            $0(idx)
+        }
         collectionView.reloadData()
         collectionView.contentOffset = .zero
     }

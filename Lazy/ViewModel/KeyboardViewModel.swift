@@ -46,15 +46,28 @@ final class KeyboardViewModel {
         typelist = typeObject[0].content.components(separatedBy: "&&&")
     }
     
-    lazy var pageCount: Int = {
+    func refresh(type: String) {
+        let temp = db.select().filter("type = '\(type)'").sorted(byKeyPath: "rank")
+        list = []
+        for x in temp.enumerated() {
+            list.append(x.element)
+        }
+        pageCount = getPageCount()
+        pages = getPages()
+    }
+    
+    var pageCount: Int = 0
+
+    private func getPageCount() -> Int {
         if list.count == 0 {
             return 0
         }
         return list.count / 8 + 1
-    }()
+    }
     
-    lazy var pages: [[KeyButton]] = {
-        
+    lazy var pages: [[KeyButton]] = []
+    
+    private func getPages() -> [[KeyButton]] {
         var res: [[KeyButton]] = []
         (0..<pageCount).forEach({ _ in
             res.append([])
@@ -62,12 +75,12 @@ final class KeyboardViewModel {
         
         for (index, item) in list.enumerated() {
             let i = index / 8
-            let j = index % 8
+//            let j = index % 8
             let key = KeyButton(KeyButton.KeyType.character(item))
             res[i].append(key)
         }
         return res.map({$0.compactMap({$0})})
-    }()
+    }
     
 }
 
